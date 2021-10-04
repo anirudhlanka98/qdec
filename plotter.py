@@ -5,7 +5,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 
 filename = sys.argv[1]
-figname = "res_"+filename[4:-4]+".pdf"
+figname = "/project/tbrun_769/qdec/plots/res_"+filename.split('_', 1)[1].split('.')[0]+".pdf"
 pp = PdfPages(figname)
 
 with open(filename, "rb") as input_file:
