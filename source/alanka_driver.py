@@ -27,15 +27,14 @@ steane_log_ops = np.array([[1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # Z_L
                            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]]) # X_L (2 x 14)
 
 # Setting up the device and dataset
-dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0_1data20000.csv'
-#dataset = '[[7,1,3]]p0_1data20000.csv'
+dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0142_data75000.csv'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 data = dl.dataloader(dataset, device)
 
 # Defining the architecture
 layersizes = [6, 20, 30, 45, 35, 14]
 acts = [sigmoid, tanh, relu, tanh, sigmoid]
-QuantumDecoderNet = Net(layersizes, acts).to(device)
+QuantumDecoderNet = Net(layersizes, acts, device)
 
 # Filenames
 if sys.argv[1] == "n":
@@ -46,10 +45,10 @@ mod_filename = "/project/tbrun_769/qdec/models/model_"+timestamp+".pt"
 acc_filename = "/project/tbrun_769/qdec/models/acc_"+timestamp+".pkl"
 
 # Hyperparameters
-kwargs = {'epochs': 5,
+kwargs = {'epochs': 100,
           'learningRate': 10**-4,
           'momentum': 0.9,
-          'num_random_trials': 30,
+          'num_random_trials': 50,
           'precision': 5,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,
@@ -58,6 +57,5 @@ kwargs = {'epochs': 5,
           'log_ops': steane_log_ops}
 
 train(QuantumDecoderNet, *data[:4], **kwargs)
-
 
 
