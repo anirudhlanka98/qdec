@@ -81,7 +81,7 @@ def accuracy(QuantumDecoderNet, ds_synds, ds_error_labels, **kwargs):
       output = QuantumDecoderNet.forward(ds_synds[idx]).cpu().detach().numpy()
       for _ in range(kwargs['num_random_trials']):
         a = np.random.uniform(size = (len(output), 1))
-        b = [1 if output[i] > a[i] else 0 for i in range(14)]
+        b = [1 if output[i] > a[i] else 0 for i in range(len(output))]
         predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
         actual_syndrome = ds_synds[idx].cpu().detach().numpy()
         if np.array_equal(predicted_syndrome, actual_syndrome):
@@ -94,8 +94,12 @@ def accuracy(QuantumDecoderNet, ds_synds, ds_error_labels, **kwargs):
             num_log_x += 1
           break
   codespace_acc = num_success / l
-  x_space_acc = 1 - (num_log_x / num_success)
-  z_space_acc = 1 - (num_log_z / num_success)
+  if num_success>0:
+    x_space_acc = 1 - (num_log_x / num_success)
+    z_space_acc = 1 - (num_log_z / num_success)	
+  else:
+    x_space_acc = 1
+    z_space_acc = 1
   return codespace_acc, x_space_acc, z_space_acc
 
 
