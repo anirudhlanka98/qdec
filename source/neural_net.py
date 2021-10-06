@@ -36,10 +36,10 @@ def train(QuantumDecoderNet, *args, **kwargs):
   train_acc_codespace, valid_acc_codespace = [], []
   train_acc_x, valid_acc_x = [], []
   train_acc_z, valid_acc_z = [], []
-  train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
-  optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate'], betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
+  train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = ar
 
   for epoch in range(kwargs['epochs']):
+    optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate']/epoch, betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
     for idx, syndrome in enumerate(train_syndromes):
       optimizer.zero_grad() # Initializing the gradients to zero
       output = QuantumDecoderNet.forward(syndrome)
