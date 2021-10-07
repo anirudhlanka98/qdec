@@ -59,11 +59,11 @@ data = dl.dataloader(dataset, device)
 
 # Defining the architecture
 #layersizes = [6, 20, 30, 35, 45, 14]
-layersizes = [22,40,50,60,46]
-acts = [tanh, tanh, tanh, sigmoid]
+layersizes = [22,50,50,60,60,46]
+acts = [tanh, tanh, tanh, tanh, sigmoid]
 QuantumDecoderNet = Net(layersizes, acts, device)
 num_epochs = 100
-learning_rate = 0.003
+learning_rate = 0.05
 trials_at_end = 50
 trials_offset = 10
 
