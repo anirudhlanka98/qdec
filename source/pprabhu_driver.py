@@ -64,6 +64,7 @@ acts = [tanh, tanh, tanh, tanh, sigmoid]
 QuantumDecoderNet = Net(layersizes, acts, device)
 num_epochs = 100
 learning_rate = 0.05
+learning_rate_final_epoch =0.001  # must be less than learning_rate
 trials_at_end = 50
 trials_offset = 10
 
@@ -79,9 +80,10 @@ acc_filename = "/project/tbrun_769/qdec/models/acc_"+timestamp+".pkl"
 # Hyperparameters
 kwargs = {'epochs': num_epochs,
           'learningRate': learning_rate,
+          'learningLast': learning_rate_final_epoch
           'momentum': 0.9,
           'num_random_trials': trials_at_end,
-	  'trials_offset':trials_offset,
+	  			'trials_offset':trials_offset,
           'precision': 5,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,

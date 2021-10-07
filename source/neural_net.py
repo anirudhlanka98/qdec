@@ -39,7 +39,7 @@ def train(QuantumDecoderNet, *args, **kwargs):
   train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
 
   for epoch in range(kwargs['epochs']):
-    optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate']/(epoch+1), betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
+    optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = epoch/kwargs['epochs']*(kwargs['learningRate']-kwargs['learningLast']), betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-3, amsgrad = False)
     for idx, syndrome in enumerate(train_syndromes):
       optimizer.zero_grad() # Initializing the gradients to zero
       output = QuantumDecoderNet.forward(syndrome)
