@@ -12,34 +12,35 @@ class Net(nn.Module):
     super(Net, self).__init__()
     self.acts = acts
     self.syndrome_input = nn.Linear(in_features=layersizes[0], out_features=layersizes[1], device=device)
-    self.hidden = [nn.Linear(in_features=layersizes[j + 1], out_features=layersizes[j + 2], device=device) for j in range(len(acts) - 2)]
+    self.hidden = [nn.Linear(in_features=layersizes[j + 1], out_features=layersizes[j + 2], device=device) for j in range(len(acts) - 3)]
     self.error_dist = nn.Linear(in_features=layersizes[-2], out_features=layersizes[-1], device=device)
 
   def forward(self, syndrome):
 
     num_layers = len(self.acts)
-    layers = [self.syndrome_input] + [self.hidden[i] for i in range(len(self.acts)-2)] + [self.error_dist]
+    layers = [self.syndrome_input] + self.hidden + [self.error_dist]
+    a_0 = self.acts[0](syndrome)
+
     def arch(input, l):
       z_l = layers[l](input)
-      a_l = self.acts[l](z_l)
-      if l < num_layers-1:
+      a_l = self.acts[l+1](z_l)
+      if l < num_layers-2:
         return arch(a_l, l+1)
       else:
         return a_l
     
-    return arch(syndrome, 0)
+    return arch(a_0, 0)
 
 
 def train(QuantumDecoderNet, *args, **kwargs):
-
   loss_arr = []
   train_acc_codespace, valid_acc_codespace = [], []
   train_acc_x, valid_acc_x = [], []
   train_acc_z, valid_acc_z = [], []
   train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+  optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate'], betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
 
   for epoch in range(kwargs['epochs']):
-    optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate']/(epoch+1), betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
     for idx, syndrome in enumerate(train_syndromes):
       optimizer.zero_grad() # Initializing the gradients to zero
       output = QuantumDecoderNet.forward(syndrome)
@@ -81,7 +82,7 @@ def accuracy(QuantumDecoderNet, ds_synds, ds_error_labels, **kwargs):
       output = QuantumDecoderNet.forward(ds_synds[idx]).cpu().detach().numpy()
       for _ in range(kwargs['num_random_trials']):
         a = np.random.uniform(size = (len(output), 1))
-        b = [1 if output[i] > a[i] else 0 for i in range(len(output))]
+        b = [1 if output[i] > a[i] else 0 for i in range(14)]
         predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
         actual_syndrome = ds_synds[idx].cpu().detach().numpy()
         if np.array_equal(predicted_syndrome, actual_syndrome):
@@ -94,13 +95,10 @@ def accuracy(QuantumDecoderNet, ds_synds, ds_error_labels, **kwargs):
             num_log_x += 1
           break
   codespace_acc = num_success / l
-  if num_success != 0:
-    x_space_acc = 1 - (num_log_x / num_success)
-    z_space_acc = 1 - (num_log_z / num_success)
-  else:
-    x_space_acc = 1
-    z_space_acc = 1  
+  x_space_acc = 1 - (num_log_x / num_success)
+  z_space_acc = 1 - (num_log_z / num_success)
   return codespace_acc, x_space_acc, z_space_acc
+
 
 
 
