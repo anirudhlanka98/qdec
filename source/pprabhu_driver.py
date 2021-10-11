@@ -6,6 +6,7 @@ import pickle as pkl
 import numpy as np
 import torch
 import torch.nn as nn
+from functools import partial
 
 # Activation functions
 elu = nn.ELU # Exponential linear function
@@ -56,7 +57,7 @@ golay_log_ops = np.array([[0,1,0,1,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 # Setting up the device and dataset
 dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_075data150000.csv'
 data = dl.dataloader(dataset, device)
-checkpoint_dir = '/project/tbrun_769/qdec/models'
+checkpoint_dir = None
 num_samples=8
 max_num_epochs=50
 gpus_per_trial=0
@@ -101,7 +102,8 @@ kwargs = {'epochs': num_epochs,
           'mod_filename': mod_filename,
           'acc_filename': acc_filename,
           'stabs': golay_stabs,
-          'log_ops': golay_log_ops}
+          'log_ops': golay_log_ops,
+          'checkpoint_dir':checkpoint_dir}
 
 # Ray tune wrappers
 config = {
@@ -118,7 +120,7 @@ reporter = CLIReporter(
     # parameter_columns=["l1", "l2", "lr", "batch_size"],
     metric_columns=["loss", "accuracy", "training_iteration"])
 result = tune.run(
-    partial(train, checkpoint_dir, device, *data[:4], **kwargs),
+    partial(train, *data[:4], device, **kwargs),
     resources_per_trial={"cpu": 2, "gpu": gpus_per_trial},
     config=config,
     num_samples=num_samples,
