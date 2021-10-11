@@ -36,7 +36,8 @@ class Net(nn.Module):
     return arch(a_0, 0)
 
 
-def train(QuantumDecoderNet, *args, **kwargs, checkpoint_dir=None, device):
+def train(QuantumDecoderNet, *args, device, **kwargs):
+  checkpoint_dir = kwargs['checkpoint_dir']
   loss_arr = []
   train_acc_codespace, valid_acc_codespace = [], []
   train_acc_x, valid_acc_x = [], []
