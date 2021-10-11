@@ -4,16 +4,20 @@ import torch.optim as optim
 import numpy as np
 import pdb
 import pickle as pkl
+import os
+from ray import tune
+from ray.tune import CLIReporter
+from ray.tune.schedulers import ASHAScheduler
 
 
 class Net(nn.Module):
 
-  def __init__(self, layersizes, acts, device):
+  def __init__(self, layersizes, acts):
     super(Net, self).__init__()
     self.acts = acts
-    self.syndrome_input = nn.Linear(in_features=layersizes[0], out_features=layersizes[1], device=device)
-    self.hidden = [nn.Linear(in_features=layersizes[j + 1], out_features=layersizes[j + 2], device=device) for j in range(len(acts) - 3)]
-    self.error_dist = nn.Linear(in_features=layersizes[-2], out_features=layersizes[-1], device=device)
+    self.syndrome_input = nn.Linear(in_features=layersizes[0], out_features=layersizes[1])
+    self.hidden = [nn.Linear(in_features=layersizes[j + 1], out_features=layersizes[j + 2]) for j in range(len(acts) - 3)]
+    self.error_dist = nn.Linear(in_features=layersizes[-2], out_features=layersizes[-1])
 
   def forward(self, syndrome):
 
@@ -32,7 +36,7 @@ class Net(nn.Module):
     return arch(a_0, 0)
 
 
-def train(QuantumDecoderNet, *args, **kwargs):
+def train(QuantumDecoderNet, *args, **kwargs, checkpoint_dir=None, device):
   loss_arr = []
   train_acc_codespace, valid_acc_codespace = [], []
   train_acc_x, valid_acc_x = [], []
@@ -40,8 +44,14 @@ def train(QuantumDecoderNet, *args, **kwargs):
   train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
   optimizer = optim.Adam(QuantumDecoderNet.parameters(), lr = kwargs['learningRate'], betas = (0.9, 0.99), eps = 1e-08, weight_decay = 10**-4, amsgrad = False)
 
+  if checkpoint_dir:
+    model_state, optimizer_state = torch.load(os.path.join(checkpoint_dir, "checkpoint"))
+    net.load_state_dict(model_state)
+    optimizer.load_state_dict(optimizer_state)
+
   for epoch in range(kwargs['epochs']):
     for idx, syndrome in enumerate(train_syndromes):
+      syndrome, train_error_labels[idx] = syndrome.to(device), train_error_labels[idx].to(device)
       optimizer.zero_grad() # Initializing the gradients to zero
       output = QuantumDecoderNet.forward(syndrome)
       loss = kwargs['criterion'](output, train_error_labels[idx])
@@ -65,6 +75,12 @@ def train(QuantumDecoderNet, *args, **kwargs):
     print("Training (Z) = {}, Validation (Z) = {}".format(round(train_acc_z_epoch, kwargs['precision']), round(valid_acc_z_epoch, kwargs['precision'])), flush=True)
     torch.save(QuantumDecoderNet, kwargs['mod_filename'])
 
+    with tune.checkpoint_dir(epoch) as checkpoint_dir:
+      path = os.path.join(checkpoint_dir, "checkpoint")
+      torch.save((net.state_dict(), optimizer.state_dict()), path)
+
+    tune.report(loss=(loss), accuracy=train_acc_codespace)
+
   results = [loss_arr, train_acc_codespace, train_acc_x, train_acc_z, valid_acc_codespace, valid_acc_x, valid_acc_z]
   with open(kwargs['acc_filename'], "wb") as file:
     pkl.dump(results, file)
@@ -80,9 +96,10 @@ def accuracy(QuantumDecoderNet, ds_synds, ds_error_labels, **kwargs):
   with torch.no_grad():
     for idx in range(l):
       output = QuantumDecoderNet.forward(ds_synds[idx]).cpu().detach().numpy()
+      len_output = len(output)
       for _ in range(kwargs['num_random_trials']):
-        a = np.random.uniform(size = (len(output), 1))
-        b = [1 if output[i] > a[i] else 0 for i in range(14)]
+        a = np.random.uniform(size = (len_output, 1))
+        b = [1 if output[i] > a[i] else 0 for i in range(len_output)]
         predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
         actual_syndrome = ds_synds[idx].cpu().detach().numpy()
         if np.array_equal(predicted_syndrome, actual_syndrome):

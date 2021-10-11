@@ -37,6 +37,7 @@ golay_stabs = np.array([[0,1,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 			[0,1,1,1,1,0,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 			[1,1,1,1,0,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 			[1,0,1,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1],
 			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,0],
 			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0],
 			[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0],
@@ -54,18 +55,29 @@ golay_log_ops = np.array([[0,1,0,1,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 
 # Setting up the device and dataset
 dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_075data150000.csv'
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 data = dl.dataloader(dataset, device)
+checkpoint_dir = '/project/tbrun_769/qdec/models'
+num_samples=8
+max_num_epochs=50
+gpus_per_trial=0
 
 # Defining the architecture
 #layersizes = [6, 20, 30, 35, 45, 14]
 layersizes = [22,50,50,60,60,46]
 acts = [tanh, tanh, tanh, tanh, sigmoid]
-QuantumDecoderNet = Net(layersizes, acts, device)
+QuantumDecoderNet = Net(layersizes, acts)
+
+device = "cpu"
+if torch.cuda.is_available():
+    device = "cuda:0"
+    if torch.cuda.device_count() > 1:
+        net = nn.DataParallel(net)
+net.to(device)
+
 num_epochs = 100
-learning_rate = 0.05
-learning_rate_final_epoch =0.001  # must be less than learning_rate
-trials_at_end = 50
+learning_rate = 0.001
+learning_rate_final_epoch =0.0001 # must be less than learning_rate
+trials_at_end = 35
 trials_offset = 10
 
 # Filenames
@@ -82,8 +94,8 @@ kwargs = {'epochs': num_epochs,
           'learningRate': learning_rate,
           'learningLast': learning_rate_final_epoch
           'momentum': 0.9,
-          'num_random_trials': trials_at_end,
-	  			'trials_offset':trials_offset,
+          'num_random_trials': config["trials"],
+	  	  'trials_offset':trials_offset,
           'precision': 5,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,
@@ -91,6 +103,35 @@ kwargs = {'epochs': num_epochs,
           'stabs': golay_stabs,
           'log_ops': golay_log_ops}
 
-train(QuantumDecoderNet, *data[:4], **kwargs)
+# Ray tune wrappers
+config = {
+	"trials": tune.quniform(lower=5, upper=75, q=5)
+	#"lr": tune.loguniform(1e-4, 1e-1),
+}
+scheduler = ASHAScheduler(
+    metric="loss",
+    mode="min",
+    max_t=max_num_epochs,
+    grace_period=1,
+    reduction_factor=2)
+reporter = CLIReporter(
+    # parameter_columns=["l1", "l2", "lr", "batch_size"],
+    metric_columns=["loss", "accuracy", "training_iteration"])
+result = tune.run(
+    partial(train, checkpoint_dir, device, *data[:4], **kwargs),
+    resources_per_trial={"cpu": 2, "gpu": gpus_per_trial},
+    config=config,
+    num_samples=num_samples,
+    scheduler=scheduler,
+    progress_reporter=reporter)
+
+best_trial = result.get_best_trial("loss", "min", "last")
+print("Best trial config: {}".format(best_trial.config))
+print("Best trial final validation loss: {}".format(
+    best_trial.last_result["loss"]))
+print("Best trial final validation accuracy: {}".format(
+    best_trial.last_result["accuracy"]))
+
+#train(QuantumDecoderNet, checkpoint_dir, device, *data[:4], **kwargs)
 
 
