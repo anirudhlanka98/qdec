@@ -7,6 +7,9 @@ import numpy as np
 import torch
 import torch.nn as nn
 from functools import partial
+from ray import tune
+from ray.tune import CLIReporter
+from ray.tune.schedulers import ASHAScheduler
 
 # Activation functions
 elu = nn.ELU # Exponential linear function
@@ -56,7 +59,6 @@ golay_log_ops = np.array([[0,1,0,1,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 
 # Setting up the device and dataset
 dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_075data150000.csv'
-data = dl.dataloader(dataset, device)
 checkpoint_dir = None
 num_samples=8
 max_num_epochs=50
@@ -68,18 +70,19 @@ layersizes = [22,50,50,60,60,46]
 acts = [tanh, tanh, tanh, tanh, sigmoid]
 QuantumDecoderNet = Net(layersizes, acts)
 
-device = "cpu"
-if torch.cuda.is_available():
-    device = "cuda:0"
-    if torch.cuda.device_count() > 1:
-        net = nn.DataParallel(net)
-net.to(device)
-
 num_epochs = 100
 learning_rate = 0.001
 learning_rate_final_epoch =0.0001 # must be less than learning_rate
 trials_at_end = 35
 trials_offset = 10
+
+device = "cpu"
+if torch.cuda.is_available():
+    device = "cuda:0"
+    if torch.cuda.device_count() > 1:
+       QuantumDecoderNet = nn.DataParallel(QuanutmDecoderNet)
+QuantumDecoderNet.to(device)
+data = dl.dataloader(dataset, device)
 
 # Filenames
 if sys.argv[1] == "n":
@@ -90,10 +93,15 @@ elif sys.argv[1] == "e":
 mod_filename = "/project/tbrun_769/qdec/models/model_"+timestamp+".pt"
 acc_filename = "/project/tbrun_769/qdec/models/acc_"+timestamp+".pkl"
 
+config = {
+        "trials": tune.quniform(lower=5, upper=75, q=5)
+        #"lr": tune.loguniform(1e-4, 1e-1),
+}
+
 # Hyperparameters
 kwargs = {'epochs': num_epochs,
           'learningRate': learning_rate,
-          'learningLast': learning_rate_final_epoch
+          'learningLast': learning_rate_final_epoch,
           'momentum': 0.9,
           'num_random_trials': config["trials"],
 	  	  'trials_offset':trials_offset,
@@ -106,10 +114,6 @@ kwargs = {'epochs': num_epochs,
           'checkpoint_dir':checkpoint_dir}
 
 # Ray tune wrappers
-config = {
-	"trials": tune.quniform(lower=5, upper=75, q=5)
-	#"lr": tune.loguniform(1e-4, 1e-1),
-}
 scheduler = ASHAScheduler(
     metric="loss",
     mode="min",
@@ -120,7 +124,7 @@ reporter = CLIReporter(
     # parameter_columns=["l1", "l2", "lr", "batch_size"],
     metric_columns=["loss", "accuracy", "training_iteration"])
 result = tune.run(
-    partial(train, *data[:4], device, **kwargs),
+    partial(train, QuantumDecoderNet, *data[:4], device, **kwargs),
     resources_per_trial={"cpu": 2, "gpu": gpus_per_trial},
     config=config,
     num_samples=num_samples,
