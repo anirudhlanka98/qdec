@@ -58,6 +58,7 @@ golay_log_ops = np.array([[0,1,0,1,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 
 
 # Setting up the device and dataset
+
 dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_185data500000.csv'
 #dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0142_data75000.csv'
 checkpoint_dir = None
@@ -81,10 +82,10 @@ config = {
         "lr": tune.loguniform(1e-5, 1e-3),
 }
 
+
 # Filenames
 if sys.argv[1] == "n":
   timestamp = str(datetime.datetime.now())[5:23].replace(":", "_").replace(".", "_").replace(" ", "_").replace("-", "_")
- # print(timestamp, layersizes, acts, num_epochs, learning_rate, trials_at_end)
   print(timestamp, layersizes, acts, num_epochs)
 elif sys.argv[1] == "e":
   timestamp = sys.argv[2]
@@ -93,11 +94,12 @@ acc_filename = "/project/tbrun_769/qdec/models/acc_"+timestamp
 
 # Hyperparameters
 kwargs = {'epochs': num_epochs,
+
          # 'learningRate': learning_rate,
          # 'learningLast': learning_rate_final_epoch,
           'momentum': 0.9,
          # 'num_random_trials': config["trials"],
-	 # 'trials_offset':trials_offset,
+	       # 'trials_offset':trials_offset,
           'precision': 5,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,
@@ -127,6 +129,7 @@ result = tune.run(
     scheduler=scheduler,
     progress_reporter=reporter)
 
+
 best_trial = result.get_best_trial("accuracy", "max", "last")
 if best_trial is None:
   print("best_trial is None. Check output logs.")
@@ -138,5 +141,4 @@ else:
       best_trial.last_result["accuracy"]))
 
 #train(QuantumDecoderNet, checkpoint_dir, device, *data[:4], **kwargs)
-
 
