@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32GB
-#SBATCH --time=23:00:00
+#SBATCH --time=45:00:00
 #SBATCH --account=tbrun_769
 
 module purge
