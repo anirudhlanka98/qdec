@@ -4,9 +4,9 @@
 ##SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=32GB
-#SBATCH --time=23:59:00
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=64GB
+#SBATCH --time=47:59:00
 #SBATCH --account=tbrun_769
 
 module purge
