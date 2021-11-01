@@ -59,16 +59,16 @@ golay_log_ops = np.array([[0,1,0,1,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
 
 # Setting up the device and dataset
 
-dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_185data500000.csv'
-#dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0142_data75000.csv'
+#dataset = '/project/tbrun_769/qdec/datasets/[[23,1,7]]p0_185data500000.csv'
+dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0142_data75000.csv'
 checkpoint_dir = None
-num_samples=50
+num_samples=10
 max_num_epochs=40
 gpus_per_trial=0
 
 # Defining the architecture
-#layersizes = [6, 120, 14]
-layersizes = [22,120,46]
+layersizes = [6, 30, 14]
+#layersizes = [22,120,46]
 acts = [tanh, tanh, sigmoid]
 
 num_epochs = max_num_epochs
@@ -78,8 +78,8 @@ num_epochs = max_num_epochs
 #trials_offset = 10
 
 config = {
-        "trials": tune.quniform(lower=35, upper=80, q=5),
-        "lr": tune.loguniform(1e-5, 1e-3),
+        "trials": tune.quniform(lower=15, upper=35, q=5),
+        "lr": tune.loguniform(5e-5, 7e-4),
 }
 
 
@@ -104,8 +104,8 @@ kwargs = {'epochs': num_epochs,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,
           'acc_filename': acc_filename,
-          'stabs': golay_stabs,
-          'log_ops': golay_log_ops,
+          'stabs': steane_stabs,
+          'log_ops': steane_log_ops,
           'layersizes': layersizes,
 	  'acts': acts,
 	  'dataset': dataset
