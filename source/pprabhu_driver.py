@@ -89,7 +89,7 @@ gpus_per_trial=0
 layersizes = [6, 14]
 #layersizes = [22,70,100,100,46]
 #layersizes = [10, 50, 100, 24]
-acts = [elu, sigmoid]
+acts = [elu, elu]
 
 num_epochs = max_num_epochs
 #learning_rate = 0.0005
@@ -119,14 +119,15 @@ kwargs = {'epochs': num_epochs,
          # 'num_random_trials': config["trials"],
 	       # 'trials_offset':trials_offset,
           'precision': 5,
-          'criterion': nn.BCELoss(),
+          'criterion': nn.BCEWithLogitsLoss(), #nn.BCELoss(),
           'mod_filename': mod_filename,
           'acc_filename': acc_filename,
           'stabs': steane_stabs,
           'log_ops': steane_log_ops,
           'layersizes': layersizes,
 	  'acts': acts,
-	  'dataset': dataset
+	  'dataset': dataset,
+          'random_sampling':False
 }
 
 # Ray tune wrappers
