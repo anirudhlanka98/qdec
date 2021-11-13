@@ -9,6 +9,8 @@
 #SBATCH --time=17:59:00
 #SBATCH --account=tbrun_769
 #SBATCH --output=/project/tbrun_769/qdec/logs/%j.out
+#SBATCH --time=9:59:00
+#SBATCH --account=tbrun_769
 
 module purge
 module load gcc/8.3.0

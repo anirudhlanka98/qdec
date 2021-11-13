@@ -75,6 +75,7 @@ color_12_2_3_log_ops = np.array([[1,1,1,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0
 [0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,1,1,1]
 ])
 
+
 code_11_1_5_stabs = np.array([[1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0],
 [0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0],
 [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1],
@@ -96,6 +97,7 @@ code_11_1_5_log_ops = np.array([[0,0,0,0,0,0,1,1,1,1,1, 0,0,0,0,0,0,0,0,0,0,0],
 dataset = '/project/tbrun_769/qdec/datasets/[[11,1,5]]Corrdata100000.csv'
 #dataset = '/project/tbrun_769/qdec/datasets/[[12,2,3]]Corrdata75000.csv'
 #dataset = '/project/tbrun_769/qdec/datasets/[[12,2,3]]XZCorrdata75000.csv'
+
 checkpoint_dir = None
 num_samples=25
 max_num_epochs=100
@@ -185,6 +187,5 @@ else:
       best_trial.last_result["loss"]))
   print("Best trial final validation accuracy: {}".format(
       best_trial.last_result["accuracy"]))
-
 #train(QuantumDecoderNet, checkpoint_dir, device, *data[:4], **kwargs)
 

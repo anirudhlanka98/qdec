@@ -63,6 +63,14 @@ data = dl.dataloader(dataset, device)
 layersizes = [6, 40, 14]
 acts = [tanh, elu, sigmoid]
 QuantumDecoderNet = Net(layersizes, acts)
+dataset = '/project/tbrun_769/qdec/datasets/[[7,1,3]]p0142_data75000.csv'
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+data = dl.dataloader(dataset, device)
+
+# Defining the architecture
+layersizes = [6, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 14]
+acts = [sigmoid, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, tanh, sigmoid]
+QuantumDecoderNet = Net(layersizes, acts, device)
 
 # Filenames
 if sys.argv[1] == "n":
@@ -75,15 +83,29 @@ res_filename = "/project/tbrun_769/qdec/models/res_"+timestamp+".pkl"
 # Hyperparameters
 kwargs = {'epochs': 50,
           'learningRate': 5e-4,
+acc_filename = "/project/tbrun_769/qdec/models/acc_"+timestamp+".pkl"
+
+# Hyperparameters
+kwargs = {'epochs': 100,
+          'learningRate': 5*(10**-4),
+
           'momentum': 0.9,
           'num_random_trials': 30,
           'precision': 5,
           'criterion': nn.BCELoss(),
           'mod_filename': mod_filename,
+
           'res_filename': res_filename,
           'random_sampling': False,
+
+          'acc_filename': acc_filename,
+
           'stabs': steane_stabs,
           'log_ops': steane_log_ops}
 
 train(QuantumDecoderNet, *data[:4], **kwargs)
+
+
+
+
 
