@@ -83,15 +83,15 @@ def train(config, checkpoint_dir =None,  **kwargs):
     print("Training (Code) = {}, Validation (Code) = {}".format(round(train_acc_codespace_epoch, kwargs['precision']), round(valid_acc_codespace_epoch, kwargs['precision'])), flush=True, end = ', ')
     print("Training (X) = {}, Validation (X) = {}".format(round(train_acc_x_epoch, kwargs['precision']), round(valid_acc_x_epoch, kwargs['precision'])), flush=True, end = ', ')
     print("Training (Z) = {}, Validation (Z) = {}".format(round(train_acc_z_epoch, kwargs['precision']), round(valid_acc_z_epoch, kwargs['precision'])), flush=True)
-    torch.save(QuantumDecoderNet, kwargs['mod_filename']+"_"+str(round(config['lr'],6))+"_"+ str(int(config['trials']))+ ".pt")
+    torch.save(QuantumDecoderNet, kwargs['mod_filename'])
 
     with tune.checkpoint_dir(epoch) as checkpoint_dir:
       path = os.path.join(checkpoint_dir, "checkpoint")
       torch.save((QuantumDecoderNet.state_dict(), optimizer.state_dict()), path)
-  #  print(train_acc_codespace_epoch)
+  
     tune.report(loss=loss_epoch, accuracy=train_acc_codespace_epoch, x_log_val_epoch=train_acc_x_epoch, epoch=epoch)
     results = [loss_arr, train_acc_codespace, train_acc_x, train_acc_z, valid_acc_codespace, valid_acc_x, valid_acc_z]
-    with open(kwargs['acc_filename']+"_"+str(round(config['lr'],6))+"_"+ str(int(config['trials']))+ ".pkl", "wb") as file:
+    with open(kwargs['res_filename'], "wb") as file:
       pkl.dump(results, file)
 
 

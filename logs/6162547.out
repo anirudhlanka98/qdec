@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6162547
+SLURM_JOB_NODELIST = d23-13
+TMPDIR = /tmp/SLURM_6162547
+==========================================
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 72, in <module>
+    print('Timestamp: '+timestamp+', Layersizes: '+str(layersizes)+', Activation functions: '+str(acts)+', Epochs: '+num_epochs+', Learning rate: '+lr+', Number of random trials: '+num_random_trails)
+TypeError: can only concatenate str (not "int") to str

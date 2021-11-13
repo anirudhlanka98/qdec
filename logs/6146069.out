@@ -1,0 +1,13 @@
+==========================================
+SLURM_JOB_ID = 6146069
+SLURM_JOB_NODELIST = d23-10
+TMPDIR = /tmp/SLURM_6146069
+==========================================
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 85, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 98, in accuracy
+    x_space_acc = 1 - (num_log_x / num_success)
+ZeroDivisionError: division by zero

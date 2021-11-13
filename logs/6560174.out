@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6560174
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6560174
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 2, in <module>
+    from neural_net import Net, train
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 128
+    success = 0, log_x = 0, log_z = 0
+              ^
+SyntaxError: cannot assign to literal

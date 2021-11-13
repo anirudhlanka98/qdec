@@ -1,0 +1,2716 @@
+==========================================
+SLURM_JOB_ID = 6215315
+SLURM_JOB_NODELIST = d05-35
+TMPDIR = /tmp/SLURM_6215315
+==========================================
+2021-10-17 22:45:48,966	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 22:45:48,966	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=6351)[0m 2021-10-17 22:53:09,791	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6351)[0m Traceback (most recent call last):
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6351)[0m     self._entrypoint()
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6351)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6351)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6351)[0m     output = fn()
+[2m[36m(pid=6351)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6351)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6351)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6351)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6351)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6351)[0m Exception in thread Thread-2:
+[2m[36m(pid=6351)[0m Traceback (most recent call last):
+[2m[36m(pid=6351)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6351)[0m     self.run()
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6351)[0m     raise e
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6351)[0m     self._entrypoint()
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6351)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6351)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6351)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6351)[0m     output = fn()
+[2m[36m(pid=6351)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6351)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6351)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6351)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6351)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:09,996	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6351, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f0b9b31f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6351, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f0b9b31f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6349)[0m 2021-10-17 22:53:13,213	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6349)[0m Traceback (most recent call last):
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6349)[0m     self._entrypoint()
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6349)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6349)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6349)[0m     output = fn()
+[2m[36m(pid=6349)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6349)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6349)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6349)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6349)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6349)[0m Exception in thread Thread-2:
+[2m[36m(pid=6349)[0m Traceback (most recent call last):
+[2m[36m(pid=6349)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6349)[0m     self.run()
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6349)[0m     raise e
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6349)[0m     self._entrypoint()
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6349)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6349)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6349)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6349)[0m     output = fn()
+[2m[36m(pid=6349)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6349)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6349)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6349)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6349)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:13,418	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6349, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f25df7ed3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6349, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f25df7ed3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+2021-10-17 22:53:22,664	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6361, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f9b625383d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6361, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f9b625383d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6361)[0m 2021-10-17 22:53:22,637	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6361)[0m Traceback (most recent call last):
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6361)[0m     self._entrypoint()
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6361)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6361)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6361)[0m     output = fn()
+[2m[36m(pid=6361)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6361)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6361)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6361)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6361)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6361)[0m Exception in thread Thread-2:
+[2m[36m(pid=6361)[0m Traceback (most recent call last):
+[2m[36m(pid=6361)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6361)[0m     self.run()
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6361)[0m     raise e
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6361)[0m     self._entrypoint()
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6361)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6361)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6361)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6361)[0m     output = fn()
+[2m[36m(pid=6361)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6361)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6361)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6361)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6361)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6359)[0m 2021-10-17 22:53:24,700	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6359)[0m Traceback (most recent call last):
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6359)[0m     self._entrypoint()
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6359)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6359)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6359)[0m     output = fn()
+[2m[36m(pid=6359)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6359)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6359)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6359)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6359)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6359)[0m Exception in thread Thread-2:
+[2m[36m(pid=6359)[0m Traceback (most recent call last):
+[2m[36m(pid=6359)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6359)[0m     self.run()
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6359)[0m     raise e
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6359)[0m     self._entrypoint()
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6359)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6359)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6359)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6359)[0m     output = fn()
+[2m[36m(pid=6359)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6359)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6359)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6359)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6359)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:24,907	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6359, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fd1790f1580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6359, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fd1790f1580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6358)[0m 2021-10-17 22:53:28,958	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6358)[0m Traceback (most recent call last):
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6358)[0m     self._entrypoint()
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6358)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6358)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6358)[0m     output = fn()
+[2m[36m(pid=6358)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6358)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6358)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6358)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6358)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6358)[0m Exception in thread Thread-2:
+[2m[36m(pid=6358)[0m Traceback (most recent call last):
+[2m[36m(pid=6358)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6358)[0m     self.run()
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6358)[0m     raise e
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6358)[0m     self._entrypoint()
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6358)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6358)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6358)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6358)[0m     output = fn()
+[2m[36m(pid=6358)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6358)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6358)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6358)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6358)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:29,162	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6358, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f915f9eb3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6358, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7f915f9eb3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6364)[0m 2021-10-17 22:53:48,417	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6364)[0m Traceback (most recent call last):
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6364)[0m     self._entrypoint()
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6364)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6364)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6364)[0m     output = fn()
+[2m[36m(pid=6364)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6364)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6364)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6364)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6364)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6364)[0m Exception in thread Thread-2:
+[2m[36m(pid=6364)[0m Traceback (most recent call last):
+[2m[36m(pid=6364)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6364)[0m     self.run()
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6364)[0m     raise e
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6364)[0m     self._entrypoint()
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6364)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6364)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6364)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6364)[0m     output = fn()
+[2m[36m(pid=6364)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6364)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6364)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6364)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6364)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:48,623	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6364, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fa3e493a580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6364, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fa3e493a580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6356)[0m 2021-10-17 22:53:49,975	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6356)[0m Traceback (most recent call last):
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6356)[0m     self._entrypoint()
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6356)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6356)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6356)[0m     output = fn()
+[2m[36m(pid=6356)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6356)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6356)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6356)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6356)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6356)[0m Exception in thread Thread-2:
+[2m[36m(pid=6356)[0m Traceback (most recent call last):
+[2m[36m(pid=6356)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6356)[0m     self.run()
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6356)[0m     raise e
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6356)[0m     self._entrypoint()
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6356)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6356)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6356)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6356)[0m     output = fn()
+[2m[36m(pid=6356)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6356)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6356)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6356)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6356)[0m NameError: name 'config' is not defined
+2021-10-17 22:53:50,180	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6356, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fc22ec813d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6356, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fc22ec813d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+2021-10-17 22:53:53,807	ERROR trial_runner.py:846 -- Trial DEFAULT_a5a32_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=6354, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fa2242f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=6354, ip=10.125.19.209, repr=<types.ImplicitFunc object at 0x7fa2242f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=6354)[0m 2021-10-17 22:53:53,759	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=6354)[0m Traceback (most recent call last):
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6354)[0m     self._entrypoint()
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6354)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6354)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6354)[0m     output = fn()
+[2m[36m(pid=6354)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6354)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6354)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6354)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6354)[0m NameError: name 'config' is not defined
+[2m[36m(pid=6354)[0m Exception in thread Thread-2:
+[2m[36m(pid=6354)[0m Traceback (most recent call last):
+[2m[36m(pid=6354)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=6354)[0m     self.run()
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=6354)[0m     raise e
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=6354)[0m     self._entrypoint()
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=6354)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=6354)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=6354)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=6354)[0m     output = fn()
+[2m[36m(pid=6354)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=6354)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=6354)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=6354)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=6354)[0m NameError: name 'config' is not defined
+10_17_22_45_39_303 [22, 35, 46] [Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 15.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | PENDING  |       |       30 |
+| DEFAULT_a5a32_00002 | PENDING  |       |       15 |
+| DEFAULT_a5a32_00003 | PENDING  |       |       65 |
+| DEFAULT_a5a32_00004 | PENDING  |       |       25 |
+| DEFAULT_a5a32_00005 | PENDING  |       |        5 |
+| DEFAULT_a5a32_00006 | PENDING  |       |       60 |
+| DEFAULT_a5a32_00007 | PENDING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=6351)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=6359)[0m 96000 24000
+== Status ==
+Memory usage on this node: 19.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=6358)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=6349)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=6354)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=6361)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=6364)[0m 96000 24000
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=6356)[0m 96000 24000
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 19.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | RUNNING  |       |       55 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_a5a32_00007:
+  {}
+  
+== Status ==
+Memory usage on this node: 18.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 14.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (1 ERROR, 7 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00004 | RUNNING  |       |       25 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 1
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_a5a32_00004:
+  {}
+  
+== Status ==
+Memory usage on this node: 18.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 12.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (2 ERROR, 6 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 2
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 18.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 12.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (2 ERROR, 6 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | RUNNING  |       |       50 |
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00003 | RUNNING  |       |       65 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 2
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_a5a32_00003:
+  {}
+  
+Result for DEFAULT_a5a32_00000:
+  {}
+  
+== Status ==
+Memory usage on this node: 17.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (4 ERROR, 4 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00005 | RUNNING  |       |        5 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 4
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_a5a32_00005:
+  {}
+  
+== Status ==
+Memory usage on this node: 16.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (5 ERROR, 3 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 5
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 16.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (5 ERROR, 3 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 5
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 16.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (5 ERROR, 3 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 5
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 16.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (5 ERROR, 3 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00001 | RUNNING  |       |       30 |
+| DEFAULT_a5a32_00002 | RUNNING  |       |       15 |
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 5
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_a5a32_00001:
+  {}
+  
+Result for DEFAULT_a5a32_00002:
+  {}
+  
+== Status ==
+Memory usage on this node: 16.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (7 ERROR, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00006 | RUNNING  |       |       60 |
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00001 | ERROR    |       |       30 |
+| DEFAULT_a5a32_00002 | ERROR    |       |       15 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 7
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00001_1_trials=30.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00002_2_trials=15.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_a5a32_00006:
+  {}
+  
+== Status ==
+Memory usage on this node: 16.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/114.46 GiB heap, 0.0/53.04 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_a5a32_00000 | ERROR    |       |       50 |
+| DEFAULT_a5a32_00001 | ERROR    |       |       30 |
+| DEFAULT_a5a32_00002 | ERROR    |       |       15 |
+| DEFAULT_a5a32_00003 | ERROR    |       |       65 |
+| DEFAULT_a5a32_00004 | ERROR    |       |       25 |
+| DEFAULT_a5a32_00005 | ERROR    |       |        5 |
+| DEFAULT_a5a32_00006 | ERROR    |       |       60 |
+| DEFAULT_a5a32_00007 | ERROR    |       |       55 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_a5a32_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00000_0_trials=50.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00001_1_trials=30.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00002_2_trials=15.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00003_3_trials=65.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00004_4_trials=25.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00005_5_trials=5.0_2021-10-17_22-45-49/error.txt  |
+| DEFAULT_a5a32_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00006_6_trials=60.0_2021-10-17_22-45-49/error.txt |
+| DEFAULT_a5a32_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-45-48/DEFAULT_a5a32_00007_7_trials=55.0_2021-10-17_22-45-49/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 120, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_a5a32_00000, DEFAULT_a5a32_00001, DEFAULT_a5a32_00002, DEFAULT_a5a32_00003, DEFAULT_a5a32_00004, DEFAULT_a5a32_00005, DEFAULT_a5a32_00006, DEFAULT_a5a32_00007])

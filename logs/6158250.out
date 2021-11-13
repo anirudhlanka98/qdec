@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6158250
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6158250
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 2, in <module>
+    from neural_net import Net, train
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 39
+    def train(QuantumDecoderNet, *args, **kwargs, checkpoint_dir=None, device):
+                                                  ^
+SyntaxError: invalid syntax

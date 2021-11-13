@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6162456
+SLURM_JOB_NODELIST = d23-15
+TMPDIR = /tmp/SLURM_6162456
+==========================================
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 65, in <module>
+    QuantumDecoderNet = Net(layersizes, acts, device)
+TypeError: __init__() takes 3 positional arguments but 4 were given

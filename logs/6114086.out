@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6114086
+SLURM_JOB_NODELIST = d11-15
+TMPDIR = /tmp/SLURM_6114086
+==========================================
+  File "source/pprabhu_driver.py", line 72
+    print(timestamp, layersizes, acts, num_epochs, learning rate, trials_factor )
+                                                            ^
+SyntaxError: invalid syntax

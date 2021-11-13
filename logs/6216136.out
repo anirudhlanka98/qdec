@@ -1,0 +1,6 @@
+==========================================
+SLURM_JOB_ID = 6216136
+SLURM_JOB_NODELIST = d11-10
+TMPDIR = /tmp/SLURM_6216136
+==========================================
+slurmstepd: error: *** JOB 6216136 ON d11-10 CANCELLED AT 2021-10-17T23:19:19 ***

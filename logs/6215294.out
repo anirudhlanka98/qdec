@@ -1,0 +1,625 @@
+==========================================
+SLURM_JOB_ID = 6215294
+SLURM_JOB_NODELIST = d05-29
+TMPDIR = /tmp/SLURM_6215294
+==========================================
+2021-10-17 22:19:31,981	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 22:19:31,981	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 22:19:34,380	WARNING worker.py:1227 -- Warning: The actor ImplicitFunc is very large (62 MiB). Check that its definition is not implicitly capturing a large array or other object in scope. Tip: use ray.put() to put large objects in the Ray object store.
+[2m[36m(pid=25081)[0m 2021-10-17 22:19:43,101	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25081)[0m Traceback (most recent call last):
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25081)[0m     self._entrypoint()
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25081)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25081)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25081)[0m     output = fn()
+[2m[36m(pid=25081)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25081)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25081)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25081)[0m Exception in thread Thread-2:
+[2m[36m(pid=25081)[0m Traceback (most recent call last):
+[2m[36m(pid=25081)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25081)[0m     self.run()
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25081)[0m     raise e
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25081)[0m     self._entrypoint()
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25081)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25081)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25081)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25081)[0m     output = fn()
+[2m[36m(pid=25081)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25081)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25081)[0m ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:43,305	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25081, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7efa881881c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25081, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7efa881881c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25089)[0m 2021-10-17 22:19:43,250	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25089)[0m Traceback (most recent call last):
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25089)[0m     self._entrypoint()
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25089)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25089)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25089)[0m     output = fn()
+[2m[36m(pid=25089)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25089)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25089)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25089)[0m Exception in thread Thread-2:
+[2m[36m(pid=25089)[0m Traceback (most recent call last):
+[2m[36m(pid=25089)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25089)[0m     self.run()
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25089)[0m     raise e
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25089)[0m     self._entrypoint()
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25089)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25089)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25089)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25089)[0m     output = fn()
+[2m[36m(pid=25089)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25089)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25089)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25088)[0m 2021-10-17 22:19:43,260	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25088)[0m Traceback (most recent call last):
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25088)[0m     self._entrypoint()
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25088)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25088)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25088)[0m     output = fn()
+[2m[36m(pid=25088)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25088)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25088)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25088)[0m Exception in thread Thread-2:
+[2m[36m(pid=25088)[0m Traceback (most recent call last):
+[2m[36m(pid=25088)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25088)[0m     self.run()
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25088)[0m     raise e
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25088)[0m     self._entrypoint()
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25088)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25088)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25088)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25088)[0m     output = fn()
+[2m[36m(pid=25088)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25088)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25088)[0m ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:43,454	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25089, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f15680981c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25089, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f15680981c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:43,474	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25088, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f872dddc1c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25088, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f872dddc1c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25091)[0m 2021-10-17 22:19:45,072	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25091)[0m Traceback (most recent call last):
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25091)[0m     self._entrypoint()
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25091)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25091)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25091)[0m     output = fn()
+[2m[36m(pid=25091)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25091)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25091)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25091)[0m Exception in thread Thread-2:
+[2m[36m(pid=25091)[0m Traceback (most recent call last):
+[2m[36m(pid=25091)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25091)[0m     self.run()
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25091)[0m     raise e
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25091)[0m     self._entrypoint()
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25091)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25091)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25091)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25091)[0m     output = fn()
+[2m[36m(pid=25091)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25091)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25091)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25092)[0m 2021-10-17 22:19:45,074	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25092)[0m Traceback (most recent call last):
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25092)[0m     self._entrypoint()
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25092)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25092)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25092)[0m     output = fn()
+[2m[36m(pid=25092)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25092)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25092)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25092)[0m Exception in thread Thread-2:
+[2m[36m(pid=25092)[0m Traceback (most recent call last):
+[2m[36m(pid=25092)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25092)[0m     self.run()
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25092)[0m     raise e
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25092)[0m     self._entrypoint()
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25092)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25092)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25092)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25092)[0m     output = fn()
+[2m[36m(pid=25092)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25092)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25092)[0m ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:45,274	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25091, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f97d85c71c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25091, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f97d85c71c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:45,280	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25092, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f765bdf1040>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25092, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f765bdf1040>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25094)[0m 2021-10-17 22:19:45,884	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25094)[0m Traceback (most recent call last):
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25094)[0m     self._entrypoint()
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25094)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25094)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25094)[0m     output = fn()
+[2m[36m(pid=25094)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25094)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25094)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25094)[0m Exception in thread Thread-2:
+[2m[36m(pid=25094)[0m Traceback (most recent call last):
+[2m[36m(pid=25094)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25094)[0m     self.run()
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25094)[0m     raise e
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25094)[0m     self._entrypoint()
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25094)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25094)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25094)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25094)[0m     output = fn()
+[2m[36m(pid=25094)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25094)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25094)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25095)[0m 2021-10-17 22:19:45,959	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25095)[0m Traceback (most recent call last):
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25095)[0m     self._entrypoint()
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25095)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25095)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25095)[0m     output = fn()
+[2m[36m(pid=25095)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25095)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25095)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25095)[0m Exception in thread Thread-2:
+[2m[36m(pid=25095)[0m Traceback (most recent call last):
+[2m[36m(pid=25095)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25095)[0m     self.run()
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25095)[0m     raise e
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25095)[0m     self._entrypoint()
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25095)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25095)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25095)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25095)[0m     output = fn()
+[2m[36m(pid=25095)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25095)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25095)[0m ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:46,087	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25094, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f0196b0a040>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25094, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f0196b0a040>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25075)[0m 2021-10-17 22:19:46,023	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=25075)[0m Traceback (most recent call last):
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25075)[0m     self._entrypoint()
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25075)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25075)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25075)[0m     output = fn()
+[2m[36m(pid=25075)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25075)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25075)[0m ValueError: not enough values to unpack (expected 4, got 1)
+[2m[36m(pid=25075)[0m Exception in thread Thread-2:
+[2m[36m(pid=25075)[0m Traceback (most recent call last):
+[2m[36m(pid=25075)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=25075)[0m     self.run()
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=25075)[0m     raise e
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=25075)[0m     self._entrypoint()
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=25075)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=25075)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=25075)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=25075)[0m     output = fn()
+[2m[36m(pid=25075)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+[2m[36m(pid=25075)[0m     train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=25075)[0m ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:46,162	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25095, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f93f8019eb0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25095, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f93f8019eb0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+2021-10-17 22:19:46,225	ERROR trial_runner.py:846 -- Trial DEFAULT_f9cd7_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=25075, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7ef7602c9eb0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=25075, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7ef7602c9eb0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 47, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: not enough values to unpack (expected 4, got 1)
+10_17_22_19_24_800 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 13.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/116.13 GiB heap, 0.0/53.76 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f9cd7_00000 | RUNNING  |       |       40 |
+| DEFAULT_f9cd7_00001 | PENDING  |       |       15 |
+| DEFAULT_f9cd7_00002 | PENDING  |       |       40 |
+| DEFAULT_f9cd7_00003 | PENDING  |       |       40 |
+| DEFAULT_f9cd7_00004 | PENDING  |       |       20 |
+| DEFAULT_f9cd7_00005 | PENDING  |       |       20 |
+| DEFAULT_f9cd7_00006 | PENDING  |       |       30 |
+| DEFAULT_f9cd7_00007 | PENDING  |       |       70 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 15.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/116.13 GiB heap, 0.0/53.76 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f9cd7_00000 | RUNNING  |       |       40 |
+| DEFAULT_f9cd7_00001 | RUNNING  |       |       15 |
+| DEFAULT_f9cd7_00002 | RUNNING  |       |       40 |
+| DEFAULT_f9cd7_00003 | RUNNING  |       |       40 |
+| DEFAULT_f9cd7_00004 | RUNNING  |       |       20 |
+| DEFAULT_f9cd7_00005 | RUNNING  |       |       20 |
+| DEFAULT_f9cd7_00006 | RUNNING  |       |       30 |
+| DEFAULT_f9cd7_00007 | RUNNING  |       |       70 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_f9cd7_00001:
+  {}
+  
+Result for DEFAULT_f9cd7_00002:
+  {}
+  
+Result for DEFAULT_f9cd7_00000:
+  {}
+  
+Result for DEFAULT_f9cd7_00003:
+  {}
+  
+Result for DEFAULT_f9cd7_00004:
+  {}
+  
+Result for DEFAULT_f9cd7_00005:
+  {}
+  
+== Status ==
+Memory usage on this node: 14.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/116.13 GiB heap, 0.0/53.76 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32
+Number of trials: 8/8 (6 ERROR, 2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f9cd7_00006 | RUNNING  |       |       30 |
+| DEFAULT_f9cd7_00007 | RUNNING  |       |       70 |
+| DEFAULT_f9cd7_00000 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00001 | ERROR    |       |       15 |
+| DEFAULT_f9cd7_00002 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00003 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00004 | ERROR    |       |       20 |
+| DEFAULT_f9cd7_00005 | ERROR    |       |       20 |
++---------------------+----------+-------+----------+
+Number of errored trials: 6
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_f9cd7_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00000_0_trials=40.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00001_1_trials=15.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00002_2_trials=40.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00003_3_trials=40.0_2021-10-17_22-19-35/error.txt |
+| DEFAULT_f9cd7_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00004_4_trials=20.0_2021-10-17_22-19-35/error.txt |
+| DEFAULT_f9cd7_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00005_5_trials=20.0_2021-10-17_22-19-36/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_f9cd7_00006:
+  {}
+  
+Result for DEFAULT_f9cd7_00007:
+  {}
+  
+== Status ==
+Memory usage on this node: 13.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/116.13 GiB heap, 0.0/53.76 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f9cd7_00000 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00001 | ERROR    |       |       15 |
+| DEFAULT_f9cd7_00002 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00003 | ERROR    |       |       40 |
+| DEFAULT_f9cd7_00004 | ERROR    |       |       20 |
+| DEFAULT_f9cd7_00005 | ERROR    |       |       20 |
+| DEFAULT_f9cd7_00006 | ERROR    |       |       30 |
+| DEFAULT_f9cd7_00007 | ERROR    |       |       70 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_f9cd7_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00000_0_trials=40.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00001_1_trials=15.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00002_2_trials=40.0_2021-10-17_22-19-34/error.txt |
+| DEFAULT_f9cd7_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00003_3_trials=40.0_2021-10-17_22-19-35/error.txt |
+| DEFAULT_f9cd7_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00004_4_trials=20.0_2021-10-17_22-19-35/error.txt |
+| DEFAULT_f9cd7_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00005_5_trials=20.0_2021-10-17_22-19-36/error.txt |
+| DEFAULT_f9cd7_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00006_6_trials=30.0_2021-10-17_22-19-37/error.txt |
+| DEFAULT_f9cd7_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-19-32/DEFAULT_f9cd7_00007_7_trials=70.0_2021-10-17_22-19-38/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 128, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_f9cd7_00000, DEFAULT_f9cd7_00001, DEFAULT_f9cd7_00002, DEFAULT_f9cd7_00003, DEFAULT_f9cd7_00004, DEFAULT_f9cd7_00005, DEFAULT_f9cd7_00006, DEFAULT_f9cd7_00007])

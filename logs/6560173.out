@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6560173
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6560173
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 2, in <module>
+    from neural_net import Net, train
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 109
+    succ, logx, logz = sample(output, ds_synds, ds_error_labels, config, **kwargs)
+                                                                                 ^
+TabError: inconsistent use of tabs and spaces in indentation

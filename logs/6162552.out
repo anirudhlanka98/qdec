@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6162552
+SLURM_JOB_NODELIST = d23-13
+TMPDIR = /tmp/SLURM_6162552
+==========================================
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 72, in <module>
+    print('Timestamp: '+timestamp+', Layersizes: '+str(layersizes)+', Activation functions: '+str(acts)+', Epochs: '+str(num_epochs)+', Learning rate: '+str(lr)+', Number of random trials: '+num_random_trails)
+NameError: name 'num_random_trails' is not defined

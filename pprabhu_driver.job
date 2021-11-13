@@ -6,8 +6,9 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
 #SBATCH --mem-per-cpu=2GB
-#SBATCH --time=9:59:00
+#SBATCH --time=17:59:00
 #SBATCH --account=tbrun_769
+#SBATCH --output=/project/tbrun_769/qdec/logs/%j.out
 
 module purge
 module load gcc/8.3.0

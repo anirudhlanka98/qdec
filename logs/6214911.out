@@ -1,0 +1,73 @@
+==========================================
+SLURM_JOB_ID = 6214911
+SLURM_JOB_NODELIST = d05-10
+TMPDIR = /tmp/SLURM_6214911
+==========================================
+10_17_21_08_33_868 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+Traceback (most recent call last):
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 1752, in _signature_get_partial
+    ba = wrapped_sig.bind_partial(*partial_args, **partial_keywords)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 3044, in bind_partial
+    return self._bind(args, kwargs, partial=True)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 2976, in _bind
+    raise TypeError(
+TypeError: multiple values for argument 'QuantumDecoderNet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 126, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 406, in run
+    experiments[i] = Experiment(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/experiment.py", line 148, in __init__
+    detect_checkpoint_function(run):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/utils/util.py", line 516, in detect_checkpoint_function
+    func_sig = inspect.signature(train_func)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 3105, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 2854, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 2317, in _signature_from_callable
+    return _signature_get_partial(wrapped_sig, obj)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/inspect.py", line 1755, in _signature_get_partial
+    raise ValueError(msg) from ex
+ValueError: partial object functools.partial(<function train at 0x7f0d1abb03a0>, tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 1., 1.,  ..., 0., 1., 1.],
+        [0., 1., 0.,  ..., 0., 1., 1.],
+        ...,
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 1., 0.]]), tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+        [1., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 1.,  ..., 0., 0., 0.],
+        ...,
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.]]), tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+        [1., 0., 0.,  ..., 1., 1., 0.],
+        [0., 0., 0.,  ..., 1., 0., 0.],
+        ...,
+        [0., 0., 0.,  ..., 0., 1., 0.],
+        [1., 1., 0.,  ..., 0., 0., 0.],
+        [0., 1., 1.,  ..., 1., 1., 0.]]), tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        ...,
+        [0., 1., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.]]), QuantumDecoderNet=Net(
+  (syndrome_input): Linear(in_features=22, out_features=50, bias=True)
+  (error_dist): Linear(in_features=60, out_features=46, bias=True)
+), device='cpu', epochs=100, learningRate=0.001, learningLast=0.0001, momentum=0.9, num_random_trials=<ray.tune.sample.Float object at 0x7f0d15c09430>, trials_offset=10, precision=5, criterion=BCELoss(), mod_filename='/project/tbrun_769/qdec/models/model_10_17_21_08_33_868.pt', acc_filename='/project/tbrun_769/qdec/models/acc_10_17_21_08_33_868.pkl', stabs=array([[0, 1, 0, ..., 0, 0, 0],
+       [1, 0, 0, ..., 0, 0, 0],
+       [0, 1, 1, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]]), log_ops=array([[0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0]]), checkpoint_dir=None) has incorrect arguments

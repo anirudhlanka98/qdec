@@ -1,0 +1,1277 @@
+==========================================
+SLURM_JOB_ID = 6216135
+SLURM_JOB_NODELIST = d06-23
+TMPDIR = /tmp/SLURM_6216135
+==========================================
+2021-10-17 23:19:10,296	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 23:19:10,297	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+10_17_23_19_00_646 [22, 35, 46] [Tanh(), Tanh(), Sigmoid()] 10 0.001 35
+== Status ==
+Memory usage on this node: 27.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (1 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | PENDING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=31268)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=31261)[0m 96000 24000
+== Status ==
+Memory usage on this node: 28.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 27.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 27.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 28.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/106.45 GiB heap, 0.0/49.61 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-19-10
+Number of trials: 2/2 (2 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_4e85f_00000 | RUNNING  |       |       20 |
+| DEFAULT_4e85f_00001 | RUNNING  |       |       35 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=31261)[0m Epoch 1: Loss = 0.59486, Training (Code) = 0.52823, Validation (Code) = 0.53238, Training (X) = 0.99998, Validation (X) = 0.99984, Training (Z) = 0.99996, Validation (Z) = 0.99992
+Result for DEFAULT_4e85f_00000:
+  accuracy:
+  - 0.5282291666666666
+  date: 2021-10-17_23-25-54
+  done: false
+  experiment_id: 9e98b7840e8145eaa1caec52a9778aba
+  hostname: d06-23.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: tensor(0.5949, requires_grad=True)
+  node_ip: 10.125.19.242
+  pid: 31261
+  should_checkpoint: true
+  time_since_restore: 398.7309055328369
+  time_this_iter_s: 398.7309055328369
+  time_total_s: 398.7309055328369
+  timestamp: 1634538354
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: 4e85f_00000
+  
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 120, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 590, in run
+    _report_progress(runner, progress_reporter)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 63, in _report_progress
+    sched_debug_str = runner.scheduler_alg.debug_string()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 161, in debug_string
+    out += "\n" + "\n".join([b.debug_str() for b in self._brackets])
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 161, in <listcomp>
+    out += "\n" + "\n".join([b.debug_str() for b in self._brackets])
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 223, in debug_str
+    iters = " | ".join([
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 224, in <listcomp>
+    "Iter {:.3f}: {}".format(milestone, self.cutoff(recorded))
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 200, in cutoff
+    return np.nanpercentile(
+  File "<__array_function__ internals>", line 5, in nanpercentile
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1243, in nanpercentile
+    return _nanquantile_unchecked(
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1368, in _nanquantile_unchecked
+    r, k = function_base._ureduce(
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/function_base.py", line 3429, in _ureduce
+    r = func(a, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1387, in _nanquantile_ureduce_func
+    result = _nanquantile_1d(part, q, overwrite_input, interpolation)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1407, in _nanquantile_1d
+    arr1d, overwrite_input = _remove_nan_1d(arr1d,
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 164, in _remove_nan_1d
+    c = np.isnan(arr1d)
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''

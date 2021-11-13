@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6159021
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6159021
+==========================================
+10_10_22_27_48_201 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 94, in <module>
+    "trials": tune.quniform(lower=5, upper=75, q=5)
+NameError: name 'tune' is not defined

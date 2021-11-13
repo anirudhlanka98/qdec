@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6159008
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6159008
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 81, in <module>
+    net.to(device)
+NameError: name 'net' is not defined

@@ -1,0 +1,42 @@
+==========================================
+SLURM_JOB_ID = 6115223
+SLURM_JOB_NODELIST = d17-34
+TMPDIR = /tmp/SLURM_6115223
+==========================================
+10_05_18_05_17_718 [22, 40, 45, 50, 60, 60, 46] [Sigmoid(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 250 0.0001 100
+Epoch 1: Loss = 0.4185, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 2: Loss = 0.41779, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 3: Loss = 0.41775, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 4: Loss = 0.41781, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 5: Loss = 0.41793, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 6: Loss = 0.41805, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 7: Loss = 0.41814, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 8: Loss = 0.41819, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 9: Loss = 0.41824, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 10: Loss = 0.41827, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 11: Loss = 0.41829, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 12: Loss = 0.4183, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 13: Loss = 0.41832, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 14: Loss = 0.41832, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 15: Loss = 0.41833, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 16: Loss = 0.41833, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 17: Loss = 0.41833, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 18: Loss = 0.41833, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 19: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 20: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 21: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 22: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 23: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 24: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 25: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 26: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 27: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 28: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 29: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 30: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 31: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 32: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 33: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 34: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 35: Loss = 0.41834, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+slurmstepd: error: *** JOB 6115223 ON d17-34 CANCELLED AT 2021-10-05T21:48:31 ***

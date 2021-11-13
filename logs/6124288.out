@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6124288
+SLURM_JOB_NODELIST = d17-23
+TMPDIR = /tmp/SLURM_6124288
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 2, in <module>
+    from neural_net import Net, train
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 103
+    return codespace_acc, x_space_acc, z_space_acc
+    ^
+SyntaxError: 'return' outside function

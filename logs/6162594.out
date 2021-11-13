@@ -1,0 +1,15 @@
+==========================================
+SLURM_JOB_ID = 6162594
+SLURM_JOB_NODELIST = d23-13
+TMPDIR = /tmp/SLURM_6162594
+==========================================
+Timestamp: 10_11_21_28_12_465, Layersizes: [22, 150, 150, 150, 150, 46], Activation functions: [Tanh(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()], Epochs: 200, Learning rate: 5e-05, Number of random trials: 100
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 91, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 86, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)

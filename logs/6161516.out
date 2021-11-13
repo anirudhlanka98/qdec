@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6161516
+SLURM_JOB_NODELIST = e16-12
+TMPDIR = /tmp/SLURM_6161516
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 68, in <module>
+    QuantumDecoderNet = Net(layersizes, acts, device)
+TypeError: __init__() takes 3 positional arguments but 4 were given

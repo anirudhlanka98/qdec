@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6225741
+SLURM_JOB_NODELIST = d17-03
+TMPDIR = /tmp/SLURM_6225741
+==========================================
+10_18_23_21_19_388 [22, 120, 46] [Tanh(), Tanh(), Sigmoid()] 40
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 105, in <module>
+    'stabs': goaly_stabs,
+NameError: name 'goaly_stabs' is not defined

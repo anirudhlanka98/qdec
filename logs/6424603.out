@@ -1,0 +1,59 @@
+==========================================
+SLURM_JOB_ID = 6424603
+SLURM_JOB_NODELIST = e22-13
+TMPDIR = /tmp/SLURM_6424603
+==========================================
+Epoch 1: Loss = 0.63365, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Session not detected. You should not be calling `checkpoint_dir` outside `tune.run` or while using the class API. 
+  File "source/driver.py", line 131, in <module>
+    train(config, checkpoint_dir,  **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in train
+    with tune.checkpoint_dir(epoch) as checkpoint_dir:
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+
+Session not detected. You should not be calling `report` outside `tune.run` or while using the class API. 
+  File "source/driver.py", line 131, in <module>
+    train(config, checkpoint_dir,  **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 115, in train
+    tune.report(loss = loss_epoch, accuracy = train_acc_codespace_epoch, x_log_val_epoch = train_acc_x_epoch, epoch = epoch)
+
+Epoch 2: Loss = 0.58421, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 3: Loss = 0.54021, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 4: Loss = 0.50684, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 5: Loss = 0.47488, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 6: Loss = 0.45058, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 7: Loss = 0.4195, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 8: Loss = 0.41269, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 9: Loss = 0.39401, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 10: Loss = 0.38815, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 11: Loss = 0.37787, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 12: Loss = 0.37393, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 13: Loss = 0.38188, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 14: Loss = 0.37738, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 15: Loss = 0.37061, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 16: Loss = 0.38115, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 17: Loss = 0.37954, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 18: Loss = 0.37698, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 19: Loss = 0.37691, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 20: Loss = 0.37629, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 21: Loss = 0.3538, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 22: Loss = 0.38405, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 23: Loss = 0.38274, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 24: Loss = 0.35339, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 25: Loss = 0.38306, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 26: Loss = 0.36204, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 27: Loss = 0.38111, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 28: Loss = 0.36014, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 29: Loss = 0.36731, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 30: Loss = 0.36194, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 31: Loss = 0.3842, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 32: Loss = 0.3895, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 33: Loss = 0.38135, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 34: Loss = 0.37855, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 35: Loss = 0.37569, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 36: Loss = 0.3773, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 37: Loss = 0.37416, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 38: Loss = 0.37187, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 39: Loss = 0.381, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 40: Loss = 0.369, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1

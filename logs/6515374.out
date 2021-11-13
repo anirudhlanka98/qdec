@@ -1,0 +1,8 @@
+==========================================
+SLURM_JOB_ID = 6515374
+SLURM_JOB_NODELIST = d17-05
+TMPDIR = /tmp/SLURM_6515374
+==========================================
+2021-11-02 00:55:51,851	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-11-02 00:55:51,852	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+slurmstepd: error: *** JOB 6515374 ON d17-05 CANCELLED AT 2021-11-02T01:00:09 ***

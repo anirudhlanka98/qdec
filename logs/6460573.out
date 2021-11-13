@@ -1,0 +1,2323 @@
+==========================================
+SLURM_JOB_ID = 6460573
+SLURM_JOB_NODELIST = d06-25
+TMPDIR = /tmp/SLURM_6460573
+==========================================
+2021-11-01 13:44:41,735	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-11-01 13:44:41,735	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=992)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=992)[0m Traceback (most recent call last):
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=992)[0m     self._entrypoint()
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=992)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=992)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=992)[0m     output = fn()
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=992)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=992)[0m     return arch(a_0, 0)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=992)[0m     return arch(a_l, l+1)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=992)[0m     return arch(a_l, l+1)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=992)[0m     z_l = layers[l](input)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=992)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=992)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=992)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=992)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=992)[0m Exception in thread Thread-2:
+[2m[36m(pid=992)[0m Traceback (most recent call last):
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=992)[0m     self.run()
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=992)[0m     raise e
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=992)[0m     self._entrypoint()
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=992)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=992)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=992)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=992)[0m     output = fn()
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=992)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1011)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1011)[0m Traceback (most recent call last):
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1011)[0m     self._entrypoint()
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1011)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1011)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1011)[0m     output = fn()
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1011)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1011)[0m     return arch(a_0, 0)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1011)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1011)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1011)[0m     z_l = layers[l](input)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1011)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1011)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1011)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1011)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1011)[0m Exception in thread Thread-2:
+[2m[36m(pid=1011)[0m Traceback (most recent call last):
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1011)[0m     self.run()
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1011)[0m     raise e
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1011)[0m     self._entrypoint()
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1011)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1011)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1011)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1011)[0m     output = fn()
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1011)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1011)[0m     return arch(a_0, 0)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1009)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1009)[0m Traceback (most recent call last):
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1009)[0m     self._entrypoint()
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1009)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1009)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1009)[0m     output = fn()
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1009)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1009)[0m     return arch(a_0, 0)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1009)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1009)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1009)[0m     z_l = layers[l](input)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1009)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1009)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1009)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1009)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1009)[0m Exception in thread Thread-2:
+[2m[36m(pid=1009)[0m Traceback (most recent call last):
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1009)[0m     self.run()
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1009)[0m     raise e
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1009)[0m     self._entrypoint()
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1009)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1009)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1009)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1009)[0m     output = fn()
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1009)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1009)[0m     return arch(a_0, 0)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1009)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=994)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=994)[0m Traceback (most recent call last):
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=994)[0m     self._entrypoint()
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=994)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=994)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=994)[0m     output = fn()
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=994)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=994)[0m     return arch(a_0, 0)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=994)[0m     return arch(a_l, l+1)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=994)[0m     return arch(a_l, l+1)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=994)[0m     z_l = layers[l](input)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=994)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=994)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=994)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=994)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=994)[0m Exception in thread Thread-2:
+[2m[36m(pid=994)[0m Traceback (most recent call last):
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=994)[0m     self.run()
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=994)[0m     raise e
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=994)[0m     self._entrypoint()
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=994)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=994)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=994)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=994)[0m     output = fn()
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=994)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=994)[0m     return arch(a_0, 0)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=994)[0m     return arch(a_l, l+1)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=994)[0m     return arch(a_l, l+1)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1002)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1002)[0m Traceback (most recent call last):
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1002)[0m     self._entrypoint()
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1002)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1002)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1002)[0m     output = fn()
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1002)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1002)[0m     return arch(a_0, 0)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1002)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1002)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1002)[0m     z_l = layers[l](input)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1002)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1002)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1002)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1002)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1002)[0m Exception in thread Thread-2:
+[2m[36m(pid=1002)[0m Traceback (most recent call last):
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1002)[0m     self.run()
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1002)[0m     raise e
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1002)[0m     self._entrypoint()
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1002)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1002)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1002)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1002)[0m     output = fn()
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1002)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1002)[0m     return arch(a_0, 0)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1002)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1013)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1013)[0m Traceback (most recent call last):
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1013)[0m     self._entrypoint()
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1013)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1013)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1013)[0m     output = fn()
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1013)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1013)[0m     return arch(a_0, 0)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1013)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1013)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1013)[0m     z_l = layers[l](input)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1013)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1013)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1013)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1013)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1013)[0m Exception in thread Thread-2:
+[2m[36m(pid=1013)[0m Traceback (most recent call last):
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1013)[0m     self.run()
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1013)[0m     raise e
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1013)[0m     self._entrypoint()
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1013)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1013)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1013)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1013)[0m     output = fn()
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1013)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1013)[0m     return arch(a_0, 0)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1013)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1000)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1000)[0m Traceback (most recent call last):
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1000)[0m     self._entrypoint()
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1000)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1000)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1000)[0m     output = fn()
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1000)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1000)[0m     return arch(a_0, 0)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1000)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1000)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1000)[0m     z_l = layers[l](input)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1000)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1000)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1000)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1000)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1000)[0m Exception in thread Thread-2:
+[2m[36m(pid=1000)[0m Traceback (most recent call last):
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1000)[0m     self.run()
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1000)[0m     raise e
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1000)[0m     self._entrypoint()
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1000)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1000)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1000)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1000)[0m     output = fn()
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1000)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1000)[0m     return arch(a_0, 0)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1000)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1000)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=999)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=999)[0m Traceback (most recent call last):
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=999)[0m     self._entrypoint()
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=999)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=999)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=999)[0m     output = fn()
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=999)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=999)[0m     return arch(a_0, 0)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=999)[0m     return arch(a_l, l+1)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=999)[0m     return arch(a_l, l+1)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=999)[0m     z_l = layers[l](input)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=999)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=999)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=999)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=999)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=999)[0m Exception in thread Thread-2:
+[2m[36m(pid=999)[0m Traceback (most recent call last):
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=999)[0m     self.run()
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=999)[0m     raise e
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=999)[0m     self._entrypoint()
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=999)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=999)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=999)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=999)[0m     output = fn()
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=999)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=999)[0m     return arch(a_0, 0)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=999)[0m     return arch(a_l, l+1)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=999)[0m     return arch(a_l, l+1)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=995)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=995)[0m Traceback (most recent call last):
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=995)[0m     self._entrypoint()
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=995)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=995)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=995)[0m     output = fn()
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=995)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=995)[0m     return arch(a_0, 0)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=995)[0m     return arch(a_l, l+1)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=995)[0m     return arch(a_l, l+1)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=995)[0m     z_l = layers[l](input)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=995)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=995)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=995)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=995)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=995)[0m Exception in thread Thread-2:
+[2m[36m(pid=995)[0m Traceback (most recent call last):
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=995)[0m     self.run()
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=995)[0m     raise e
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=995)[0m     self._entrypoint()
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=995)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=995)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=995)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=995)[0m     output = fn()
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=995)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=995)[0m     return arch(a_0, 0)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=995)[0m     return arch(a_l, l+1)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=995)[0m     return arch(a_l, l+1)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=997)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=997)[0m Traceback (most recent call last):
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=997)[0m     self._entrypoint()
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=997)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=997)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=997)[0m     output = fn()
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=997)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=997)[0m     return arch(a_0, 0)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=997)[0m     return arch(a_l, l+1)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=997)[0m     return arch(a_l, l+1)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=997)[0m     z_l = layers[l](input)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=997)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=997)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=997)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=997)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=997)[0m Exception in thread Thread-2:
+[2m[36m(pid=997)[0m Traceback (most recent call last):
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=997)[0m     self.run()
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=997)[0m     raise e
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=997)[0m     self._entrypoint()
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=997)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=997)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=997)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=997)[0m     output = fn()
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=997)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=997)[0m     return arch(a_0, 0)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=997)[0m     return arch(a_l, l+1)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=997)[0m     return arch(a_l, l+1)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=997)[0m     z_l = layers[l](input)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=993)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=993)[0m Traceback (most recent call last):
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=993)[0m     self._entrypoint()
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=993)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=993)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=993)[0m     output = fn()
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=993)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=993)[0m     return arch(a_0, 0)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=993)[0m     return arch(a_l, l+1)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=993)[0m     return arch(a_l, l+1)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=993)[0m     z_l = layers[l](input)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=993)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=993)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=993)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=993)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=993)[0m Exception in thread Thread-2:
+[2m[36m(pid=993)[0m Traceback (most recent call last):
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=993)[0m     self.run()
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=993)[0m     raise e
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=993)[0m     self._entrypoint()
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=993)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=993)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=993)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=993)[0m     output = fn()
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=993)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=993)[0m     return arch(a_0, 0)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=993)[0m     return arch(a_l, l+1)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=993)[0m     return arch(a_l, l+1)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1012)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1012)[0m Traceback (most recent call last):
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1012)[0m     self._entrypoint()
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1012)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1012)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1012)[0m     output = fn()
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1012)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1012)[0m     return arch(a_0, 0)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1012)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1012)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1012)[0m     z_l = layers[l](input)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1012)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1012)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1012)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1012)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1012)[0m Exception in thread Thread-2:
+[2m[36m(pid=1012)[0m Traceback (most recent call last):
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1012)[0m     self.run()
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1012)[0m     raise e
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1012)[0m     self._entrypoint()
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1012)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1012)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1012)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1012)[0m     output = fn()
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1012)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1012)[0m     return arch(a_0, 0)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1012)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1012)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1010)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1010)[0m Traceback (most recent call last):
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1010)[0m     self._entrypoint()
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1010)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1010)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1010)[0m     output = fn()
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1010)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1010)[0m     return arch(a_0, 0)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1010)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1010)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1010)[0m     z_l = layers[l](input)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1010)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1010)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1010)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1010)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1010)[0m Exception in thread Thread-2:
+[2m[36m(pid=1010)[0m Traceback (most recent call last):
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1010)[0m     self.run()
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1010)[0m     raise e
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1010)[0m     self._entrypoint()
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1010)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1010)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1010)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1010)[0m     output = fn()
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1010)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1010)[0m     return arch(a_0, 0)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1010)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1010)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1007)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1007)[0m Traceback (most recent call last):
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1007)[0m     self._entrypoint()
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1007)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1007)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1007)[0m     output = fn()
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1007)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1007)[0m     return arch(a_0, 0)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1007)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1007)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1007)[0m     z_l = layers[l](input)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1007)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1007)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1007)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1007)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1007)[0m Exception in thread Thread-2:
+[2m[36m(pid=1007)[0m Traceback (most recent call last):
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1007)[0m     self.run()
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1007)[0m     raise e
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1007)[0m     self._entrypoint()
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1007)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1007)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1007)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1007)[0m     output = fn()
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1007)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1007)[0m     return arch(a_0, 0)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1007)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1007)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1008)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1008)[0m Traceback (most recent call last):
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1008)[0m     self._entrypoint()
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1008)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1008)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1008)[0m     output = fn()
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1008)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1008)[0m     return arch(a_0, 0)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1008)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1008)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1008)[0m     z_l = layers[l](input)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1008)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1008)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1008)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1008)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1008)[0m Exception in thread Thread-2:
+[2m[36m(pid=1008)[0m Traceback (most recent call last):
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1008)[0m     self.run()
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1008)[0m     raise e
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1008)[0m     self._entrypoint()
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1008)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1008)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1008)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1008)[0m     output = fn()
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1008)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1008)[0m     return arch(a_0, 0)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1008)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1008)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=991)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=991)[0m Traceback (most recent call last):
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=991)[0m     self._entrypoint()
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=991)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=991)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=991)[0m     output = fn()
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=991)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=991)[0m     return arch(a_0, 0)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=991)[0m     return arch(a_l, l+1)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=991)[0m     return arch(a_l, l+1)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=991)[0m     z_l = layers[l](input)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=991)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=991)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=991)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=991)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=991)[0m Exception in thread Thread-2:
+[2m[36m(pid=991)[0m Traceback (most recent call last):
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=991)[0m     self.run()
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=991)[0m     raise e
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=991)[0m     self._entrypoint()
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=991)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=991)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=991)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=991)[0m     output = fn()
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=991)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=991)[0m     return arch(a_0, 0)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=991)[0m     return arch(a_l, l+1)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=991)[0m     return arch(a_l, l+1)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1003)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1003)[0m Traceback (most recent call last):
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1003)[0m     self._entrypoint()
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1003)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1003)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1003)[0m     output = fn()
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1003)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1003)[0m     return arch(a_0, 0)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1003)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1003)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1003)[0m     z_l = layers[l](input)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1003)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1003)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1003)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1003)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1003)[0m Exception in thread Thread-2:
+[2m[36m(pid=1003)[0m Traceback (most recent call last):
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1003)[0m     self.run()
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1003)[0m     raise e
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1003)[0m     self._entrypoint()
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1003)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1003)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1003)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1003)[0m     output = fn()
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1003)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1003)[0m     return arch(a_0, 0)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1003)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1003)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1006)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1006)[0m Traceback (most recent call last):
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1006)[0m     self._entrypoint()
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1006)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1006)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1006)[0m     output = fn()
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1006)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1006)[0m     return arch(a_0, 0)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1006)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1006)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1006)[0m     z_l = layers[l](input)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1006)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1006)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1006)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1006)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1006)[0m Exception in thread Thread-2:
+[2m[36m(pid=1006)[0m Traceback (most recent call last):
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1006)[0m     self.run()
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1006)[0m     raise e
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1006)[0m     self._entrypoint()
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1006)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1006)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1006)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1006)[0m     output = fn()
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1006)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1006)[0m     return arch(a_0, 0)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1006)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1006)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1006)[0m     z_l = layers[l](input)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1004)[0m 2021-11-01 13:44:59,687	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1004)[0m Traceback (most recent call last):
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1004)[0m     self._entrypoint()
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1004)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1004)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1004)[0m     output = fn()
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1004)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1004)[0m     return arch(a_0, 0)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1004)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1004)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1004)[0m     z_l = layers[l](input)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1004)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1004)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1004)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1004)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1004)[0m Exception in thread Thread-2:
+[2m[36m(pid=1004)[0m Traceback (most recent call last):
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1004)[0m     self.run()
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1004)[0m     raise e
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1004)[0m     self._entrypoint()
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1004)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1004)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1004)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1004)[0m     output = fn()
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=1004)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=1004)[0m     return arch(a_0, 0)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1004)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=998)[0m 2021-11-01 13:44:59,686	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=998)[0m Traceback (most recent call last):
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=998)[0m     self._entrypoint()
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=998)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=998)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=998)[0m     output = fn()
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=998)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=998)[0m     return arch(a_0, 0)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=998)[0m     return arch(a_l, l+1)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=998)[0m     return arch(a_l, l+1)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=998)[0m     z_l = layers[l](input)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=998)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=998)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=998)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=998)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=998)[0m Exception in thread Thread-2:
+[2m[36m(pid=998)[0m Traceback (most recent call last):
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=998)[0m     self.run()
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=998)[0m     raise e
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=998)[0m     self._entrypoint()
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=998)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=998)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=998)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=998)[0m     output = fn()
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=998)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=998)[0m     return arch(a_0, 0)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=998)[0m     return arch(a_l, l+1)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=998)[0m     return arch(a_l, l+1)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=998)[0m     z_l = layers[l](input)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=992)[0m     return arch(a_0, 0)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=992)[0m     return arch(a_l, l+1)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=992)[0m     return arch(a_l, l+1)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=992)[0m     z_l = layers[l](input)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1011)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+[2m[36m(pid=1011)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1011)[0m     z_l = layers[l](input)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1009)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1009)[0m     z_l = layers[l](input)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=994)[0m     z_l = layers[l](input)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=994)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=994)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=994)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1002)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1002)[0m     z_l = layers[l](input)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1013)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1013)[0m     z_l = layers[l](input)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1000)[0m     z_l = layers[l](input)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=999)[0m     z_l = layers[l](input)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=995)[0m     z_l = layers[l](input)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=997)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=997)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=997)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=993)[0m     z_l = layers[l](input)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1012)[0m     z_l = layers[l](input)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1010)[0m     z_l = layers[l](input)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1007)[0m     z_l = layers[l](input)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1008)[0m     z_l = layers[l](input)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=991)[0m     z_l = layers[l](input)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1003)[0m     z_l = layers[l](input)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=1006)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1006)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1006)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1004)[0m     return arch(a_l, l+1)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=1004)[0m     z_l = layers[l](input)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=998)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=992)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1011)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1009)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=994)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=994)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1002)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1013)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1000)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=999)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=995)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=997)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=997)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=993)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1012)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1010)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1007)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1008)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=991)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=991)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=991)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1003)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1003)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1003)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1006)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1006)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1004)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=1004)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1004)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=998)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=998)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=998)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=998)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=992)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=992)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1011)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1011)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1009)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1009)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1002)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1002)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1013)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1013)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1000)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1000)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=999)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=999)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=995)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=995)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=993)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=993)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1012)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1012)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1010)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1010)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1007)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1007)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=1008)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=1008)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=991)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=991)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1013)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1013)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1000)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1000)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=993)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=993)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1012)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1012)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1010)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1010)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1007)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1007)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1008)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1008)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1003)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1003)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1004)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1004)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,889	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1013, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f264e2fa3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1013, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f264e2fa3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=992)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=992)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1011)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1011)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1009)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1009)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=1002)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=1002)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=999)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=999)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+[2m[36m(pid=995)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=995)[0m TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,899	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=999, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fb2486bb580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=999, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fb2486bb580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,902	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1002, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fbc31efd580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1002, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fbc31efd580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,905	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1009, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f607e13b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1009, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f607e13b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,908	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00017: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1003, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fb0ae93c3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1003, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fb0ae93c3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,910	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00011: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1007, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7eee0192f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1007, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7eee0192f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,913	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00010: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1012, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f33202353d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1012, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f33202353d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,921	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00019: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=998, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f590a0f93d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=998, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f590a0f93d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,928	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00014: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=991, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fe8d873b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=991, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fe8d873b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,932	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00016: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1006, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f9e248f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1006, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f9e248f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,936	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1010, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f3f2c08a3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1010, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f3f2c08a3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,940	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00008: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1008, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f4a2945d3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1008, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f4a2945d3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,945	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00012: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=997, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f34a29413d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=997, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f34a29413d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,949	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00015: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=993, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f3ef391b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=993, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f3ef391b3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,953	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=994, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f62407cf580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=994, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f62407cf580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,958	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00018: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1004, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f81282f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1004, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f81282f63d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,962	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=992, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f38cb8d7580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=992, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f38cb8d7580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,965	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00009: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=995, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f5e4c05f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=995, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7f5e4c05f3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,967	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1011, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fd951791580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1011, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7fd951791580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+2021-11-01 13:44:59,970	ERROR trial_runner.py:846 -- Trial DEFAULT_89f15_00013: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1000, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7faaf1a713d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1000, ip=10.125.19.244, repr=<types.ImplicitFunc object at 0x7faaf1a713d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in arch
+    return arch(a_l, l+1)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+TypeError: linear(): argument 'input' (position 1) must be Tensor, not ELU
+11_01_13_44_34_357 [6, 40, 80, 14] [Tanh(), Tanh(), <class 'torch.nn.modules.activation.ELU'>, Sigmoid()] 150
+== Status ==
+Memory usage on this node: 7.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 80.000: None | Iter 40.000: None | Iter 20.000: None | Iter 10.000: None | Iter 5.000: None
+Resources requested: 1.0/24 CPUs, 0/0 GPUs, 0.0/120.75 GiB heap, 0.0/55.74 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41
+Number of trials: 20/20 (19 PENDING, 1 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_89f15_00000 | RUNNING  |       | 0.000367539 |        5 |
+| DEFAULT_89f15_00001 | PENDING  |       | 1.36617e-05 |        5 |
+| DEFAULT_89f15_00002 | PENDING  |       | 2.96669e-05 |       10 |
+| DEFAULT_89f15_00003 | PENDING  |       | 0.000123209 |       10 |
+| DEFAULT_89f15_00004 | PENDING  |       | 0.000178934 |        5 |
+| DEFAULT_89f15_00005 | PENDING  |       | 1.98202e-05 |       10 |
+| DEFAULT_89f15_00006 | PENDING  |       | 0.00026398  |       10 |
+| DEFAULT_89f15_00007 | PENDING  |       | 1.10028e-05 |        5 |
+| DEFAULT_89f15_00008 | PENDING  |       | 0.000151508 |       10 |
+| DEFAULT_89f15_00009 | PENDING  |       | 5.40774e-05 |       10 |
+| DEFAULT_89f15_00010 | PENDING  |       | 1.19283e-05 |        5 |
+| DEFAULT_89f15_00011 | PENDING  |       | 0.000192941 |        5 |
+| DEFAULT_89f15_00012 | PENDING  |       | 0.00024429  |        5 |
+| DEFAULT_89f15_00013 | PENDING  |       | 0.000523837 |        5 |
+| DEFAULT_89f15_00014 | PENDING  |       | 0.000340774 |        5 |
+| DEFAULT_89f15_00015 | PENDING  |       | 2.56344e-05 |       10 |
+| DEFAULT_89f15_00016 | PENDING  |       | 2.74385e-05 |        5 |
+| DEFAULT_89f15_00017 | PENDING  |       | 5.60582e-05 |       10 |
+| DEFAULT_89f15_00018 | PENDING  |       | 0.000250467 |        5 |
+| DEFAULT_89f15_00019 | PENDING  |       | 3.36057e-05 |        5 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 9.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 80.000: None | Iter 40.000: None | Iter 20.000: None | Iter 10.000: None | Iter 5.000: None
+Resources requested: 20.0/24 CPUs, 0/0 GPUs, 0.0/120.75 GiB heap, 0.0/55.74 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41
+Number of trials: 20/20 (20 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_89f15_00000 | RUNNING  |       | 0.000367539 |        5 |
+| DEFAULT_89f15_00001 | RUNNING  |       | 1.36617e-05 |        5 |
+| DEFAULT_89f15_00002 | RUNNING  |       | 2.96669e-05 |       10 |
+| DEFAULT_89f15_00003 | RUNNING  |       | 0.000123209 |       10 |
+| DEFAULT_89f15_00004 | RUNNING  |       | 0.000178934 |        5 |
+| DEFAULT_89f15_00005 | RUNNING  |       | 1.98202e-05 |       10 |
+| DEFAULT_89f15_00006 | RUNNING  |       | 0.00026398  |       10 |
+| DEFAULT_89f15_00007 | RUNNING  |       | 1.10028e-05 |        5 |
+| DEFAULT_89f15_00008 | RUNNING  |       | 0.000151508 |       10 |
+| DEFAULT_89f15_00009 | RUNNING  |       | 5.40774e-05 |       10 |
+| DEFAULT_89f15_00010 | RUNNING  |       | 1.19283e-05 |        5 |
+| DEFAULT_89f15_00011 | RUNNING  |       | 0.000192941 |        5 |
+| DEFAULT_89f15_00012 | RUNNING  |       | 0.00024429  |        5 |
+| DEFAULT_89f15_00013 | RUNNING  |       | 0.000523837 |        5 |
+| DEFAULT_89f15_00014 | RUNNING  |       | 0.000340774 |        5 |
+| DEFAULT_89f15_00015 | RUNNING  |       | 2.56344e-05 |       10 |
+| DEFAULT_89f15_00016 | RUNNING  |       | 2.74385e-05 |        5 |
+| DEFAULT_89f15_00017 | RUNNING  |       | 5.60582e-05 |       10 |
+| DEFAULT_89f15_00018 | RUNNING  |       | 0.000250467 |        5 |
+| DEFAULT_89f15_00019 | RUNNING  |       | 3.36057e-05 |        5 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 12.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 80.000: None | Iter 40.000: None | Iter 20.000: None | Iter 10.000: None | Iter 5.000: None
+Resources requested: 20.0/24 CPUs, 0/0 GPUs, 0.0/120.75 GiB heap, 0.0/55.74 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41
+Number of trials: 20/20 (20 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_89f15_00000 | RUNNING  |       | 0.000367539 |        5 |
+| DEFAULT_89f15_00001 | RUNNING  |       | 1.36617e-05 |        5 |
+| DEFAULT_89f15_00002 | RUNNING  |       | 2.96669e-05 |       10 |
+| DEFAULT_89f15_00003 | RUNNING  |       | 0.000123209 |       10 |
+| DEFAULT_89f15_00004 | RUNNING  |       | 0.000178934 |        5 |
+| DEFAULT_89f15_00005 | RUNNING  |       | 1.98202e-05 |       10 |
+| DEFAULT_89f15_00006 | RUNNING  |       | 0.00026398  |       10 |
+| DEFAULT_89f15_00007 | RUNNING  |       | 1.10028e-05 |        5 |
+| DEFAULT_89f15_00008 | RUNNING  |       | 0.000151508 |       10 |
+| DEFAULT_89f15_00009 | RUNNING  |       | 5.40774e-05 |       10 |
+| DEFAULT_89f15_00010 | RUNNING  |       | 1.19283e-05 |        5 |
+| DEFAULT_89f15_00011 | RUNNING  |       | 0.000192941 |        5 |
+| DEFAULT_89f15_00012 | RUNNING  |       | 0.00024429  |        5 |
+| DEFAULT_89f15_00013 | RUNNING  |       | 0.000523837 |        5 |
+| DEFAULT_89f15_00014 | RUNNING  |       | 0.000340774 |        5 |
+| DEFAULT_89f15_00015 | RUNNING  |       | 2.56344e-05 |       10 |
+| DEFAULT_89f15_00016 | RUNNING  |       | 2.74385e-05 |        5 |
+| DEFAULT_89f15_00017 | RUNNING  |       | 5.60582e-05 |       10 |
+| DEFAULT_89f15_00018 | RUNNING  |       | 0.000250467 |        5 |
+| DEFAULT_89f15_00019 | RUNNING  |       | 3.36057e-05 |        5 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 12.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 80.000: None | Iter 40.000: None | Iter 20.000: None | Iter 10.000: None | Iter 5.000: None
+Resources requested: 20.0/24 CPUs, 0/0 GPUs, 0.0/120.75 GiB heap, 0.0/55.74 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41
+Number of trials: 20/20 (20 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_89f15_00000 | RUNNING  |       | 0.000367539 |        5 |
+| DEFAULT_89f15_00001 | RUNNING  |       | 1.36617e-05 |        5 |
+| DEFAULT_89f15_00002 | RUNNING  |       | 2.96669e-05 |       10 |
+| DEFAULT_89f15_00003 | RUNNING  |       | 0.000123209 |       10 |
+| DEFAULT_89f15_00004 | RUNNING  |       | 0.000178934 |        5 |
+| DEFAULT_89f15_00005 | RUNNING  |       | 1.98202e-05 |       10 |
+| DEFAULT_89f15_00006 | RUNNING  |       | 0.00026398  |       10 |
+| DEFAULT_89f15_00007 | RUNNING  |       | 1.10028e-05 |        5 |
+| DEFAULT_89f15_00008 | RUNNING  |       | 0.000151508 |       10 |
+| DEFAULT_89f15_00009 | RUNNING  |       | 5.40774e-05 |       10 |
+| DEFAULT_89f15_00010 | RUNNING  |       | 1.19283e-05 |        5 |
+| DEFAULT_89f15_00011 | RUNNING  |       | 0.000192941 |        5 |
+| DEFAULT_89f15_00012 | RUNNING  |       | 0.00024429  |        5 |
+| DEFAULT_89f15_00013 | RUNNING  |       | 0.000523837 |        5 |
+| DEFAULT_89f15_00014 | RUNNING  |       | 0.000340774 |        5 |
+| DEFAULT_89f15_00015 | RUNNING  |       | 2.56344e-05 |       10 |
+| DEFAULT_89f15_00016 | RUNNING  |       | 2.74385e-05 |        5 |
+| DEFAULT_89f15_00017 | RUNNING  |       | 5.60582e-05 |       10 |
+| DEFAULT_89f15_00018 | RUNNING  |       | 0.000250467 |        5 |
+| DEFAULT_89f15_00019 | RUNNING  |       | 3.36057e-05 |        5 |
++---------------------+----------+-------+-------------+----------+
+
+
+[2m[36m(ImplicitFunc pid=994)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1011)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1002)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=992)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=999)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1009)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1000)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1013)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=995)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=997)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=993)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1012)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1010)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1008)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1007)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=991)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1003)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1006)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1004)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=998)[0m 32000 8000
+Result for DEFAULT_89f15_00007:
+  {}
+  
+Result for DEFAULT_89f15_00002:
+  {}
+  
+Result for DEFAULT_89f15_00001:
+  {}
+  
+Result for DEFAULT_89f15_00005:
+  {}
+  
+Result for DEFAULT_89f15_00017:
+  {}
+  
+Result for DEFAULT_89f15_00011:
+  {}
+  
+Result for DEFAULT_89f15_00010:
+  {}
+  
+Result for DEFAULT_89f15_00019:
+  {}
+  
+Result for DEFAULT_89f15_00014:
+  {}
+  
+Result for DEFAULT_89f15_00016:
+  {}
+  
+Result for DEFAULT_89f15_00006:
+  {}
+  
+Result for DEFAULT_89f15_00008:
+  {}
+  
+Result for DEFAULT_89f15_00012:
+  {}
+  
+Result for DEFAULT_89f15_00015:
+  {}
+  
+Result for DEFAULT_89f15_00003:
+  {}
+  
+Result for DEFAULT_89f15_00018:
+  {}
+  
+Result for DEFAULT_89f15_00004:
+  {}
+  
+Result for DEFAULT_89f15_00009:
+  {}
+  
+Result for DEFAULT_89f15_00000:
+  {}
+  
+Result for DEFAULT_89f15_00013:
+  {}
+  
+== Status ==
+Memory usage on this node: 11.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 80.000: None | Iter 40.000: None | Iter 20.000: None | Iter 10.000: None | Iter 5.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/120.75 GiB heap, 0.0/55.74 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41
+Number of trials: 20/20 (20 ERROR)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_89f15_00000 | ERROR    |       | 0.000367539 |        5 |
+| DEFAULT_89f15_00001 | ERROR    |       | 1.36617e-05 |        5 |
+| DEFAULT_89f15_00002 | ERROR    |       | 2.96669e-05 |       10 |
+| DEFAULT_89f15_00003 | ERROR    |       | 0.000123209 |       10 |
+| DEFAULT_89f15_00004 | ERROR    |       | 0.000178934 |        5 |
+| DEFAULT_89f15_00005 | ERROR    |       | 1.98202e-05 |       10 |
+| DEFAULT_89f15_00006 | ERROR    |       | 0.00026398  |       10 |
+| DEFAULT_89f15_00007 | ERROR    |       | 1.10028e-05 |        5 |
+| DEFAULT_89f15_00008 | ERROR    |       | 0.000151508 |       10 |
+| DEFAULT_89f15_00009 | ERROR    |       | 5.40774e-05 |       10 |
+| DEFAULT_89f15_00010 | ERROR    |       | 1.19283e-05 |        5 |
+| DEFAULT_89f15_00011 | ERROR    |       | 0.000192941 |        5 |
+| DEFAULT_89f15_00012 | ERROR    |       | 0.00024429  |        5 |
+| DEFAULT_89f15_00013 | ERROR    |       | 0.000523837 |        5 |
+| DEFAULT_89f15_00014 | ERROR    |       | 0.000340774 |        5 |
+| DEFAULT_89f15_00015 | ERROR    |       | 2.56344e-05 |       10 |
+| DEFAULT_89f15_00016 | ERROR    |       | 2.74385e-05 |        5 |
+| DEFAULT_89f15_00017 | ERROR    |       | 5.60582e-05 |       10 |
+| DEFAULT_89f15_00018 | ERROR    |       | 0.000250467 |        5 |
+| DEFAULT_89f15_00019 | ERROR    |       | 3.36057e-05 |        5 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 20
++---------------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                            |
+|---------------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_89f15_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00000_0_lr=0.00036754,trials=5.0_2021-11-01_13-44-43/error.txt   |
+| DEFAULT_89f15_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00001_1_lr=1.3662e-05,trials=5.0_2021-11-01_13-44-43/error.txt   |
+| DEFAULT_89f15_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00002_2_lr=2.9667e-05,trials=10.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00003_3_lr=0.00012321,trials=10.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00004_4_lr=0.00017893,trials=5.0_2021-11-01_13-44-43/error.txt   |
+| DEFAULT_89f15_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00005_5_lr=1.982e-05,trials=10.0_2021-11-01_13-44-43/error.txt   |
+| DEFAULT_89f15_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00006_6_lr=0.00026398,trials=10.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00007_7_lr=1.1003e-05,trials=5.0_2021-11-01_13-44-43/error.txt   |
+| DEFAULT_89f15_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00008_8_lr=0.00015151,trials=10.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00009_9_lr=5.4077e-05,trials=10.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00010_10_lr=1.1928e-05,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00011_11_lr=0.00019294,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00012 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00012_12_lr=0.00024429,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00013 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00013_13_lr=0.00052384,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00014 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00014_14_lr=0.00034077,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00015 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00015_15_lr=2.5634e-05,trials=10.0_2021-11-01_13-44-43/error.txt |
+| DEFAULT_89f15_00016 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00016_16_lr=2.7438e-05,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00017 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00017_17_lr=5.6058e-05,trials=10.0_2021-11-01_13-44-43/error.txt |
+| DEFAULT_89f15_00018 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00018_18_lr=0.00025047,trials=5.0_2021-11-01_13-44-43/error.txt  |
+| DEFAULT_89f15_00019 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-01_13-44-41/DEFAULT_89f15_00019_19_lr=3.3606e-05,trials=5.0_2021-11-01_13-44-43/error.txt  |
++---------------------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 124, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_89f15_00000, DEFAULT_89f15_00001, DEFAULT_89f15_00002, DEFAULT_89f15_00003, DEFAULT_89f15_00004, DEFAULT_89f15_00005, DEFAULT_89f15_00006, DEFAULT_89f15_00007, DEFAULT_89f15_00008, DEFAULT_89f15_00009, DEFAULT_89f15_00010, DEFAULT_89f15_00011, DEFAULT_89f15_00012, DEFAULT_89f15_00013, DEFAULT_89f15_00014, DEFAULT_89f15_00015, DEFAULT_89f15_00016, DEFAULT_89f15_00017, DEFAULT_89f15_00018, DEFAULT_89f15_00019])

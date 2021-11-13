@@ -1,0 +1,621 @@
+==========================================
+SLURM_JOB_ID = 6214925
+SLURM_JOB_NODELIST = d05-07
+TMPDIR = /tmp/SLURM_6214925
+==========================================
+2021-10-17 21:40:21,638	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 21:40:21,638	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 21:40:24,307	WARNING worker.py:1227 -- Warning: The actor ImplicitFunc is very large (62 MiB). Check that its definition is not implicitly capturing a large array or other object in scope. Tip: use ray.put() to put large objects in the Ray object store.
+[2m[36m(pid=15298)[0m 2021-10-17 21:40:35,376	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15298)[0m Traceback (most recent call last):
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15298)[0m     self._entrypoint()
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15298)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15298)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15298)[0m     output = fn()
+[2m[36m(pid=15298)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15298)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15298)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15298)[0m Exception in thread Thread-2:
+[2m[36m(pid=15298)[0m Traceback (most recent call last):
+[2m[36m(pid=15298)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15298)[0m     self.run()
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15298)[0m     raise e
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15298)[0m     self._entrypoint()
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15298)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15298)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15298)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15298)[0m     output = fn()
+[2m[36m(pid=15298)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15298)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15298)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15299)[0m 2021-10-17 21:40:35,372	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15299)[0m Traceback (most recent call last):
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15299)[0m     self._entrypoint()
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15299)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15299)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15299)[0m     output = fn()
+[2m[36m(pid=15299)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15299)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15299)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15299)[0m Exception in thread Thread-2:
+[2m[36m(pid=15299)[0m Traceback (most recent call last):
+[2m[36m(pid=15299)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15299)[0m     self.run()
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15299)[0m     raise e
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15299)[0m     self._entrypoint()
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15299)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15299)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15299)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15299)[0m     output = fn()
+[2m[36m(pid=15299)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15299)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15299)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:35,577	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15299, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f8d1b0bf160>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15299, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f8d1b0bf160>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:35,607	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15298, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fd4601a2160>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15298, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fd4601a2160>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15293)[0m 2021-10-17 21:40:36,421	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15293)[0m Traceback (most recent call last):
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15293)[0m     self._entrypoint()
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15293)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15293)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15293)[0m     output = fn()
+[2m[36m(pid=15293)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15293)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15293)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15293)[0m Exception in thread Thread-2:
+[2m[36m(pid=15293)[0m Traceback (most recent call last):
+[2m[36m(pid=15293)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15293)[0m     self.run()
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15293)[0m     raise e
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15293)[0m     self._entrypoint()
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15293)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15293)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15293)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15293)[0m     output = fn()
+[2m[36m(pid=15293)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15293)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15293)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15290)[0m 2021-10-17 21:40:36,500	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15290)[0m Traceback (most recent call last):
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15290)[0m     self._entrypoint()
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15290)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15290)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15290)[0m     output = fn()
+[2m[36m(pid=15290)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15290)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15290)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15290)[0m Exception in thread Thread-2:
+[2m[36m(pid=15290)[0m Traceback (most recent call last):
+[2m[36m(pid=15290)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15290)[0m     self.run()
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15290)[0m     raise e
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15290)[0m     self._entrypoint()
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15290)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15290)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15290)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15290)[0m     output = fn()
+[2m[36m(pid=15290)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15290)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15290)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:36,625	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15293, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fc7eb1a1fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15293, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fc7eb1a1fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:36,705	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15290, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fd5cc10efa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15290, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fd5cc10efa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15284)[0m 2021-10-17 21:40:38,079	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15284)[0m Traceback (most recent call last):
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15284)[0m     self._entrypoint()
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15284)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15284)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15284)[0m     output = fn()
+[2m[36m(pid=15284)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15284)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15284)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15284)[0m Exception in thread Thread-2:
+[2m[36m(pid=15284)[0m Traceback (most recent call last):
+[2m[36m(pid=15284)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15284)[0m     self.run()
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15284)[0m     raise e
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15284)[0m     self._entrypoint()
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15284)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15284)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15284)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15284)[0m     output = fn()
+[2m[36m(pid=15284)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15284)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15284)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:38,282	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15284, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f7229ec8fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15284, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f7229ec8fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15279)[0m 2021-10-17 21:40:38,212	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15279)[0m Traceback (most recent call last):
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15279)[0m     self._entrypoint()
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15279)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15279)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15279)[0m     output = fn()
+[2m[36m(pid=15279)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15279)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15279)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15279)[0m Exception in thread Thread-2:
+[2m[36m(pid=15279)[0m Traceback (most recent call last):
+[2m[36m(pid=15279)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15279)[0m     self.run()
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15279)[0m     raise e
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15279)[0m     self._entrypoint()
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15279)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15279)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15279)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15279)[0m     output = fn()
+[2m[36m(pid=15279)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15279)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15279)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:38,415	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15279, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f8a61d02fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15279, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7f8a61d02fa0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15280)[0m 2021-10-17 21:40:38,482	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15280)[0m Traceback (most recent call last):
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15280)[0m     self._entrypoint()
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15280)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15280)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15280)[0m     output = fn()
+[2m[36m(pid=15280)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15280)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15280)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15280)[0m Exception in thread Thread-2:
+[2m[36m(pid=15280)[0m Traceback (most recent call last):
+[2m[36m(pid=15280)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15280)[0m     self.run()
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15280)[0m     raise e
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15280)[0m     self._entrypoint()
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15280)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15280)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15280)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15280)[0m     output = fn()
+[2m[36m(pid=15280)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15280)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15280)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:38,685	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15280, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7efca8830e80>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15280, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7efca8830e80>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15283)[0m 2021-10-17 21:40:39,294	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=15283)[0m Traceback (most recent call last):
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15283)[0m     self._entrypoint()
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15283)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15283)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15283)[0m     output = fn()
+[2m[36m(pid=15283)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15283)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15283)[0m ValueError: too many values to unpack (expected 6)
+[2m[36m(pid=15283)[0m Exception in thread Thread-2:
+[2m[36m(pid=15283)[0m Traceback (most recent call last):
+[2m[36m(pid=15283)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=15283)[0m     self.run()
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=15283)[0m     raise e
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=15283)[0m     self._entrypoint()
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=15283)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=15283)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=15283)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=15283)[0m     output = fn()
+[2m[36m(pid=15283)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+[2m[36m(pid=15283)[0m     QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+[2m[36m(pid=15283)[0m ValueError: too many values to unpack (expected 6)
+2021-10-17 21:40:39,497	ERROR trial_runner.py:846 -- Trial DEFAULT_80ea4_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=15283, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fee7fcb1e80>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=15283, ip=10.125.19.181, repr=<types.ImplicitFunc object at 0x7fee7fcb1e80>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 45, in train
+    QuantumDecoderNet, device, train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = args
+ValueError: too many values to unpack (expected 6)
+<class 'tuple'>
+10_17_21_40_12_539 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 33.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/102.83 GiB heap, 0.0/48.06 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_80ea4_00000 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00001 | PENDING  |       |       45 |
+| DEFAULT_80ea4_00002 | PENDING  |       |       65 |
+| DEFAULT_80ea4_00003 | PENDING  |       |       65 |
+| DEFAULT_80ea4_00004 | PENDING  |       |       60 |
+| DEFAULT_80ea4_00005 | PENDING  |       |       55 |
+| DEFAULT_80ea4_00006 | PENDING  |       |       40 |
+| DEFAULT_80ea4_00007 | PENDING  |       |       75 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 35.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/102.83 GiB heap, 0.0/48.06 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_80ea4_00000 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00001 | RUNNING  |       |       45 |
+| DEFAULT_80ea4_00002 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00003 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00004 | RUNNING  |       |       60 |
+| DEFAULT_80ea4_00005 | RUNNING  |       |       55 |
+| DEFAULT_80ea4_00006 | RUNNING  |       |       40 |
+| DEFAULT_80ea4_00007 | RUNNING  |       |       75 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_80ea4_00001:
+  {}
+  
+== Status ==
+Memory usage on this node: 36.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 14.0/24 CPUs, 0/0 GPUs, 0.0/102.83 GiB heap, 0.0/48.06 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21
+Number of trials: 8/8 (1 ERROR, 7 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_80ea4_00000 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00002 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00003 | RUNNING  |       |       65 |
+| DEFAULT_80ea4_00004 | RUNNING  |       |       60 |
+| DEFAULT_80ea4_00005 | RUNNING  |       |       55 |
+| DEFAULT_80ea4_00006 | RUNNING  |       |       40 |
+| DEFAULT_80ea4_00007 | RUNNING  |       |       75 |
+| DEFAULT_80ea4_00001 | ERROR    |       |       45 |
++---------------------+----------+-------+----------+
+Number of errored trials: 1
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_80ea4_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00001_1_trials=45.0_2021-10-17_21-40-24/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_80ea4_00000:
+  {}
+  
+Result for DEFAULT_80ea4_00003:
+  {}
+  
+Result for DEFAULT_80ea4_00002:
+  {}
+  
+Result for DEFAULT_80ea4_00004:
+  {}
+  
+Result for DEFAULT_80ea4_00005:
+  {}
+  
+Result for DEFAULT_80ea4_00006:
+  {}
+  
+Result for DEFAULT_80ea4_00007:
+  {}
+  
+== Status ==
+Memory usage on this node: 33.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/102.83 GiB heap, 0.0/48.06 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_80ea4_00000 | ERROR    |       |       65 |
+| DEFAULT_80ea4_00001 | ERROR    |       |       45 |
+| DEFAULT_80ea4_00002 | ERROR    |       |       65 |
+| DEFAULT_80ea4_00003 | ERROR    |       |       65 |
+| DEFAULT_80ea4_00004 | ERROR    |       |       60 |
+| DEFAULT_80ea4_00005 | ERROR    |       |       55 |
+| DEFAULT_80ea4_00006 | ERROR    |       |       40 |
+| DEFAULT_80ea4_00007 | ERROR    |       |       75 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_80ea4_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00000_0_trials=65.0_2021-10-17_21-40-23/error.txt |
+| DEFAULT_80ea4_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00001_1_trials=45.0_2021-10-17_21-40-24/error.txt |
+| DEFAULT_80ea4_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00002_2_trials=65.0_2021-10-17_21-40-24/error.txt |
+| DEFAULT_80ea4_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00003_3_trials=65.0_2021-10-17_21-40-25/error.txt |
+| DEFAULT_80ea4_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00004_4_trials=60.0_2021-10-17_21-40-25/error.txt |
+| DEFAULT_80ea4_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00005_5_trials=55.0_2021-10-17_21-40-26/error.txt |
+| DEFAULT_80ea4_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00006_6_trials=40.0_2021-10-17_21-40-27/error.txt |
+| DEFAULT_80ea4_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_21-40-21/DEFAULT_80ea4_00007_7_trials=75.0_2021-10-17_21-40-29/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 128, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_80ea4_00000, DEFAULT_80ea4_00001, DEFAULT_80ea4_00002, DEFAULT_80ea4_00003, DEFAULT_80ea4_00004, DEFAULT_80ea4_00005, DEFAULT_80ea4_00006, DEFAULT_80ea4_00007])
