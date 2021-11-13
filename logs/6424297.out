@@ -1,0 +1,13 @@
+==========================================
+SLURM_JOB_ID = 6424297
+SLURM_JOB_NODELIST = e22-13
+TMPDIR = /tmp/SLURM_6424297
+==========================================
+Traceback (most recent call last):
+  File "source/driver.py", line 131, in <module>
+    train(config, checkpoint_dir,  **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 85, in train
+    outputs = QuantumDecoderNet.forward(batch_syndromes)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 154, in forward
+    raise RuntimeError("module must have its parameters and buffers "
+RuntimeError: module must have its parameters and buffers on device cuda:0 (device_ids[0]) but found one of them on device: cpu

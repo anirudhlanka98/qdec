@@ -1,0 +1,1800 @@
+==========================================
+SLURM_JOB_ID = 6560211
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6560211
+==========================================
+2021-11-05 14:12:21,293	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-11-05 14:12:21,293	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=1217)[0m 2021-11-05 14:12:25,164	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1217)[0m Traceback (most recent call last):
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1217)[0m     self._entrypoint()
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1217)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1217)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1217)[0m     output = fn()
+[2m[36m(pid=1217)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1217)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1217)[0m KeyError: 'dataset'
+[2m[36m(pid=1217)[0m Exception in thread Thread-2:
+[2m[36m(pid=1217)[0m Traceback (most recent call last):
+[2m[36m(pid=1217)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1216)[0m 2021-11-05 14:12:25,159	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1216)[0m Traceback (most recent call last):
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1216)[0m     self._entrypoint()
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1216)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1216)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1216)[0m     output = fn()
+[2m[36m(pid=1216)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1216)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1216)[0m KeyError: 'dataset'
+[2m[36m(pid=1216)[0m Exception in thread Thread-2:
+[2m[36m(pid=1216)[0m Traceback (most recent call last):
+[2m[36m(pid=1216)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1216)[0m     self.run()
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1216)[0m     raise e
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1216)[0m     self._entrypoint()
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1216)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1216)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1216)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1216)[0m     output = fn()
+[2m[36m(pid=1216)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1216)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1216)[0m KeyError: 'dataset'
+[2m[36m(pid=1217)[0m     self.run()
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1217)[0m     raise e
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1217)[0m     self._entrypoint()
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1217)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1217)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1217)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1217)[0m     output = fn()
+[2m[36m(pid=1217)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1237)[0m 2021-11-05 14:12:25,165	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1237)[0m Traceback (most recent call last):
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1237)[0m     self._entrypoint()
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1237)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1237)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1237)[0m     output = fn()
+[2m[36m(pid=1237)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1237)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1237)[0m KeyError: 'dataset'
+[2m[36m(pid=1237)[0m Exception in thread Thread-2:
+[2m[36m(pid=1237)[0m Traceback (most recent call last):
+[2m[36m(pid=1237)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1236)[0m 2021-11-05 14:12:25,165	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1236)[0m Traceback (most recent call last):
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1236)[0m     self._entrypoint()
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1236)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1236)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1236)[0m     output = fn()
+[2m[36m(pid=1236)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1236)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1236)[0m KeyError: 'dataset'
+[2m[36m(pid=1236)[0m Exception in thread Thread-2:
+[2m[36m(pid=1236)[0m Traceback (most recent call last):
+[2m[36m(pid=1236)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1217)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1217)[0m KeyError: 'dataset'
+[2m[36m(pid=1237)[0m     self.run()
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1237)[0m     raise e
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1237)[0m     self._entrypoint()
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1237)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1237)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1237)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1237)[0m     output = fn()
+[2m[36m(pid=1237)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1236)[0m     self.run()
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1236)[0m     raise e
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1237)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1237)[0m KeyError: 'dataset'
+[2m[36m(pid=1236)[0m     self._entrypoint()
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1236)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1236)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1236)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1236)[0m     output = fn()
+[2m[36m(pid=1236)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1236)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1236)[0m KeyError: 'dataset'
+[2m[36m(pid=1230)[0m 2021-11-05 14:12:25,193	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1230)[0m Traceback (most recent call last):
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1230)[0m     self._entrypoint()
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1230)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1230)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1230)[0m     output = fn()
+[2m[36m(pid=1230)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1230)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1230)[0m KeyError: 'dataset'
+[2m[36m(pid=1230)[0m Exception in thread Thread-2:
+[2m[36m(pid=1230)[0m Traceback (most recent call last):
+[2m[36m(pid=1230)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1230)[0m     self.run()
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1230)[0m     raise e
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1230)[0m     self._entrypoint()
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1230)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1230)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1230)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1230)[0m     output = fn()
+[2m[36m(pid=1230)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1230)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1230)[0m KeyError: 'dataset'
+[2m[36m(pid=1229)[0m 2021-11-05 14:12:25,210	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1229)[0m Traceback (most recent call last):
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1229)[0m     self._entrypoint()
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1229)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1229)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1229)[0m     output = fn()
+[2m[36m(pid=1229)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1229)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1229)[0m KeyError: 'dataset'
+[2m[36m(pid=1229)[0m Exception in thread Thread-2:
+[2m[36m(pid=1229)[0m Traceback (most recent call last):
+[2m[36m(pid=1229)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1229)[0m     self.run()
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1229)[0m     raise e
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1229)[0m     self._entrypoint()
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1229)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1229)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1229)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1229)[0m     output = fn()
+[2m[36m(pid=1229)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1229)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1229)[0m KeyError: 'dataset'
+[2m[36m(pid=1223)[0m 2021-11-05 14:12:25,213	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1223)[0m Traceback (most recent call last):
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1223)[0m     self._entrypoint()
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1223)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1223)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1223)[0m     output = fn()
+[2m[36m(pid=1223)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1223)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1223)[0m KeyError: 'dataset'
+[2m[36m(pid=1223)[0m Exception in thread Thread-2:
+[2m[36m(pid=1223)[0m Traceback (most recent call last):
+[2m[36m(pid=1223)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1223)[0m     self.run()
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1223)[0m     raise e
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1223)[0m     self._entrypoint()
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1223)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1223)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1223)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1223)[0m     output = fn()
+[2m[36m(pid=1223)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1223)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1223)[0m KeyError: 'dataset'
+[2m[36m(pid=1232)[0m 2021-11-05 14:12:25,193	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1232)[0m Traceback (most recent call last):
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1232)[0m     self._entrypoint()
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1232)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1232)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1232)[0m     output = fn()
+[2m[36m(pid=1232)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1232)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1232)[0m KeyError: 'dataset'
+[2m[36m(pid=1232)[0m Exception in thread Thread-2:
+[2m[36m(pid=1232)[0m Traceback (most recent call last):
+[2m[36m(pid=1232)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1232)[0m     self.run()
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1232)[0m     raise e
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1232)[0m     self._entrypoint()
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1232)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1232)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1232)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1232)[0m     output = fn()
+[2m[36m(pid=1232)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1232)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1232)[0m KeyError: 'dataset'
+[2m[36m(pid=1233)[0m 2021-11-05 14:12:25,202	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1233)[0m Traceback (most recent call last):
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1233)[0m     self._entrypoint()
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1233)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1233)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1233)[0m     output = fn()
+[2m[36m(pid=1233)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1233)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1233)[0m KeyError: 'dataset'
+[2m[36m(pid=1233)[0m Exception in thread Thread-2:
+[2m[36m(pid=1233)[0m Traceback (most recent call last):
+[2m[36m(pid=1233)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1233)[0m     self.run()
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1233)[0m     raise e
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1233)[0m     self._entrypoint()
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1233)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1233)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1233)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1233)[0m     output = fn()
+[2m[36m(pid=1233)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1233)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1233)[0m KeyError: 'dataset'
+[2m[36m(pid=1220)[0m 2021-11-05 14:12:25,201	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1220)[0m Traceback (most recent call last):
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1220)[0m     self._entrypoint()
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1220)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1220)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1220)[0m     output = fn()
+[2m[36m(pid=1220)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1220)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1220)[0m KeyError: 'dataset'
+[2m[36m(pid=1220)[0m Exception in thread Thread-2:
+[2m[36m(pid=1220)[0m Traceback (most recent call last):
+[2m[36m(pid=1220)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1220)[0m     self.run()
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1220)[0m     raise e
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1220)[0m     self._entrypoint()
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1220)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1220)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1220)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1220)[0m     output = fn()
+[2m[36m(pid=1220)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1220)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1220)[0m KeyError: 'dataset'
+[2m[36m(pid=1231)[0m 2021-11-05 14:12:25,201	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1231)[0m Traceback (most recent call last):
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1231)[0m     self._entrypoint()
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1231)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1231)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1231)[0m     output = fn()
+[2m[36m(pid=1231)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1231)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1231)[0m KeyError: 'dataset'
+[2m[36m(pid=1231)[0m Exception in thread Thread-2:
+[2m[36m(pid=1231)[0m Traceback (most recent call last):
+[2m[36m(pid=1231)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1231)[0m     self.run()
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1231)[0m     raise e
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1231)[0m     self._entrypoint()
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1231)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1231)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1231)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1231)[0m     output = fn()
+[2m[36m(pid=1231)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1231)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1231)[0m KeyError: 'dataset'
+[2m[36m(pid=1221)[0m 2021-11-05 14:12:25,219	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1221)[0m Traceback (most recent call last):
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1221)[0m     self._entrypoint()
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1221)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1221)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1221)[0m     output = fn()
+[2m[36m(pid=1221)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1221)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1221)[0m KeyError: 'dataset'
+[2m[36m(pid=1221)[0m Exception in thread Thread-2:
+[2m[36m(pid=1221)[0m Traceback (most recent call last):
+[2m[36m(pid=1221)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1221)[0m     self.run()
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1221)[0m     raise e
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1221)[0m     self._entrypoint()
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1221)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1221)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1221)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1221)[0m     output = fn()
+[2m[36m(pid=1221)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1221)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1221)[0m KeyError: 'dataset'
+2021-11-05 14:12:25,350	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1216, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f9ab79be5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1216, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f9ab79be5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,369	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1217, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fe562e475e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1217, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fe562e475e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,380	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1237, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7eff219875e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1237, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7eff219875e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,390	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1236, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f8004a2a5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1236, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f8004a2a5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,403	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00010: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1220, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7faaf120a430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1220, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7faaf120a430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,416	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00008: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1232, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f6d0447e430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1232, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f6d0447e430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,435	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00009: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1233, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fcbb8749430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1233, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fcbb8749430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,454	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1223, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f8c9d08e430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1223, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f8c9d08e430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,487	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1229, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fbbacfb8430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1229, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fbbacfb8430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,517	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00011: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1231, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fb14013c430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1231, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fb14013c430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,546	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1221, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f498345a5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1221, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f498345a5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:25,567	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1230, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fd5a5b78430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1230, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fd5a5b78430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+[2m[36m(pid=1218)[0m 2021-11-05 14:12:28,599	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1218)[0m Traceback (most recent call last):
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1218)[0m     self._entrypoint()
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1218)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1218)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1218)[0m     output = fn()
+[2m[36m(pid=1218)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1218)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1218)[0m KeyError: 'dataset'
+[2m[36m(pid=1218)[0m Exception in thread Thread-2:
+[2m[36m(pid=1218)[0m Traceback (most recent call last):
+[2m[36m(pid=1218)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1218)[0m     self.run()
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1218)[0m     raise e
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1218)[0m     self._entrypoint()
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1218)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1218)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1218)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1218)[0m     output = fn()
+[2m[36m(pid=1218)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1218)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1218)[0m KeyError: 'dataset'
+[2m[36m(pid=1224)[0m 2021-11-05 14:12:28,605	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1224)[0m Traceback (most recent call last):
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1224)[0m     self._entrypoint()
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1224)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1224)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1224)[0m     output = fn()
+[2m[36m(pid=1224)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1224)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1224)[0m KeyError: 'dataset'
+[2m[36m(pid=1224)[0m Exception in thread Thread-2:
+[2m[36m(pid=1224)[0m Traceback (most recent call last):
+[2m[36m(pid=1224)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1224)[0m     self.run()
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1224)[0m     raise e
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1224)[0m     self._entrypoint()
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1224)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1224)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1224)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1224)[0m     output = fn()
+[2m[36m(pid=1224)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1224)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1224)[0m KeyError: 'dataset'
+[2m[36m(pid=1234)[0m 2021-11-05 14:12:28,605	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1234)[0m Traceback (most recent call last):
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1234)[0m     self._entrypoint()
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1234)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1234)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1234)[0m     output = fn()
+[2m[36m(pid=1234)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1234)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1234)[0m KeyError: 'dataset'
+[2m[36m(pid=1234)[0m Exception in thread Thread-2:
+[2m[36m(pid=1234)[0m Traceback (most recent call last):
+[2m[36m(pid=1234)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1234)[0m     self.run()
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1234)[0m     raise e
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1234)[0m     self._entrypoint()
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1234)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1234)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1234)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1234)[0m     output = fn()
+[2m[36m(pid=1234)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1234)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1234)[0m KeyError: 'dataset'
+[2m[36m(pid=1222)[0m 2021-11-05 14:12:28,613	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1222)[0m Traceback (most recent call last):
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1222)[0m     self._entrypoint()
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1222)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1222)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1222)[0m     output = fn()
+[2m[36m(pid=1222)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1222)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1222)[0m KeyError: 'dataset'
+[2m[36m(pid=1222)[0m Exception in thread Thread-2:
+[2m[36m(pid=1222)[0m Traceback (most recent call last):
+[2m[36m(pid=1222)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1222)[0m     self.run()
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1222)[0m     raise e
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1222)[0m     self._entrypoint()
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1222)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1222)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1222)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1222)[0m     output = fn()
+[2m[36m(pid=1222)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1222)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1222)[0m KeyError: 'dataset'
+[2m[36m(pid=1214)[0m 2021-11-05 14:12:28,622	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1214)[0m Traceback (most recent call last):
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1214)[0m     self._entrypoint()
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1214)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1214)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1214)[0m     output = fn()
+[2m[36m(pid=1214)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1214)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1214)[0m KeyError: 'dataset'
+[2m[36m(pid=1214)[0m Exception in thread Thread-2:
+[2m[36m(pid=1214)[0m Traceback (most recent call last):
+[2m[36m(pid=1214)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1214)[0m     self.run()
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1215)[0m 2021-11-05 14:12:28,587	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1215)[0m Traceback (most recent call last):
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1215)[0m     self._entrypoint()
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1215)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1215)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1215)[0m     output = fn()
+[2m[36m(pid=1215)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1215)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1215)[0m KeyError: 'dataset'
+[2m[36m(pid=1215)[0m Exception in thread Thread-2:
+[2m[36m(pid=1215)[0m Traceback (most recent call last):
+[2m[36m(pid=1215)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1215)[0m     self.run()
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1215)[0m     raise e
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1215)[0m     self._entrypoint()
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1215)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1215)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1215)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1215)[0m     output = fn()
+[2m[36m(pid=1215)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1215)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1215)[0m KeyError: 'dataset'
+[2m[36m(pid=1225)[0m 2021-11-05 14:12:28,587	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1225)[0m Traceback (most recent call last):
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1225)[0m     self._entrypoint()
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1225)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1225)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1225)[0m     output = fn()
+[2m[36m(pid=1225)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1225)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1225)[0m KeyError: 'dataset'
+[2m[36m(pid=1225)[0m Exception in thread Thread-2:
+[2m[36m(pid=1225)[0m Traceback (most recent call last):
+[2m[36m(pid=1225)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1225)[0m     self.run()
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1225)[0m     raise e
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1225)[0m     self._entrypoint()
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1225)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1225)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1225)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1225)[0m     output = fn()
+[2m[36m(pid=1225)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1225)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1225)[0m KeyError: 'dataset'
+[2m[36m(pid=1226)[0m 2021-11-05 14:12:28,588	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1226)[0m Traceback (most recent call last):
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1226)[0m     self._entrypoint()
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1226)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1226)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1226)[0m     output = fn()
+[2m[36m(pid=1226)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1226)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1226)[0m KeyError: 'dataset'
+[2m[36m(pid=1226)[0m Exception in thread Thread-2:
+[2m[36m(pid=1226)[0m Traceback (most recent call last):
+[2m[36m(pid=1226)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1226)[0m     self.run()
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1226)[0m     raise e
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1226)[0m     self._entrypoint()
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1226)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1226)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1226)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1226)[0m     output = fn()
+[2m[36m(pid=1226)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1226)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1226)[0m KeyError: 'dataset'
+[2m[36m(pid=1219)[0m 2021-11-05 14:12:28,588	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1219)[0m Traceback (most recent call last):
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1219)[0m     self._entrypoint()
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1219)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1219)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1219)[0m     output = fn()
+[2m[36m(pid=1219)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1219)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1219)[0m KeyError: 'dataset'
+[2m[36m(pid=1219)[0m Exception in thread Thread-2:
+[2m[36m(pid=1219)[0m Traceback (most recent call last):
+[2m[36m(pid=1219)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1219)[0m     self.run()
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1219)[0m     raise e
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1219)[0m     self._entrypoint()
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1219)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1219)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1219)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1219)[0m     output = fn()
+[2m[36m(pid=1219)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1219)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1219)[0m KeyError: 'dataset'
+[2m[36m(pid=1214)[0m     raise e
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1214)[0m     self._entrypoint()
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1214)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1214)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1214)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1214)[0m     output = fn()
+[2m[36m(pid=1214)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1214)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1214)[0m KeyError: 'dataset'
+[2m[36m(pid=1235)[0m 2021-11-05 14:12:28,635	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1235)[0m Traceback (most recent call last):
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1235)[0m     self._entrypoint()
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1235)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1235)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1235)[0m     output = fn()
+[2m[36m(pid=1235)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1235)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1235)[0m KeyError: 'dataset'
+[2m[36m(pid=1235)[0m Exception in thread Thread-2:
+[2m[36m(pid=1235)[0m Traceback (most recent call last):
+[2m[36m(pid=1235)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1235)[0m     self.run()
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1235)[0m     raise e
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1235)[0m     self._entrypoint()
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1235)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1235)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1235)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1235)[0m     output = fn()
+[2m[36m(pid=1235)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1235)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1235)[0m KeyError: 'dataset'
+[2m[36m(pid=1228)[0m 2021-11-05 14:12:28,635	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1228)[0m Traceback (most recent call last):
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1228)[0m     self._entrypoint()
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1228)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1228)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1228)[0m     output = fn()
+[2m[36m(pid=1228)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1228)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1228)[0m KeyError: 'dataset'
+[2m[36m(pid=1228)[0m Exception in thread Thread-2:
+[2m[36m(pid=1228)[0m Traceback (most recent call last):
+[2m[36m(pid=1228)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1228)[0m     self.run()
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1228)[0m     raise e
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1228)[0m     self._entrypoint()
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1228)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1228)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1228)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1228)[0m     output = fn()
+[2m[36m(pid=1228)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1228)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1228)[0m KeyError: 'dataset'
+[2m[36m(pid=1227)[0m 2021-11-05 14:12:28,637	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1227)[0m Traceback (most recent call last):
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1227)[0m     self._entrypoint()
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1227)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1227)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1227)[0m     output = fn()
+[2m[36m(pid=1227)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1227)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1227)[0m KeyError: 'dataset'
+[2m[36m(pid=1227)[0m Exception in thread Thread-2:
+[2m[36m(pid=1227)[0m Traceback (most recent call last):
+[2m[36m(pid=1227)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1227)[0m     self.run()
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1227)[0m     raise e
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1227)[0m     self._entrypoint()
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1227)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1227)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1227)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1227)[0m     output = fn()
+[2m[36m(pid=1227)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1227)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1227)[0m KeyError: 'dataset'
+2021-11-05 14:12:28,783	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00012: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1225, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fdc96116430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1225, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fdc96116430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,803	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00013: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1226, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fb87ba89430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1226, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fb87ba89430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,807	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00021: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1215, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f994d707430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1215, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f994d707430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,810	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00016: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1224, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f023f2be430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1224, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f023f2be430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,813	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00023: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1218, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f4582b02430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1218, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f4582b02430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,816	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00014: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1219, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fab219ca430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1219, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fab219ca430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,819	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00020: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1234, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f0d5c0f6430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1234, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f0d5c0f6430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,823	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00018: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1214, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f2c6551d430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1214, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f2c6551d430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,826	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00019: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1222, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f0f3c5f6430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1222, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f0f3c5f6430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,836	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00017: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1228, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fd4ad635430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1228, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7fd4ad635430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,839	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00015: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1235, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f74f9d13430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1235, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f74f9d13430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+2021-11-05 14:12:28,841	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00022: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1227, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f117d30b430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1227, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f117d30b430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+[2m[36m(pid=1859)[0m 2021-11-05 14:12:32,211	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1859)[0m Traceback (most recent call last):
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1859)[0m     self._entrypoint()
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1859)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1859)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1859)[0m     output = fn()
+[2m[36m(pid=1859)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1859)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1859)[0m KeyError: 'dataset'
+[2m[36m(pid=1859)[0m Exception in thread Thread-2:
+[2m[36m(pid=1859)[0m Traceback (most recent call last):
+[2m[36m(pid=1859)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1859)[0m     self.run()
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1859)[0m     raise e
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1859)[0m     self._entrypoint()
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1859)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1859)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1859)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1859)[0m     output = fn()
+[2m[36m(pid=1859)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+[2m[36m(pid=1859)[0m     data = dl.dataloader(kwargs['dataset'],device)
+[2m[36m(pid=1859)[0m KeyError: 'dataset'
+2021-11-05 14:12:32,406	ERROR trial_runner.py:846 -- Trial DEFAULT_10b1a_00024: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1859, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f7419c41400>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1859, ip=10.125.19.188, repr=<types.ImplicitFunc object at 0x7f7419c41400>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 52, in train
+    data = dl.dataloader(kwargs['dataset'],device)
+KeyError: 'dataset'
+11_05_14_12_18_808 [6, 14] [ELU(alpha=1.0), ELU(alpha=1.0)] 100
+== Status ==
+Memory usage on this node: 7.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/120.27 GiB heap, 0.0/55.53 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21
+Number of trials: 25/25 (24 PENDING, 1 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_10b1a_00000 | RUNNING  |       | 3.06675e-05 |        2 |
+| DEFAULT_10b1a_00001 | PENDING  |       | 5.86653e-05 |        2 |
+| DEFAULT_10b1a_00002 | PENDING  |       | 1.15635e-05 |        2 |
+| DEFAULT_10b1a_00003 | PENDING  |       | 7.36912e-06 |        2 |
+| DEFAULT_10b1a_00004 | PENDING  |       | 9.21696e-05 |        2 |
+| DEFAULT_10b1a_00005 | PENDING  |       | 3.95562e-05 |        2 |
+| DEFAULT_10b1a_00006 | PENDING  |       | 5.52031e-06 |        2 |
+| DEFAULT_10b1a_00007 | PENDING  |       | 1.212e-05   |        2 |
+| DEFAULT_10b1a_00008 | PENDING  |       | 6.84256e-06 |        2 |
+| DEFAULT_10b1a_00009 | PENDING  |       | 3.57298e-05 |        2 |
+| DEFAULT_10b1a_00010 | PENDING  |       | 2.58796e-05 |        2 |
+| DEFAULT_10b1a_00011 | PENDING  |       | 7.24176e-06 |        2 |
+| DEFAULT_10b1a_00012 | PENDING  |       | 6.77487e-06 |        2 |
+| DEFAULT_10b1a_00013 | PENDING  |       | 3.63115e-05 |        2 |
+| DEFAULT_10b1a_00014 | PENDING  |       | 6.14001e-06 |        2 |
+| DEFAULT_10b1a_00015 | PENDING  |       | 1.65504e-05 |        2 |
+| DEFAULT_10b1a_00016 | PENDING  |       | 4.56688e-05 |        2 |
+| DEFAULT_10b1a_00017 | PENDING  |       | 2.37645e-05 |        2 |
+| DEFAULT_10b1a_00018 | PENDING  |       | 4.37674e-05 |        2 |
+| DEFAULT_10b1a_00019 | PENDING  |       | 3.16247e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+... 5 more trials not shown (5 PENDING)
+
+
+Result for DEFAULT_10b1a_00000:
+  {}
+  
+Result for DEFAULT_10b1a_00004:
+  {}
+  
+Result for DEFAULT_10b1a_00003:
+  {}
+  
+Result for DEFAULT_10b1a_00001:
+  {}
+  
+Result for DEFAULT_10b1a_00010:
+  {}
+  
+Result for DEFAULT_10b1a_00008:
+  {}
+  
+Result for DEFAULT_10b1a_00009:
+  {}
+  
+Result for DEFAULT_10b1a_00007:
+  {}
+  
+Result for DEFAULT_10b1a_00006:
+  {}
+  
+Result for DEFAULT_10b1a_00011:
+  {}
+  
+Result for DEFAULT_10b1a_00002:
+  {}
+  
+Result for DEFAULT_10b1a_00005:
+  {}
+  
+== Status ==
+Memory usage on this node: 8.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/120.27 GiB heap, 0.0/55.53 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21
+Number of trials: 25/25 (12 ERROR, 1 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_10b1a_00012 | RUNNING  |       | 6.77487e-06 |        2 |
+| DEFAULT_10b1a_00013 | RUNNING  |       | 3.63115e-05 |        2 |
+| DEFAULT_10b1a_00014 | RUNNING  |       | 6.14001e-06 |        2 |
+| DEFAULT_10b1a_00015 | RUNNING  |       | 1.65504e-05 |        2 |
+| DEFAULT_10b1a_00016 | RUNNING  |       | 4.56688e-05 |        2 |
+| DEFAULT_10b1a_00017 | RUNNING  |       | 2.37645e-05 |        2 |
+| DEFAULT_10b1a_00018 | RUNNING  |       | 4.37674e-05 |        2 |
+| DEFAULT_10b1a_00019 | RUNNING  |       | 3.16247e-05 |        2 |
+| DEFAULT_10b1a_00020 | RUNNING  |       | 4.36213e-05 |        2 |
+| DEFAULT_10b1a_00021 | RUNNING  |       | 8.47693e-05 |        2 |
+| DEFAULT_10b1a_00024 | PENDING  |       | 5.80527e-06 |        2 |
+| DEFAULT_10b1a_00000 | ERROR    |       | 3.06675e-05 |        2 |
+| DEFAULT_10b1a_00001 | ERROR    |       | 5.86653e-05 |        2 |
+| DEFAULT_10b1a_00002 | ERROR    |       | 1.15635e-05 |        2 |
+| DEFAULT_10b1a_00003 | ERROR    |       | 7.36912e-06 |        2 |
+| DEFAULT_10b1a_00004 | ERROR    |       | 9.21696e-05 |        2 |
+| DEFAULT_10b1a_00005 | ERROR    |       | 3.95562e-05 |        2 |
+| DEFAULT_10b1a_00006 | ERROR    |       | 5.52031e-06 |        2 |
+| DEFAULT_10b1a_00007 | ERROR    |       | 1.212e-05   |        2 |
+| DEFAULT_10b1a_00008 | ERROR    |       | 6.84256e-06 |        2 |
+| DEFAULT_10b1a_00009 | ERROR    |       | 3.57298e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+... 5 more trials not shown (2 RUNNING, 2 ERROR)
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_10b1a_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00000_0_lr=3.0667e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00001_1_lr=5.8665e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00002_2_lr=1.1563e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00003_3_lr=7.3691e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00004_4_lr=9.217e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00005_5_lr=3.9556e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00006_6_lr=5.5203e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00007_7_lr=1.212e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00008_8_lr=6.8426e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00009_9_lr=3.573e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00010_10_lr=2.588e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00011_11_lr=7.2418e-06,trials=2.0_2021-11-05_14-12-22/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_10b1a_00012:
+  {}
+  
+Result for DEFAULT_10b1a_00013:
+  {}
+  
+Result for DEFAULT_10b1a_00021:
+  {}
+  
+Result for DEFAULT_10b1a_00016:
+  {}
+  
+Result for DEFAULT_10b1a_00023:
+  {}
+  
+Result for DEFAULT_10b1a_00014:
+  {}
+  
+Result for DEFAULT_10b1a_00020:
+  {}
+  
+Result for DEFAULT_10b1a_00018:
+  {}
+  
+Result for DEFAULT_10b1a_00019:
+  {}
+  
+Result for DEFAULT_10b1a_00017:
+  {}
+  
+Result for DEFAULT_10b1a_00015:
+  {}
+  
+Result for DEFAULT_10b1a_00022:
+  {}
+  
+Result for DEFAULT_10b1a_00024:
+  {}
+  
+== Status ==
+Memory usage on this node: 6.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/120.27 GiB heap, 0.0/55.53 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21
+Number of trials: 25/25 (25 ERROR)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_10b1a_00000 | ERROR    |       | 3.06675e-05 |        2 |
+| DEFAULT_10b1a_00001 | ERROR    |       | 5.86653e-05 |        2 |
+| DEFAULT_10b1a_00002 | ERROR    |       | 1.15635e-05 |        2 |
+| DEFAULT_10b1a_00003 | ERROR    |       | 7.36912e-06 |        2 |
+| DEFAULT_10b1a_00004 | ERROR    |       | 9.21696e-05 |        2 |
+| DEFAULT_10b1a_00005 | ERROR    |       | 3.95562e-05 |        2 |
+| DEFAULT_10b1a_00006 | ERROR    |       | 5.52031e-06 |        2 |
+| DEFAULT_10b1a_00007 | ERROR    |       | 1.212e-05   |        2 |
+| DEFAULT_10b1a_00008 | ERROR    |       | 6.84256e-06 |        2 |
+| DEFAULT_10b1a_00009 | ERROR    |       | 3.57298e-05 |        2 |
+| DEFAULT_10b1a_00010 | ERROR    |       | 2.58796e-05 |        2 |
+| DEFAULT_10b1a_00011 | ERROR    |       | 7.24176e-06 |        2 |
+| DEFAULT_10b1a_00012 | ERROR    |       | 6.77487e-06 |        2 |
+| DEFAULT_10b1a_00013 | ERROR    |       | 3.63115e-05 |        2 |
+| DEFAULT_10b1a_00014 | ERROR    |       | 6.14001e-06 |        2 |
+| DEFAULT_10b1a_00015 | ERROR    |       | 1.65504e-05 |        2 |
+| DEFAULT_10b1a_00016 | ERROR    |       | 4.56688e-05 |        2 |
+| DEFAULT_10b1a_00017 | ERROR    |       | 2.37645e-05 |        2 |
+| DEFAULT_10b1a_00018 | ERROR    |       | 4.37674e-05 |        2 |
+| DEFAULT_10b1a_00019 | ERROR    |       | 3.16247e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+... 5 more trials not shown (5 ERROR)
+Number of errored trials: 25
+Table truncated to 20 rows (5 overflow)
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_10b1a_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00000_0_lr=3.0667e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00001_1_lr=5.8665e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00002_2_lr=1.1563e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00003_3_lr=7.3691e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00004_4_lr=9.217e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00005_5_lr=3.9556e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00006_6_lr=5.5203e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00007_7_lr=1.212e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00008_8_lr=6.8426e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00009_9_lr=3.573e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00010_10_lr=2.588e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00011_11_lr=7.2418e-06,trials=2.0_2021-11-05_14-12-22/error.txt |
+| DEFAULT_10b1a_00012 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00012_12_lr=6.7749e-06,trials=2.0_2021-11-05_14-12-22/error.txt |
+| DEFAULT_10b1a_00013 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00013_13_lr=3.6312e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00014 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00014_14_lr=6.14e-06,trials=2.0_2021-11-05_14-12-25/error.txt   |
+| DEFAULT_10b1a_00015 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00015_15_lr=1.655e-05,trials=2.0_2021-11-05_14-12-25/error.txt  |
+| DEFAULT_10b1a_00016 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00016_16_lr=4.5669e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00017 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00017_17_lr=2.3764e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00018 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00018_18_lr=4.3767e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00019 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00019_19_lr=3.1625e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 6.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/120.27 GiB heap, 0.0/55.53 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21
+Number of trials: 25/25 (25 ERROR)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_10b1a_00000 | ERROR    |       | 3.06675e-05 |        2 |
+| DEFAULT_10b1a_00001 | ERROR    |       | 5.86653e-05 |        2 |
+| DEFAULT_10b1a_00002 | ERROR    |       | 1.15635e-05 |        2 |
+| DEFAULT_10b1a_00003 | ERROR    |       | 7.36912e-06 |        2 |
+| DEFAULT_10b1a_00004 | ERROR    |       | 9.21696e-05 |        2 |
+| DEFAULT_10b1a_00005 | ERROR    |       | 3.95562e-05 |        2 |
+| DEFAULT_10b1a_00006 | ERROR    |       | 5.52031e-06 |        2 |
+| DEFAULT_10b1a_00007 | ERROR    |       | 1.212e-05   |        2 |
+| DEFAULT_10b1a_00008 | ERROR    |       | 6.84256e-06 |        2 |
+| DEFAULT_10b1a_00009 | ERROR    |       | 3.57298e-05 |        2 |
+| DEFAULT_10b1a_00010 | ERROR    |       | 2.58796e-05 |        2 |
+| DEFAULT_10b1a_00011 | ERROR    |       | 7.24176e-06 |        2 |
+| DEFAULT_10b1a_00012 | ERROR    |       | 6.77487e-06 |        2 |
+| DEFAULT_10b1a_00013 | ERROR    |       | 3.63115e-05 |        2 |
+| DEFAULT_10b1a_00014 | ERROR    |       | 6.14001e-06 |        2 |
+| DEFAULT_10b1a_00015 | ERROR    |       | 1.65504e-05 |        2 |
+| DEFAULT_10b1a_00016 | ERROR    |       | 4.56688e-05 |        2 |
+| DEFAULT_10b1a_00017 | ERROR    |       | 2.37645e-05 |        2 |
+| DEFAULT_10b1a_00018 | ERROR    |       | 4.37674e-05 |        2 |
+| DEFAULT_10b1a_00019 | ERROR    |       | 3.16247e-05 |        2 |
+| DEFAULT_10b1a_00020 | ERROR    |       | 4.36213e-05 |        2 |
+| DEFAULT_10b1a_00021 | ERROR    |       | 8.47693e-05 |        2 |
+| DEFAULT_10b1a_00022 | ERROR    |       | 3.65295e-05 |        2 |
+| DEFAULT_10b1a_00023 | ERROR    |       | 1.84539e-05 |        2 |
+| DEFAULT_10b1a_00024 | ERROR    |       | 5.80527e-06 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 25
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_10b1a_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00000_0_lr=3.0667e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00001_1_lr=5.8665e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00002_2_lr=1.1563e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00003_3_lr=7.3691e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00004_4_lr=9.217e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00005_5_lr=3.9556e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00006_6_lr=5.5203e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00007_7_lr=1.212e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00008_8_lr=6.8426e-06,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00009_9_lr=3.573e-05,trials=2.0_2021-11-05_14-12-22/error.txt   |
+| DEFAULT_10b1a_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00010_10_lr=2.588e-05,trials=2.0_2021-11-05_14-12-22/error.txt  |
+| DEFAULT_10b1a_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00011_11_lr=7.2418e-06,trials=2.0_2021-11-05_14-12-22/error.txt |
+| DEFAULT_10b1a_00012 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00012_12_lr=6.7749e-06,trials=2.0_2021-11-05_14-12-22/error.txt |
+| DEFAULT_10b1a_00013 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00013_13_lr=3.6312e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00014 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00014_14_lr=6.14e-06,trials=2.0_2021-11-05_14-12-25/error.txt   |
+| DEFAULT_10b1a_00015 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00015_15_lr=1.655e-05,trials=2.0_2021-11-05_14-12-25/error.txt  |
+| DEFAULT_10b1a_00016 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00016_16_lr=4.5669e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00017 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00017_17_lr=2.3764e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00018 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00018_18_lr=4.3767e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00019 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00019_19_lr=3.1625e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00020 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00020_20_lr=4.3621e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00021 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00021_21_lr=8.4769e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00022 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00022_22_lr=3.653e-05,trials=2.0_2021-11-05_14-12-25/error.txt  |
+| DEFAULT_10b1a_00023 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00023_23_lr=1.8454e-05,trials=2.0_2021-11-05_14-12-25/error.txt |
+| DEFAULT_10b1a_00024 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-05_14-12-21/DEFAULT_10b1a_00024_24_lr=5.8053e-06,trials=2.0_2021-11-05_14-12-25/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 142, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_10b1a_00000, DEFAULT_10b1a_00001, DEFAULT_10b1a_00002, DEFAULT_10b1a_00003, DEFAULT_10b1a_00004, DEFAULT_10b1a_00005, DEFAULT_10b1a_00006, DEFAULT_10b1a_00007, DEFAULT_10b1a_00008, DEFAULT_10b1a_00009, DEFAULT_10b1a_00010, DEFAULT_10b1a_00011, DEFAULT_10b1a_00012, DEFAULT_10b1a_00013, DEFAULT_10b1a_00014, DEFAULT_10b1a_00015, DEFAULT_10b1a_00016, DEFAULT_10b1a_00017, DEFAULT_10b1a_00018, DEFAULT_10b1a_00019, DEFAULT_10b1a_00020, DEFAULT_10b1a_00021, DEFAULT_10b1a_00022, DEFAULT_10b1a_00023, DEFAULT_10b1a_00024])

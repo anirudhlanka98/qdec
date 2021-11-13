@@ -1,0 +1,14 @@
+==========================================
+SLURM_JOB_ID = 6114099
+SLURM_JOB_NODELIST = d11-15
+TMPDIR = /tmp/SLURM_6114099
+==========================================
+10_05_15_22_55_235 [22, 40, 45, 50, 60, 60, 46] [Sigmoid(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 250 0.0001 100
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 90, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 51, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 82, in accuracy
+    trials = epoch//kwargs['epochs']*kwargs['num_random_trials']
+NameError: name 'epoch' is not defined

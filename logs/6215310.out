@@ -1,0 +1,2659 @@
+==========================================
+SLURM_JOB_ID = 6215310
+SLURM_JOB_NODELIST = d05-29
+TMPDIR = /tmp/SLURM_6215310
+==========================================
+2021-10-17 22:38:56,216	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 22:38:56,216	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 22:46:52,205	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27743, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fa259b38310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27743, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fa259b38310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27743)[0m 2021-10-17 22:46:52,160	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27743)[0m Traceback (most recent call last):
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27743)[0m     self._entrypoint()
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27743)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27743)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27743)[0m     output = fn()
+[2m[36m(pid=27743)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27743)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27743)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27743)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27743)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27743)[0m Exception in thread Thread-2:
+[2m[36m(pid=27743)[0m Traceback (most recent call last):
+[2m[36m(pid=27743)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27743)[0m     self.run()
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27743)[0m     raise e
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27743)[0m     self._entrypoint()
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27743)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27743)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27743)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27743)[0m     output = fn()
+[2m[36m(pid=27743)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27743)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27743)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27743)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27743)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27746)[0m 2021-10-17 22:46:52,730	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27746)[0m Traceback (most recent call last):
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27746)[0m     self._entrypoint()
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27746)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27746)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27746)[0m     output = fn()
+[2m[36m(pid=27746)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27746)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27746)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27746)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27746)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27746)[0m Exception in thread Thread-2:
+[2m[36m(pid=27746)[0m Traceback (most recent call last):
+[2m[36m(pid=27746)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27746)[0m     self.run()
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27746)[0m     raise e
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27746)[0m     self._entrypoint()
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27746)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27746)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27746)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27746)[0m     output = fn()
+[2m[36m(pid=27746)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27746)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27746)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27746)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27746)[0m NameError: name 'config' is not defined
+2021-10-17 22:46:52,932	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27746, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f2c49002370>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27746, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f2c49002370>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27745)[0m 2021-10-17 22:46:54,310	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27745)[0m Traceback (most recent call last):
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27745)[0m     self._entrypoint()
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27745)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27745)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27745)[0m     output = fn()
+[2m[36m(pid=27745)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27745)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27745)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27745)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27745)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27745)[0m Exception in thread Thread-2:
+[2m[36m(pid=27745)[0m Traceback (most recent call last):
+[2m[36m(pid=27745)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27745)[0m     self.run()
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27745)[0m     raise e
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27745)[0m     self._entrypoint()
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27745)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27745)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27745)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27745)[0m     output = fn()
+[2m[36m(pid=27745)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27745)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27745)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27745)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27745)[0m NameError: name 'config' is not defined
+2021-10-17 22:46:54,360	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27745, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f08a85361c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27745, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f08a85361c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27732)[0m 2021-10-17 22:46:54,688	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27732)[0m Traceback (most recent call last):
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27732)[0m     self._entrypoint()
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27732)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27732)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27732)[0m     output = fn()
+[2m[36m(pid=27732)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27732)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27732)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27732)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27732)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27732)[0m Exception in thread Thread-2:
+[2m[36m(pid=27732)[0m Traceback (most recent call last):
+[2m[36m(pid=27732)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27732)[0m     self.run()
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27732)[0m     raise e
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27732)[0m     self._entrypoint()
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27732)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27732)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27732)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27732)[0m     output = fn()
+[2m[36m(pid=27732)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27732)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27732)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27732)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27732)[0m NameError: name 'config' is not defined
+2021-10-17 22:46:54,846	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27732, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f998c4731c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27732, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f998c4731c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27735)[0m 2021-10-17 22:46:58,378	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27735)[0m Traceback (most recent call last):
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27735)[0m     self._entrypoint()
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27735)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27735)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27735)[0m     output = fn()
+[2m[36m(pid=27735)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27735)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27735)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27735)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27735)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27735)[0m Exception in thread Thread-2:
+[2m[36m(pid=27735)[0m Traceback (most recent call last):
+[2m[36m(pid=27735)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27735)[0m     self.run()
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27735)[0m     raise e
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27735)[0m     self._entrypoint()
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27735)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27735)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27735)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27735)[0m     output = fn()
+[2m[36m(pid=27735)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27735)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27735)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27735)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27735)[0m NameError: name 'config' is not defined
+2021-10-17 22:46:58,582	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27735, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fccdee0f310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27735, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fccdee0f310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+2021-10-17 22:46:59,873	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27747, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f6575b50310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27747, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f6575b50310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27747)[0m 2021-10-17 22:46:59,856	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27747)[0m Traceback (most recent call last):
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27747)[0m     self._entrypoint()
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27747)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27747)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27747)[0m     output = fn()
+[2m[36m(pid=27747)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27747)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27747)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27747)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27747)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27747)[0m Exception in thread Thread-2:
+[2m[36m(pid=27747)[0m Traceback (most recent call last):
+[2m[36m(pid=27747)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27747)[0m     self.run()
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27747)[0m     raise e
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27747)[0m     self._entrypoint()
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27747)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27747)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27747)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27747)[0m     output = fn()
+[2m[36m(pid=27747)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27747)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27747)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27747)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27747)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27748)[0m 2021-10-17 22:47:00,195	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27748)[0m Traceback (most recent call last):
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27748)[0m     self._entrypoint()
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27748)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27748)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27748)[0m     output = fn()
+[2m[36m(pid=27748)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27748)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27748)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27748)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27748)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27748)[0m Exception in thread Thread-2:
+[2m[36m(pid=27748)[0m Traceback (most recent call last):
+[2m[36m(pid=27748)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27748)[0m     self.run()
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27748)[0m     raise e
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27748)[0m     self._entrypoint()
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27748)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27748)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27748)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27748)[0m     output = fn()
+[2m[36m(pid=27748)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27748)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27748)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27748)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27748)[0m NameError: name 'config' is not defined
+2021-10-17 22:47:00,398	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27748, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fdaa20d3310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27748, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fdaa20d3310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+2021-10-17 22:47:00,575	ERROR trial_runner.py:846 -- Trial DEFAULT_af9cd_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=27738, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7eef0ab3d310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=27738, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7eef0ab3d310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+NameError: name 'config' is not defined
+[2m[36m(pid=27738)[0m 2021-10-17 22:47:00,561	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=27738)[0m Traceback (most recent call last):
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27738)[0m     self._entrypoint()
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27738)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27738)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27738)[0m     output = fn()
+[2m[36m(pid=27738)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27738)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27738)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27738)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27738)[0m NameError: name 'config' is not defined
+[2m[36m(pid=27738)[0m Exception in thread Thread-2:
+[2m[36m(pid=27738)[0m Traceback (most recent call last):
+[2m[36m(pid=27738)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=27738)[0m     self.run()
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=27738)[0m     raise e
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=27738)[0m     self._entrypoint()
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=27738)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=27738)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=27738)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=27738)[0m     output = fn()
+[2m[36m(pid=27738)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=27738)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=27738)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=27738)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=27738)[0m NameError: name 'config' is not defined
+10_17_22_38_48_894 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 14.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | PENDING  |       |       65 |
+| DEFAULT_af9cd_00002 | PENDING  |       |       45 |
+| DEFAULT_af9cd_00003 | PENDING  |       |       15 |
+| DEFAULT_af9cd_00004 | PENDING  |       |       40 |
+| DEFAULT_af9cd_00005 | PENDING  |       |       20 |
+| DEFAULT_af9cd_00006 | PENDING  |       |       55 |
+| DEFAULT_af9cd_00007 | PENDING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 16.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=27732)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27743)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27738)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27745)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27748)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27747)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27735)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=27746)[0m 96000 24000
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | RUNNING  |       |       35 |
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00002 | RUNNING  |       |       45 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_af9cd_00002:
+  {}
+  
+Result for DEFAULT_af9cd_00000:
+  {}
+  
+== Status ==
+Memory usage on this node: 17.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 12.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (2 ERROR, 6 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00001 | RUNNING  |       |       65 |
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00005 | RUNNING  |       |       20 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00007 | RUNNING  |       |       10 |
+| DEFAULT_af9cd_00000 | ERROR    |       |       35 |
+| DEFAULT_af9cd_00002 | ERROR    |       |       45 |
++---------------------+----------+-------+----------+
+Number of errored trials: 2
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_af9cd_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00000_0_trials=35.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00002_2_trials=45.0_2021-10-17_22-38-56/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_af9cd_00001:
+  {}
+  
+Result for DEFAULT_af9cd_00007:
+  {}
+  
+Result for DEFAULT_af9cd_00005:
+  {}
+  
+== Status ==
+Memory usage on this node: 15.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (5 ERROR, 3 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00003 | RUNNING  |       |       15 |
+| DEFAULT_af9cd_00004 | RUNNING  |       |       40 |
+| DEFAULT_af9cd_00006 | RUNNING  |       |       55 |
+| DEFAULT_af9cd_00000 | ERROR    |       |       35 |
+| DEFAULT_af9cd_00001 | ERROR    |       |       65 |
+| DEFAULT_af9cd_00002 | ERROR    |       |       45 |
+| DEFAULT_af9cd_00005 | ERROR    |       |       20 |
+| DEFAULT_af9cd_00007 | ERROR    |       |       10 |
++---------------------+----------+-------+----------+
+Number of errored trials: 5
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_af9cd_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00000_0_trials=35.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00001_1_trials=65.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00002_2_trials=45.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00005_5_trials=20.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00007_7_trials=10.0_2021-10-17_22-38-56/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_af9cd_00004:
+  {}
+  
+Result for DEFAULT_af9cd_00003:
+  {}
+  
+Result for DEFAULT_af9cd_00006:
+  {}
+  
+== Status ==
+Memory usage on this node: 14.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_af9cd_00000 | ERROR    |       |       35 |
+| DEFAULT_af9cd_00001 | ERROR    |       |       65 |
+| DEFAULT_af9cd_00002 | ERROR    |       |       45 |
+| DEFAULT_af9cd_00003 | ERROR    |       |       15 |
+| DEFAULT_af9cd_00004 | ERROR    |       |       40 |
+| DEFAULT_af9cd_00005 | ERROR    |       |       20 |
+| DEFAULT_af9cd_00006 | ERROR    |       |       55 |
+| DEFAULT_af9cd_00007 | ERROR    |       |       10 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_af9cd_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00000_0_trials=35.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00001_1_trials=65.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00002_2_trials=45.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00003_3_trials=15.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00004_4_trials=40.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00005_5_trials=20.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00006_6_trials=55.0_2021-10-17_22-38-56/error.txt |
+| DEFAULT_af9cd_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-38-56/DEFAULT_af9cd_00007_7_trials=10.0_2021-10-17_22-38-56/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 120, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_af9cd_00000, DEFAULT_af9cd_00001, DEFAULT_af9cd_00002, DEFAULT_af9cd_00003, DEFAULT_af9cd_00004, DEFAULT_af9cd_00005, DEFAULT_af9cd_00006, DEFAULT_af9cd_00007])

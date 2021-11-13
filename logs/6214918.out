@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6214918
+SLURM_JOB_NODELIST = d05-10
+TMPDIR = /tmp/SLURM_6214918
+==========================================
+10_17_21_18_32_252 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 127, in <module>
+    partial(train, *([QuantumDecoderNet, device]+data[:4]), **kwargs),
+TypeError: can only concatenate list (not "tuple") to list

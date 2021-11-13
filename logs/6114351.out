@@ -1,0 +1,14 @@
+==========================================
+SLURM_JOB_ID = 6114351
+SLURM_JOB_NODELIST = d06-19
+TMPDIR = /tmp/SLURM_6114351
+==========================================
+10_05_15_28_56_412 [22, 40, 45, 50, 60, 60, 46] [Sigmoid(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 250 0.0001 100
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 90, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 51, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, train_syndromes, train_error_labels, epoch, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 98, in accuracy
+    x_space_acc = 1 - (num_log_x / num_success)
+ZeroDivisionError: division by zero

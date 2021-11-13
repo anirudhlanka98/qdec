@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6159016
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6159016
+==========================================
+10_10_22_25_59_553 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 98, in <module>
+    'num_random_trials': config["trials"],
+NameError: name 'config' is not defined

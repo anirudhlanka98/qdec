@@ -1,0 +1,22 @@
+==========================================
+SLURM_JOB_ID = 6159026
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6159026
+==========================================
+2021-10-10 22:29:11,845	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-10 22:29:11,846	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+10_10_22_29_01_567 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 126, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 406, in run
+    experiments[i] = Experiment(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/experiment.py", line 159, in __init__
+    self._run_identifier = Experiment.register_if_needed(run)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/experiment.py", line 305, in register_if_needed
+    register_trainable(name, run_object)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/registry.py", line 68, in register_trainable
+    trainable = wrap_function(trainable, warn=warn)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 550, in wrap_function
+    raise ValueError(
+ValueError: Unknown argument found in the Trainable function. The function args must include a 'config' positional parameter. Any other args must be 'checkpoint_dir'. Found: []

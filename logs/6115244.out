@@ -1,0 +1,20 @@
+==========================================
+SLURM_JOB_ID = 6115244
+SLURM_JOB_NODELIST = d05-06
+TMPDIR = /tmp/SLURM_6115244
+==========================================
+10_05_18_17_58_574 [22, 40, 45, 50, 60, 60, 46] [Sigmoid(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 200 0.0002 50
+Epoch 1: Loss = 0.41676, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 2: Loss = 0.41776, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 3: Loss = 0.41823, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 4: Loss = 0.41845, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 5: Loss = 0.41856, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 6: Loss = 0.41861, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 7: Loss = 0.41863, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 8: Loss = 0.41865, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 9: Loss = 0.41866, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 10: Loss = 0.41867, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 11: Loss = 0.41867, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 12: Loss = 0.41868, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+Epoch 13: Loss = 0.41868, Training (Code) = 0.0, Validation (Code) = 0.0, Training (X) = 1, Validation (X) = 1, Training (Z) = 1, Validation (Z) = 1
+slurmstepd: error: *** JOB 6115244 ON d05-06 CANCELLED AT 2021-10-05T21:48:41 ***

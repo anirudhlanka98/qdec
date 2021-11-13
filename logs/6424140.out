@@ -1,0 +1,6 @@
+==========================================
+SLURM_JOB_ID = 6424140
+SLURM_JOB_NODELIST = e22-06
+TMPDIR = /tmp/SLURM_6424140
+==========================================
+slurmstepd: error: *** JOB 6424140 ON e22-06 CANCELLED AT 2021-11-01T01:11:45 ***

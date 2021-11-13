@@ -1,0 +1,6 @@
+==========================================
+SLURM_JOB_ID = 6124103
+SLURM_JOB_NODELIST = e20-38
+TMPDIR = /tmp/SLURM_6124103
+==========================================
+slurmstepd: error: *** JOB 6124103 ON e20-38 CANCELLED AT 2021-10-06T15:40:36 ***

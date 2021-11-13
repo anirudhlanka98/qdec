@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6147553
+SLURM_JOB_NODELIST = d23-10
+TMPDIR = /tmp/SLURM_6147553
+==========================================
+Epoch 1: Loss = 0.11985, Training (Code) = 0.21795, Validation (Code) = 0.22154, Training (X) = 0.99995, Validation (X) = 1.0, Training (Z) = 1.0, Validation (Z) = 1.0
+Epoch 2: Loss = 0.11872, Training (Code) = 0.22491, Validation (Code) = 0.223, Training (X) = 0.99986, Validation (X) = 1.0, Training (Z) = 1.0, Validation (Z) = 1.0
+Epoch 3: Loss = 0.11917, Training (Code) = 0.23772, Validation (Code) = 0.23463, Training (X) = 0.99996, Validation (X) = 1.0, Training (Z) = 1.0, Validation (Z) = 1.0
+Epoch 4: Loss = 0.12028, Training (Code) = 0.25494, Validation (Code) = 0.25292, Training (X) = 0.99996, Validation (X) = 1.0, Training (Z) = 0.99996, Validation (Z) = 1.0
+slurmstepd: error: *** JOB 6147553 ON d23-10 CANCELLED AT 2021-10-08T18:55:25 ***

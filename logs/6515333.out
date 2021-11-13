@@ -1,0 +1,2213 @@
+==========================================
+SLURM_JOB_ID = 6515333
+SLURM_JOB_NODELIST = d05-38
+TMPDIR = /tmp/SLURM_6515333
+==========================================
+2021-11-02 00:27:05,592	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-11-02 00:27:05,592	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=1835)[0m 2021-11-02 00:27:50,856	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1835)[0m Traceback (most recent call last):
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1835)[0m     self._entrypoint()
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1835)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1835)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1835)[0m     output = fn()
+[2m[36m(pid=1835)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1835)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1835)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1835)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1835)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1835)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1835)[0m Exception in thread Thread-2:
+[2m[36m(pid=1835)[0m Traceback (most recent call last):
+[2m[36m(pid=1835)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1835)[0m     self.run()
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1835)[0m     raise e
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1835)[0m     self._entrypoint()
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1835)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1835)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1835)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1835)[0m     output = fn()
+[2m[36m(pid=1835)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1835)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1835)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1835)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1835)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1835)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:51,060	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1835, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fca65f915e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1835, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fca65f915e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1846)[0m 2021-11-02 00:27:52,152	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1846)[0m Traceback (most recent call last):
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1846)[0m     self._entrypoint()
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1846)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1846)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1846)[0m     output = fn()
+[2m[36m(pid=1846)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1846)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1846)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1846)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1846)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1846)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1846)[0m Exception in thread Thread-2:
+[2m[36m(pid=1846)[0m Traceback (most recent call last):
+[2m[36m(pid=1846)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1846)[0m     self.run()
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1846)[0m     raise e
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1846)[0m     self._entrypoint()
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1846)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1846)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1846)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1846)[0m     output = fn()
+[2m[36m(pid=1846)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1846)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1846)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1846)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1846)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1846)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:52,265	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1846, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f0a86aff430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1846, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f0a86aff430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1836)[0m 2021-11-02 00:27:52,895	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1836)[0m Traceback (most recent call last):
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1836)[0m     self._entrypoint()
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1836)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1836)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1836)[0m     output = fn()
+[2m[36m(pid=1836)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1836)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1836)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1836)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1836)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1836)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1836)[0m Exception in thread Thread-2:
+[2m[36m(pid=1836)[0m Traceback (most recent call last):
+[2m[36m(pid=1836)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1836)[0m     self.run()
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1836)[0m     raise e
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1836)[0m     self._entrypoint()
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1836)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1836)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1836)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1836)[0m     output = fn()
+[2m[36m(pid=1836)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1836)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1836)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1836)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1836)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1836)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:53,030	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1832, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f676cc7f430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1832, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f676cc7f430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1832)[0m 2021-11-02 00:27:52,991	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1832)[0m Traceback (most recent call last):
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1832)[0m     self._entrypoint()
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1832)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1832)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1832)[0m     output = fn()
+[2m[36m(pid=1832)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1832)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1832)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1832)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1832)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1832)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1832)[0m Exception in thread Thread-2:
+[2m[36m(pid=1832)[0m Traceback (most recent call last):
+[2m[36m(pid=1832)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1832)[0m     self.run()
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1832)[0m     raise e
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1832)[0m     self._entrypoint()
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1832)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1832)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1832)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1832)[0m     output = fn()
+[2m[36m(pid=1832)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1832)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1832)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1832)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1832)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1832)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1838)[0m 2021-11-02 00:27:52,970	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1838)[0m Traceback (most recent call last):
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1838)[0m     self._entrypoint()
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1838)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1838)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1838)[0m     output = fn()
+[2m[36m(pid=1838)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1838)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1838)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1838)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1838)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1838)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1838)[0m Exception in thread Thread-2:
+[2m[36m(pid=1838)[0m Traceback (most recent call last):
+[2m[36m(pid=1838)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1838)[0m     self.run()
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1838)[0m     raise e
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1838)[0m     self._entrypoint()
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1838)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1838)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1838)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1838)[0m     output = fn()
+[2m[36m(pid=1838)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1838)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1838)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1838)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1838)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1838)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:53,050	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1836, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fb05a838430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1836, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fb05a838430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:53,107	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00011: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1838, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f7326f03430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1838, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f7326f03430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1843)[0m 2021-11-02 00:27:54,032	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1843)[0m Traceback (most recent call last):
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1843)[0m     self._entrypoint()
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1843)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1843)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1843)[0m     output = fn()
+[2m[36m(pid=1843)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1843)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1843)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1843)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1843)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1843)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1843)[0m Exception in thread Thread-2:
+[2m[36m(pid=1843)[0m Traceback (most recent call last):
+[2m[36m(pid=1843)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1843)[0m     self.run()
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1843)[0m     raise e
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1843)[0m     self._entrypoint()
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1843)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1843)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1843)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1843)[0m     output = fn()
+[2m[36m(pid=1843)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1843)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1843)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1843)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1843)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1843)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1826)[0m 2021-11-02 00:27:54,106	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1826)[0m Traceback (most recent call last):
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1826)[0m     self._entrypoint()
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1826)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1826)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1826)[0m     output = fn()
+[2m[36m(pid=1826)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1826)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1826)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1826)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1826)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1826)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1826)[0m Exception in thread Thread-2:
+[2m[36m(pid=1826)[0m Traceback (most recent call last):
+[2m[36m(pid=1826)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1826)[0m     self.run()
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1826)[0m     raise e
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1826)[0m     self._entrypoint()
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1826)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1826)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1826)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1826)[0m     output = fn()
+[2m[36m(pid=1826)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1826)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1826)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1826)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1826)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1826)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:54,202	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00009: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1843, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f5e2db51430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1843, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f5e2db51430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:54,280	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1826, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f9869c1b5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1826, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f9869c1b5e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1848)[0m 2021-11-02 00:27:54,801	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1848)[0m Traceback (most recent call last):
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1848)[0m     self._entrypoint()
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1848)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1848)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1848)[0m     output = fn()
+[2m[36m(pid=1848)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1848)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1848)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1848)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1848)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1848)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1848)[0m Exception in thread Thread-2:
+[2m[36m(pid=1848)[0m Traceback (most recent call last):
+[2m[36m(pid=1848)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1848)[0m     self.run()
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1848)[0m     raise e
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1848)[0m     self._entrypoint()
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1848)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1848)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1848)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1848)[0m     output = fn()
+[2m[36m(pid=1848)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1848)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1848)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1848)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1848)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1848)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:54,885	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00010: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1848, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f9bf87c0430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1848, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f9bf87c0430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:56,069	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1839, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f8929a32430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1839, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f8929a32430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1839)[0m 2021-11-02 00:27:56,053	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1839)[0m Traceback (most recent call last):
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1839)[0m     self._entrypoint()
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1839)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1839)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1839)[0m     output = fn()
+[2m[36m(pid=1839)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1839)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1839)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1839)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1839)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1839)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1839)[0m Exception in thread Thread-2:
+[2m[36m(pid=1839)[0m Traceback (most recent call last):
+[2m[36m(pid=1839)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1839)[0m     self.run()
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1839)[0m     raise e
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1839)[0m     self._entrypoint()
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1839)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1839)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1839)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1839)[0m     output = fn()
+[2m[36m(pid=1839)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1839)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1839)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1839)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1839)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1839)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1841)[0m 2021-11-02 00:27:56,488	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1841)[0m Traceback (most recent call last):
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1841)[0m     self._entrypoint()
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1841)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1841)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1841)[0m     output = fn()
+[2m[36m(pid=1841)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1841)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1841)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1841)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1841)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1841)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1841)[0m Exception in thread Thread-2:
+[2m[36m(pid=1841)[0m Traceback (most recent call last):
+[2m[36m(pid=1841)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1841)[0m     self.run()
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1841)[0m     raise e
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1841)[0m     self._entrypoint()
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1841)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1841)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1841)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1841)[0m     output = fn()
+[2m[36m(pid=1841)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1841)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1841)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1841)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1841)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1841)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:56,651	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00008: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1841, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7ef211e59430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1841, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7ef211e59430>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:56,687	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1833, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fe3985315e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1833, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fe3985315e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1833)[0m 2021-11-02 00:27:56,610	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1833)[0m Traceback (most recent call last):
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1833)[0m     self._entrypoint()
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1833)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1833)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1833)[0m     output = fn()
+[2m[36m(pid=1833)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1833)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1833)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1833)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1833)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1833)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1833)[0m Exception in thread Thread-2:
+[2m[36m(pid=1833)[0m Traceback (most recent call last):
+[2m[36m(pid=1833)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1833)[0m     self.run()
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1833)[0m     raise e
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1833)[0m     self._entrypoint()
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1833)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1833)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1833)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1833)[0m     output = fn()
+[2m[36m(pid=1833)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1833)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1833)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1833)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1833)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1833)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1831)[0m 2021-11-02 00:27:57,563	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1831)[0m Traceback (most recent call last):
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1831)[0m     self._entrypoint()
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1831)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1831)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1831)[0m     output = fn()
+[2m[36m(pid=1831)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1831)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1831)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1831)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1831)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1831)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1831)[0m Exception in thread Thread-2:
+[2m[36m(pid=1831)[0m Traceback (most recent call last):
+[2m[36m(pid=1831)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1831)[0m     self.run()
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1831)[0m     raise e
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1831)[0m     self._entrypoint()
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1831)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1831)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1831)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1831)[0m     output = fn()
+[2m[36m(pid=1831)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1831)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1831)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1831)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1831)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1831)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:27:57,698	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1831, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f5744f965e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1831, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f5744f965e0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1844)[0m 2021-11-02 00:28:30,919	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1844)[0m Traceback (most recent call last):
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1844)[0m     self._entrypoint()
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1844)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1844)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1844)[0m     output = fn()
+[2m[36m(pid=1844)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1844)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1844)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1844)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1844)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1844)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1844)[0m Exception in thread Thread-2:
+[2m[36m(pid=1844)[0m Traceback (most recent call last):
+[2m[36m(pid=1844)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1844)[0m     self.run()
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1844)[0m     raise e
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1844)[0m     self._entrypoint()
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1844)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1844)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1844)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1844)[0m     output = fn()
+[2m[36m(pid=1844)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1844)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1844)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1844)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1844)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1844)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:31,087	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00013: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1844, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f2769ea5460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1844, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f2769ea5460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:31,482	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00012: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1827, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fdc84660460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1827, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7fdc84660460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1827)[0m 2021-11-02 00:28:31,441	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1827)[0m Traceback (most recent call last):
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1827)[0m     self._entrypoint()
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1827)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1827)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1827)[0m     output = fn()
+[2m[36m(pid=1827)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1827)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1827)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1827)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1827)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1827)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1827)[0m Exception in thread Thread-2:
+[2m[36m(pid=1827)[0m Traceback (most recent call last):
+[2m[36m(pid=1827)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1827)[0m     self.run()
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1827)[0m     raise e
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1827)[0m     self._entrypoint()
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1827)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1827)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1827)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1827)[0m     output = fn()
+[2m[36m(pid=1827)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1827)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1827)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1827)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1827)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1827)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1828)[0m 2021-11-02 00:28:31,940	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1828)[0m Traceback (most recent call last):
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1828)[0m     self._entrypoint()
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1828)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1828)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1828)[0m     output = fn()
+[2m[36m(pid=1828)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1828)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1828)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1828)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1828)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1828)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1828)[0m Exception in thread Thread-2:
+[2m[36m(pid=1828)[0m Traceback (most recent call last):
+[2m[36m(pid=1828)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1828)[0m     self.run()
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1828)[0m     raise e
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1828)[0m     self._entrypoint()
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1828)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1828)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1828)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1828)[0m     output = fn()
+[2m[36m(pid=1828)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1828)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1828)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1828)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1828)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1828)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:32,142	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00015: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1828, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f31fd612460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1828, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f31fd612460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:32,324	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00016: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1847, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f1536f81460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1847, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f1536f81460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1847)[0m 2021-11-02 00:28:32,315	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1847)[0m Traceback (most recent call last):
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1847)[0m     self._entrypoint()
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1847)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1847)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1847)[0m     output = fn()
+[2m[36m(pid=1847)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1847)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1847)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1847)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1847)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1847)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1847)[0m Exception in thread Thread-2:
+[2m[36m(pid=1847)[0m Traceback (most recent call last):
+[2m[36m(pid=1847)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1847)[0m     self.run()
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1847)[0m     raise e
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1847)[0m     self._entrypoint()
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1847)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1847)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1847)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1847)[0m     output = fn()
+[2m[36m(pid=1847)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1847)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1847)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1847)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1847)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1847)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1822)[0m 2021-11-02 00:28:32,970	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1822)[0m Traceback (most recent call last):
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1822)[0m     self._entrypoint()
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1822)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1822)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1822)[0m     output = fn()
+[2m[36m(pid=1822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1822)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1822)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1822)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1822)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1822)[0m Exception in thread Thread-2:
+[2m[36m(pid=1822)[0m Traceback (most recent call last):
+[2m[36m(pid=1822)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1822)[0m     self.run()
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1822)[0m     raise e
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1822)[0m     self._entrypoint()
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1822)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1822)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1822)[0m     output = fn()
+[2m[36m(pid=1822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1822)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1822)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1822)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1822)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1821)[0m 2021-11-02 00:28:33,041	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1821)[0m Traceback (most recent call last):
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1821)[0m     self._entrypoint()
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1821)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1821)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1821)[0m     output = fn()
+[2m[36m(pid=1821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1821)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1821)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1821)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1821)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1821)[0m Exception in thread Thread-2:
+[2m[36m(pid=1821)[0m Traceback (most recent call last):
+[2m[36m(pid=1821)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1821)[0m     self.run()
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1821)[0m     raise e
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1821)[0m     self._entrypoint()
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1821)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1824)[0m 2021-11-02 00:28:32,947	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1824)[0m Traceback (most recent call last):
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1824)[0m     self._entrypoint()
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1824)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1824)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1824)[0m     output = fn()
+[2m[36m(pid=1824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1824)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1824)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1824)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1824)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1824)[0m Exception in thread Thread-2:
+[2m[36m(pid=1824)[0m Traceback (most recent call last):
+[2m[36m(pid=1824)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1824)[0m     self.run()
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1824)[0m     raise e
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1824)[0m     self._entrypoint()
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1824)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1824)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1824)[0m     output = fn()
+[2m[36m(pid=1824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1824)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1824)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1824)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1824)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1821)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1821)[0m     output = fn()
+[2m[36m(pid=1821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1821)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1821)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1821)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1821)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:33,068	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00017: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1822, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f6ea14dc460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1822, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f6ea14dc460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:33,073	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00018: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1821, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f688ddbb460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1821, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f688ddbb460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:33,104	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00019: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1824, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f4d09b92460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1824, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f4d09b92460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1834)[0m 2021-11-02 00:28:33,135	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=1834)[0m Traceback (most recent call last):
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1834)[0m     self._entrypoint()
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1834)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1834)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1834)[0m     output = fn()
+[2m[36m(pid=1834)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1834)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1834)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1834)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1834)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1834)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+[2m[36m(pid=1834)[0m Exception in thread Thread-2:
+[2m[36m(pid=1834)[0m Traceback (most recent call last):
+[2m[36m(pid=1834)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=1834)[0m     self.run()
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=1834)[0m     raise e
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=1834)[0m     self._entrypoint()
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=1834)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=1834)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=1834)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=1834)[0m     output = fn()
+[2m[36m(pid=1834)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=1834)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=1834)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+[2m[36m(pid=1834)[0m     predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+[2m[36m(pid=1834)[0m   File "<__array_function__ internals>", line 5, in dot
+[2m[36m(pid=1834)[0m ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+2021-11-02 00:28:33,338	ERROR trial_runner.py:846 -- Trial DEFAULT_47de6_00014: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=1834, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f965c510460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=1834, ip=10.125.19.212, repr=<types.ImplicitFunc object at 0x7f965c510460>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 112, in accuracy
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  File "<__array_function__ internals>", line 5, in dot
+ValueError: shapes (22,46) and (14,) not aligned: 46 (dim 1) != 14 (dim 0)
+11_02_00_27_02_737 [6, 40, 80, 14] [Tanh(), Tanh(), ELU(alpha=1.0), Sigmoid()] 150
+== Status ==
+Memory usage on this node: 10.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (19 PENDING, 1 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | PENDING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | PENDING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | PENDING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | PENDING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | PENDING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | PENDING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | PENDING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | PENDING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | PENDING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | PENDING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | PENDING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+[2m[36m(ImplicitFunc pid=1826)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1835)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1833)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1839)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1838)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1843)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1832)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1836)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1831)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1846)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1841)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1848)[0m 32000 8000
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+== Status ==
+Memory usage on this node: 14.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (8 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | RUNNING  |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | RUNNING  |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | RUNNING  |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | RUNNING  |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | RUNNING  |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | PENDING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | PENDING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | PENDING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | PENDING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | PENDING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+
+
+Result for DEFAULT_47de6_00001:
+  {}
+  
+Result for DEFAULT_47de6_00004:
+  {}
+  
+Result for DEFAULT_47de6_00007:
+  {}
+  
+Result for DEFAULT_47de6_00005:
+  {}
+  
+Result for DEFAULT_47de6_00011:
+  {}
+  
+== Status ==
+Memory usage on this node: 13.1/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 24.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (5 ERROR, 3 PENDING, 12 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | RUNNING  |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00002 | RUNNING  |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | RUNNING  |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00006 | RUNNING  |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00008 | RUNNING  |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | RUNNING  |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | RUNNING  |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | PENDING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | PENDING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | PENDING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 5
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_47de6_00009:
+  {}
+  
+Result for DEFAULT_47de6_00003:
+  {}
+  
+Result for DEFAULT_47de6_00010:
+  {}
+  
+Result for DEFAULT_47de6_00006:
+  {}
+  
+Result for DEFAULT_47de6_00008:
+  {}
+  
+Result for DEFAULT_47de6_00000:
+  {}
+  
+[2m[36m(ImplicitFunc pid=1827)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1844)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1834)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1828)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1847)[0m 32000 8000
+Result for DEFAULT_47de6_00002:
+  {}
+  
+[2m[36m(ImplicitFunc pid=1822)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1821)[0m 32000 8000
+[2m[36m(ImplicitFunc pid=1824)[0m 32000 8000
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Memory usage on this node: 12.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (12 ERROR, 8 RUNNING)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00012 | RUNNING  |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | RUNNING  |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | RUNNING  |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | RUNNING  |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | RUNNING  |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | RUNNING  |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | RUNNING  |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | RUNNING  |       | 9.90822e-05 |        2 |
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 12
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_47de6_00013:
+  {}
+  
+Result for DEFAULT_47de6_00012:
+  {}
+  
+Result for DEFAULT_47de6_00015:
+  {}
+  
+Result for DEFAULT_47de6_00016:
+  {}
+  
+Result for DEFAULT_47de6_00017:
+  {}
+  
+Result for DEFAULT_47de6_00018:
+  {}
+  
+Result for DEFAULT_47de6_00019:
+  {}
+  
+Result for DEFAULT_47de6_00014:
+  {}
+  
+== Status ==
+Memory usage on this node: 10.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 101.250: None | Iter 67.500: None | Iter 45.000: None | Iter 30.000: None | Iter 20.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/118.05 GiB heap, 0.0/54.58 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05
+Number of trials: 20/20 (20 ERROR)
++---------------------+----------+-------+-------------+----------+
+| Trial name          | status   | loc   |          lr |   trials |
+|---------------------+----------+-------+-------------+----------|
+| DEFAULT_47de6_00000 | ERROR    |       | 0.000140187 |        2 |
+| DEFAULT_47de6_00001 | ERROR    |       | 0.000198303 |        2 |
+| DEFAULT_47de6_00002 | ERROR    |       | 7.678e-05   |        2 |
+| DEFAULT_47de6_00003 | ERROR    |       | 7.65583e-05 |        2 |
+| DEFAULT_47de6_00004 | ERROR    |       | 0.000398435 |        2 |
+| DEFAULT_47de6_00005 | ERROR    |       | 0.000111601 |        2 |
+| DEFAULT_47de6_00006 | ERROR    |       | 0.000408032 |        2 |
+| DEFAULT_47de6_00007 | ERROR    |       | 0.000232189 |        2 |
+| DEFAULT_47de6_00008 | ERROR    |       | 0.000428459 |        2 |
+| DEFAULT_47de6_00009 | ERROR    |       | 0.000247039 |        2 |
+| DEFAULT_47de6_00010 | ERROR    |       | 0.000143613 |        2 |
+| DEFAULT_47de6_00011 | ERROR    |       | 0.000137557 |        2 |
+| DEFAULT_47de6_00012 | ERROR    |       | 0.000145879 |        2 |
+| DEFAULT_47de6_00013 | ERROR    |       | 0.000221807 |        2 |
+| DEFAULT_47de6_00014 | ERROR    |       | 0.00017289  |        2 |
+| DEFAULT_47de6_00015 | ERROR    |       | 5.92075e-05 |        2 |
+| DEFAULT_47de6_00016 | ERROR    |       | 6.50989e-05 |        2 |
+| DEFAULT_47de6_00017 | ERROR    |       | 0.000293086 |        2 |
+| DEFAULT_47de6_00018 | ERROR    |       | 6.38929e-05 |        2 |
+| DEFAULT_47de6_00019 | ERROR    |       | 9.90822e-05 |        2 |
++---------------------+----------+-------+-------------+----------+
+Number of errored trials: 20
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                                           |
+|---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_47de6_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00000_0_lr=0.00014019,trials=2.0_2021-11-02_00-27-06/error.txt  |
+| DEFAULT_47de6_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00001_1_lr=0.0001983,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00002_2_lr=7.678e-05,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00003_3_lr=7.6558e-05,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00004_4_lr=0.00039844,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00005_5_lr=0.0001116,trials=2.0_2021-11-02_00-27-07/error.txt   |
+| DEFAULT_47de6_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00006_6_lr=0.00040803,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00007_7_lr=0.00023219,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00008 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00008_8_lr=0.00042846,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00009 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00009_9_lr=0.00024704,trials=2.0_2021-11-02_00-27-07/error.txt  |
+| DEFAULT_47de6_00010 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00010_10_lr=0.00014361,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00011 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00011_11_lr=0.00013756,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00012 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00012_12_lr=0.00014588,trials=2.0_2021-11-02_00-27-07/error.txt |
+| DEFAULT_47de6_00013 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00013_13_lr=0.00022181,trials=2.0_2021-11-02_00-27-51/error.txt |
+| DEFAULT_47de6_00014 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00014_14_lr=0.00017289,trials=2.0_2021-11-02_00-27-52/error.txt |
+| DEFAULT_47de6_00015 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00015_15_lr=5.9207e-05,trials=2.0_2021-11-02_00-27-53/error.txt |
+| DEFAULT_47de6_00016 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00016_16_lr=6.5099e-05,trials=2.0_2021-11-02_00-27-53/error.txt |
+| DEFAULT_47de6_00017 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00017_17_lr=0.00029309,trials=2.0_2021-11-02_00-27-53/error.txt |
+| DEFAULT_47de6_00018 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00018_18_lr=6.3893e-05,trials=2.0_2021-11-02_00-27-54/error.txt |
+| DEFAULT_47de6_00019 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-11-02_00-27-05/DEFAULT_47de6_00019_19_lr=9.9082e-05,trials=2.0_2021-11-02_00-27-54/error.txt |
++---------------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 124, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_47de6_00000, DEFAULT_47de6_00001, DEFAULT_47de6_00002, DEFAULT_47de6_00003, DEFAULT_47de6_00004, DEFAULT_47de6_00005, DEFAULT_47de6_00006, DEFAULT_47de6_00007, DEFAULT_47de6_00008, DEFAULT_47de6_00009, DEFAULT_47de6_00010, DEFAULT_47de6_00011, DEFAULT_47de6_00012, DEFAULT_47de6_00013, DEFAULT_47de6_00014, DEFAULT_47de6_00015, DEFAULT_47de6_00016, DEFAULT_47de6_00017, DEFAULT_47de6_00018, DEFAULT_47de6_00019])

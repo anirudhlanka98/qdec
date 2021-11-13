@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6124102
+SLURM_JOB_NODELIST = e20-38
+TMPDIR = /tmp/SLURM_6124102
+==========================================
+10_06_15_39_58_704 [22, 40, 50, 60, 46] [Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.003 50
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 92, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 39, in train
+    train_syndromes, train_error_labels, valid_syndromes, valid_error_labels = ar
+NameError: name 'ar' is not defined

@@ -1,0 +1,1492 @@
+==========================================
+SLURM_JOB_ID = 6216154
+SLURM_JOB_NODELIST = d05-11
+TMPDIR = /tmp/SLURM_6216154
+==========================================
+2021-10-17 23:52:30,759	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 23:52:30,759	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 23:55:21,085	INFO tune.py:617 -- Total run time: 170.33 seconds (170.12 seconds for the tuning loop).
+2021-10-17 23:55:21,131	WARNING experiment_analysis.py:648 -- Could not find best trial. Did you pass the correct `metric` parameter?
+10_17_23_52_28_018 [6, 20, 14] [Tanh(), Tanh(), Sigmoid()] 10 0.001 35
+== Status ==
+Memory usage on this node: 19.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f6e23_00000 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00001 | PENDING  |       |       50 |
+| DEFAULT_f6e23_00002 | PENDING  |       |       20 |
+| DEFAULT_f6e23_00003 | PENDING  |       |       60 |
+| DEFAULT_f6e23_00004 | PENDING  |       |       55 |
+| DEFAULT_f6e23_00005 | PENDING  |       |       70 |
+| DEFAULT_f6e23_00006 | PENDING  |       |       45 |
+| DEFAULT_f6e23_00007 | PENDING  |       |       65 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=23741)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23738)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23734)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23737)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23733)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23742)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23735)[0m 12800 3200
+[2m[36m(ImplicitFunc pid=23731)[0m 12800 3200
+== Status ==
+Memory usage on this node: 21.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f6e23_00000 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00001 | RUNNING  |       |       50 |
+| DEFAULT_f6e23_00002 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00003 | RUNNING  |       |       60 |
+| DEFAULT_f6e23_00004 | RUNNING  |       |       55 |
+| DEFAULT_f6e23_00005 | RUNNING  |       |       70 |
+| DEFAULT_f6e23_00006 | RUNNING  |       |       45 |
+| DEFAULT_f6e23_00007 | RUNNING  |       |       65 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 21.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f6e23_00000 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00001 | RUNNING  |       |       50 |
+| DEFAULT_f6e23_00002 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00003 | RUNNING  |       |       60 |
+| DEFAULT_f6e23_00004 | RUNNING  |       |       55 |
+| DEFAULT_f6e23_00005 | RUNNING  |       |       70 |
+| DEFAULT_f6e23_00006 | RUNNING  |       |       45 |
+| DEFAULT_f6e23_00007 | RUNNING  |       |       65 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 21.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f6e23_00000 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00001 | RUNNING  |       |       50 |
+| DEFAULT_f6e23_00002 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00003 | RUNNING  |       |       60 |
+| DEFAULT_f6e23_00004 | RUNNING  |       |       55 |
+| DEFAULT_f6e23_00005 | RUNNING  |       |       70 |
+| DEFAULT_f6e23_00006 | RUNNING  |       |       45 |
+| DEFAULT_f6e23_00007 | RUNNING  |       |       65 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 21.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_f6e23_00000 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00001 | RUNNING  |       |       50 |
+| DEFAULT_f6e23_00002 | RUNNING  |       |       20 |
+| DEFAULT_f6e23_00003 | RUNNING  |       |       60 |
+| DEFAULT_f6e23_00004 | RUNNING  |       |       55 |
+| DEFAULT_f6e23_00005 | RUNNING  |       |       70 |
+| DEFAULT_f6e23_00006 | RUNNING  |       |       45 |
+| DEFAULT_f6e23_00007 | RUNNING  |       |       65 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.934921875
+  date: 2021-10-17_23-52-53
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.12525615096092224
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 19.76213240623474
+  time_this_iter_s: 19.76213240623474
+  time_total_s: 19.76213240623474
+  timestamp: 1634539973
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 1: Loss = 0.12526, Training (Code) = 0.93492, Validation (Code) = 0.93125, Training (X) = 0.87023, Validation (X) = 0.86846, Training (Z) = 0.86922, Validation (Z) = 0.8594
+[2m[36m(ImplicitFunc pid=23733)[0m 0.934921875
+Result for DEFAULT_f6e23_00001:
+  accuracy: 0.9878125
+  date: 2021-10-17_23-52-54
+  done: true
+  experiment_id: fd3486b497a2428b9230434bd9ad0b0d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.14112839102745056
+  node_ip: 10.125.19.185
+  pid: 23734
+  should_checkpoint: true
+  time_since_restore: 20.536184787750244
+  time_this_iter_s: 20.536184787750244
+  time_total_s: 20.536184787750244
+  timestamp: 1634539974
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00001
+  
+[2m[36m(ImplicitFunc pid=23734)[0m Epoch 1: Loss = 0.14113, Training (Code) = 0.98781, Validation (Code) = 0.98594, Training (X) = 0.8631, Validation (X) = 0.86181, Training (Z) = 0.85266, Validation (Z) = 0.84723
+[2m[36m(ImplicitFunc pid=23734)[0m 0.9878125
+Result for DEFAULT_f6e23_00003:
+  accuracy: 0.9890625
+  date: 2021-10-17_23-52-54
+  done: true
+  experiment_id: 9a7707ad69074eb1bdbbcd8eea19ffd8
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.1332836002111435
+  node_ip: 10.125.19.185
+  pid: 23737
+  should_checkpoint: true
+  time_since_restore: 20.854206800460815
+  time_this_iter_s: 20.854206800460815
+  time_total_s: 20.854206800460815
+  timestamp: 1634539974
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00003
+  
+[2m[36m(ImplicitFunc pid=23737)[0m Epoch 1: Loss = 0.13328, Training (Code) = 0.98906, Validation (Code) = 0.98813, Training (X) = 0.86501, Validation (X) = 0.858, Training (Z) = 0.85466, Validation (Z) = 0.85294
+[2m[36m(ImplicitFunc pid=23737)[0m 0.9890625
+Result for DEFAULT_f6e23_00005:
+  accuracy: 0.98828125
+  date: 2021-10-17_23-52-55
+  done: false
+  experiment_id: 7f31c48316584d7bb0d7cc6cdadadd5b
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.12396807968616486
+  node_ip: 10.125.19.185
+  pid: 23741
+  should_checkpoint: true
+  time_since_restore: 21.463106393814087
+  time_this_iter_s: 21.463106393814087
+  time_total_s: 21.463106393814087
+  timestamp: 1634539975
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00005
+  
+[2m[36m(ImplicitFunc pid=23741)[0m Epoch 1: Loss = 0.12397, Training (Code) = 0.98828, Validation (Code) = 0.98687, Training (X) = 0.85937, Validation (X) = 0.85465, Training (Z) = 0.85676, Validation (Z) = 0.85054
+[2m[36m(ImplicitFunc pid=23741)[0m 0.98828125
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.977421875
+  date: 2021-10-17_23-52-55
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.12440429627895355
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 21.625552654266357
+  time_this_iter_s: 21.625552654266357
+  time_total_s: 21.625552654266357
+  timestamp: 1634539975
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00006
+  
+Result for DEFAULT_f6e23_00004:
+  accuracy: 0.988828125
+  date: 2021-10-17_23-52-55
+  done: true
+  experiment_id: ae51260d5e31413d9a764daac1baa44a
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.13131125271320343
+  node_ip: 10.125.19.185
+  pid: 23738
+  should_checkpoint: true
+  time_since_restore: 21.68282413482666
+  time_this_iter_s: 21.68282413482666
+  time_total_s: 21.68282413482666
+  timestamp: 1634539975
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00004
+  
+[2m[36m(ImplicitFunc pid=23738)[0m Epoch 1: Loss = 0.13131, Training (Code) = 0.98883, Validation (Code) = 0.9875, Training (X) = 0.86292, Validation (X) = 0.85633, Training (Z) = 0.8532, Validation (Z) = 0.84494
+[2m[36m(ImplicitFunc pid=23738)[0m 0.988828125
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 1: Loss = 0.1244, Training (Code) = 0.97742, Validation (Code) = 0.98, Training (X) = 0.86572, Validation (X) = 0.86384, Training (Z) = 0.85717, Validation (Z) = 0.85204
+[2m[36m(ImplicitFunc pid=23735)[0m 0.977421875
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.98625
+  date: 2021-10-17_23-52-56
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.1226663589477539
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 22.464418649673462
+  time_this_iter_s: 22.464418649673462
+  time_total_s: 22.464418649673462
+  timestamp: 1634539976
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00007
+  
+== Status ==
+Memory usage on this node: 20.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=3
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: -0.12525615096092224
+Resources requested: 10.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (5 RUNNING, 3 TERMINATED)
++---------------------+------------+---------------------+----------+----------+------------+
+| Trial name          | status     | loc                 |   trials |     loss |   accuracy |
+|---------------------+------------+---------------------+----------+----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.125256 |   0.934922 |
+| DEFAULT_f6e23_00002 | RUNNING    |                     |       20 |          |            |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.123968 |   0.988281 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.124404 |   0.977422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.122666 |   0.98625  |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128 |   0.987812 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284 |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311 |   0.988828 |
++---------------------+------------+---------------------+----------+----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 1: Loss = 0.12267, Training (Code) = 0.98625, Validation (Code) = 0.985, Training (X) = 0.86478, Validation (X) = 0.85755, Training (Z) = 0.85868, Validation (Z) = 0.85184
+[2m[36m(ImplicitFunc pid=23731)[0m 0.98625
+Result for DEFAULT_f6e23_00002:
+  accuracy: 0.93109375
+  date: 2021-10-17_23-52-57
+  done: true
+  experiment_id: 6f940d0422804ccb8de0ad438131ac2d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 1
+  loss: 0.12916269898414612
+  node_ip: 10.125.19.185
+  pid: 23742
+  should_checkpoint: true
+  time_since_restore: 23.389444589614868
+  time_this_iter_s: 23.389444589614868
+  time_total_s: 23.389444589614868
+  timestamp: 1634539977
+  timesteps_since_restore: 0
+  training_iteration: 1
+  trial_id: f6e23_00002
+  
+[2m[36m(ImplicitFunc pid=23742)[0m Epoch 1: Loss = 0.12916, Training (Code) = 0.93109, Validation (Code) = 0.92563, Training (X) = 0.87263, Validation (X) = 0.87205, Training (Z) = 0.86969, Validation (Z) = 0.86293
+[2m[36m(ImplicitFunc pid=23742)[0m 0.93109375
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+----------+------------+
+| Trial name          | status     | loc                 |   trials |     loss |   accuracy |
+|---------------------+------------+---------------------+----------+----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.125256 |   0.934922 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.123968 |   0.988281 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.124404 |   0.977422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.122666 |   0.98625  |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128 |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163 |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284 |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311 |   0.988828 |
++---------------------+------------+---------------------+----------+----------+------------+
+
+
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+----------+------------+
+| Trial name          | status     | loc                 |   trials |     loss |   accuracy |
+|---------------------+------------+---------------------+----------+----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.125256 |   0.934922 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.123968 |   0.988281 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.124404 |   0.977422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.122666 |   0.98625  |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128 |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163 |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284 |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311 |   0.988828 |
++---------------------+------------+---------------------+----------+----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 2: Loss = 0.10581, Training (Code) = 0.95406, Validation (Code) = 0.95031, Training (X) = 0.87586, Validation (X) = 0.86748, Training (Z) = 0.87234, Validation (Z) = 0.87011
+[2m[36m(ImplicitFunc pid=23733)[0m 0.9540625
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.9540625
+  date: 2021-10-17_23-53-11
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 2
+  loss: 0.10580969601869583
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 37.257718086242676
+  time_this_iter_s: 17.495585680007935
+  time_total_s: 37.257718086242676
+  timestamp: 1634539991
+  timesteps_since_restore: 0
+  training_iteration: 2
+  trial_id: f6e23_00000
+  
+Result for DEFAULT_f6e23_00005:
+  accuracy: 0.99703125
+  date: 2021-10-17_23-53-13
+  done: false
+  experiment_id: 7f31c48316584d7bb0d7cc6cdadadd5b
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 2
+  loss: 0.09892547130584717
+  node_ip: 10.125.19.185
+  pid: 23741
+  should_checkpoint: true
+  time_since_restore: 38.942551136016846
+  time_this_iter_s: 17.47944474220276
+  time_total_s: 38.942551136016846
+  timestamp: 1634539993
+  timesteps_since_restore: 0
+  training_iteration: 2
+  trial_id: f6e23_00005
+  
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.1023675836622715 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.10581   |   0.954063 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0989255 |   0.997031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.124404  |   0.977422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.122666  |   0.98625  |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23741)[0m Epoch 2: Loss = 0.09893, Training (Code) = 0.99703, Validation (Code) = 0.99844, Training (X) = 0.86656, Validation (X) = 0.85947, Training (Z) = 0.86225, Validation (Z) = 0.85383
+[2m[36m(ImplicitFunc pid=23741)[0m 0.99703125
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.989140625
+  date: 2021-10-17_23-53-13
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 2
+  loss: 0.10007381439208984
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 39.839970111846924
+  time_this_iter_s: 18.214417457580566
+  time_total_s: 39.839970111846924
+  timestamp: 1634539993
+  timesteps_since_restore: 0
+  training_iteration: 2
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 2: Loss = 0.10007, Training (Code) = 0.98914, Validation (Code) = 0.98938, Training (X) = 0.86999, Validation (X) = 0.8626, Training (Z) = 0.86344, Validation (Z) = 0.85534
+[2m[36m(ImplicitFunc pid=23735)[0m 0.989140625
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.995
+  date: 2021-10-17_23-53-15
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 2
+  loss: 0.09694787114858627
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 41.0408935546875
+  time_this_iter_s: 18.576474905014038
+  time_total_s: 41.0408935546875
+  timestamp: 1634539995
+  timesteps_since_restore: 0
+  training_iteration: 2
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 2: Loss = 0.09695, Training (Code) = 0.995, Validation (Code) = 0.99406, Training (X) = 0.86636, Validation (X) = 0.86074, Training (Z) = 0.85985, Validation (Z) = 0.85225
+[2m[36m(ImplicitFunc pid=23731)[0m 0.995
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.10581   |   0.954063 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0989255 |   0.997031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.100074  |   0.989141 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0969479 |   0.995    |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.10581   |   0.954063 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0989255 |   0.997031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.100074  |   0.989141 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0969479 |   0.995    |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.962734375
+  date: 2021-10-17_23-53-27
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 3
+  loss: 0.08850488811731339
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 53.65688443183899
+  time_this_iter_s: 16.399166345596313
+  time_total_s: 53.65688443183899
+  timestamp: 1634540007
+  timesteps_since_restore: 0
+  training_iteration: 3
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 3: Loss = 0.0885, Training (Code) = 0.96273, Validation (Code) = 0.96188, Training (X) = 0.87966, Validation (X) = 0.87037, Training (Z) = 0.87024, Validation (Z) = 0.86387
+[2m[36m(ImplicitFunc pid=23733)[0m 0.962734375
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0885049 |   0.962734 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0989255 |   0.997031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.100074  |   0.989141 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0969479 |   0.995    |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.993046875
+  date: 2021-10-17_23-53-30
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 3
+  loss: 0.07693804055452347
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 56.50723457336426
+  time_this_iter_s: 16.667264461517334
+  time_total_s: 56.50723457336426
+  timestamp: 1634540010
+  timesteps_since_restore: 0
+  training_iteration: 3
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 3: Loss = 0.07694, Training (Code) = 0.99305, Validation (Code) = 0.99031, Training (X) = 0.8698, Validation (X) = 0.85989, Training (Z) = 0.86327, Validation (Z) = 0.86115
+[2m[36m(ImplicitFunc pid=23735)[0m 0.993046875
+Result for DEFAULT_f6e23_00005:
+  accuracy: 0.998125
+  date: 2021-10-17_23-53-30
+  done: false
+  experiment_id: 7f31c48316584d7bb0d7cc6cdadadd5b
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 3
+  loss: 0.08262523263692856
+  node_ip: 10.125.19.185
+  pid: 23741
+  should_checkpoint: true
+  time_since_restore: 56.80472731590271
+  time_this_iter_s: 17.862176179885864
+  time_total_s: 56.80472731590271
+  timestamp: 1634540010
+  timesteps_since_restore: 0
+  training_iteration: 3
+  trial_id: f6e23_00005
+  
+[2m[36m(ImplicitFunc pid=23741)[0m Epoch 3: Loss = 0.08263, Training (Code) = 0.99813, Validation (Code) = 0.99844, Training (X) = 0.86882, Validation (X) = 0.86166, Training (Z) = 0.86326, Validation (Z) = 0.85665
+[2m[36m(ImplicitFunc pid=23741)[0m 0.998125
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.996015625
+  date: 2021-10-17_23-53-32
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 3
+  loss: 0.08196716010570526
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 58.67225933074951
+  time_this_iter_s: 17.63136577606201
+  time_total_s: 58.67225933074951
+  timestamp: 1634540012
+  timesteps_since_restore: 0
+  training_iteration: 3
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 3: Loss = 0.08197, Training (Code) = 0.99602, Validation (Code) = 0.99656, Training (X) = 0.86964, Validation (X) = 0.8661, Training (Z) = 0.86085, Validation (Z) = 0.85701
+[2m[36m(ImplicitFunc pid=23731)[0m 0.996015625
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0885049 |   0.962734 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0826252 |   0.998125 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.076938  |   0.993047 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0819672 |   0.996016 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0885049 |   0.962734 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0826252 |   0.998125 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.076938  |   0.993047 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0819672 |   0.996016 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+== Status ==
+Memory usage on this node: 20.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=4
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 8.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (4 RUNNING, 4 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0885049 |   0.962734 |
+| DEFAULT_f6e23_00005 | RUNNING    | 10.125.19.185:23741 |       70 | 0.0826252 |   0.998125 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.076938  |   0.993047 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0819672 |   0.996016 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.97203125
+  date: 2021-10-17_23-53-45
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 4
+  loss: 0.07484998553991318
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 70.94232177734375
+  time_this_iter_s: 17.28543734550476
+  time_total_s: 70.94232177734375
+  timestamp: 1634540025
+  timesteps_since_restore: 0
+  training_iteration: 4
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 4: Loss = 0.07485, Training (Code) = 0.97203, Validation (Code) = 0.96969, Training (X) = 0.87695, Validation (X) = 0.87174, Training (Z) = 0.87261, Validation (Z) = 0.86336
+[2m[36m(ImplicitFunc pid=23733)[0m 0.97203125
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.995234375
+  date: 2021-10-17_23-53-46
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 4
+  loss: 0.06260024011135101
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 72.55191040039062
+  time_this_iter_s: 16.044675827026367
+  time_total_s: 72.55191040039062
+  timestamp: 1634540026
+  timesteps_since_restore: 0
+  training_iteration: 4
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 4: Loss = 0.0626, Training (Code) = 0.99523, Validation (Code) = 0.99406, Training (X) = 0.87024, Validation (X) = 0.86482, Training (Z) = 0.86506, Validation (Z) = 0.85696
+[2m[36m(ImplicitFunc pid=23735)[0m 0.995234375
+Result for DEFAULT_f6e23_00005:
+  accuracy: 0.999140625
+  date: 2021-10-17_23-53-47
+  done: true
+  experiment_id: 7f31c48316584d7bb0d7cc6cdadadd5b
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 4
+  loss: 0.07462133467197418
+  node_ip: 10.125.19.185
+  pid: 23741
+  should_checkpoint: true
+  time_since_restore: 73.82206845283508
+  time_this_iter_s: 17.017341136932373
+  time_total_s: 73.82206845283508
+  timestamp: 1634540027
+  timesteps_since_restore: 0
+  training_iteration: 4
+  trial_id: f6e23_00005
+  
+[2m[36m(ImplicitFunc pid=23741)[0m Epoch 4: Loss = 0.07462, Training (Code) = 0.99914, Validation (Code) = 0.99969, Training (X) = 0.86895, Validation (X) = 0.86214, Training (Z) = 0.86465, Validation (Z) = 0.85683
+[2m[36m(ImplicitFunc pid=23741)[0m 0.999140625
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.07462133467197418 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.07485   |   0.972031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0626002 |   0.995234 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0819672 |   0.996016 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.99765625
+  date: 2021-10-17_23-53-49
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 4
+  loss: 0.07340686023235321
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 75.75888729095459
+  time_this_iter_s: 17.086627960205078
+  time_total_s: 75.75888729095459
+  timestamp: 1634540029
+  timesteps_since_restore: 0
+  training_iteration: 4
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 4: Loss = 0.07341, Training (Code) = 0.99766, Validation (Code) = 0.99813, Training (X) = 0.86969, Validation (X) = 0.86537, Training (Z) = 0.86335, Validation (Z) = 0.85567
+[2m[36m(ImplicitFunc pid=23731)[0m 0.99765625
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.07485   |   0.972031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0626002 |   0.995234 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0734069 |   0.997656 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.07485   |   0.972031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0626002 |   0.995234 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0734069 |   0.997656 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.97796875
+  date: 2021-10-17_23-54-00
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 5
+  loss: 0.06768998503684998
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 86.4242000579834
+  time_this_iter_s: 15.481878280639648
+  time_total_s: 86.4242000579834
+  timestamp: 1634540040
+  timesteps_since_restore: 0
+  training_iteration: 5
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 5: Loss = 0.06769, Training (Code) = 0.97797, Validation (Code) = 0.97625, Training (X) = 0.87666, Validation (X) = 0.871, Training (Z) = 0.87003, Validation (Z) = 0.8678
+[2m[36m(ImplicitFunc pid=23733)[0m 0.97796875
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.99703125
+  date: 2021-10-17_23-54-02
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 5
+  loss: 0.05756203085184097
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 88.08738422393799
+  time_this_iter_s: 15.535473823547363
+  time_total_s: 88.08738422393799
+  timestamp: 1634540042
+  timesteps_since_restore: 0
+  training_iteration: 5
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 5: Loss = 0.05756, Training (Code) = 0.99703, Validation (Code) = 0.99594, Training (X) = 0.8693, Validation (X) = 0.86131, Training (Z) = 0.86483, Validation (Z) = 0.85535
+[2m[36m(ImplicitFunc pid=23735)[0m 0.99703125
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.06769   |   0.977969 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.057562  |   0.997031 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0734069 |   0.997656 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.998671875
+  date: 2021-10-17_23-54-06
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 5
+  loss: 0.06895915418863297
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 92.75413131713867
+  time_this_iter_s: 16.995244026184082
+  time_total_s: 92.75413131713867
+  timestamp: 1634540046
+  timesteps_since_restore: 0
+  training_iteration: 5
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 5: Loss = 0.06896, Training (Code) = 0.99867, Validation (Code) = 0.99938, Training (X) = 0.86983, Validation (X) = 0.86554, Training (Z) = 0.86506, Validation (Z) = 0.85679
+[2m[36m(ImplicitFunc pid=23731)[0m 0.998671875
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.06769   |   0.977969 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.057562  |   0.997031 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0689592 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.97703125
+  date: 2021-10-17_23-54-15
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 6
+  loss: 0.06314772367477417
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 101.64499759674072
+  time_this_iter_s: 15.220797538757324
+  time_total_s: 101.64499759674072
+  timestamp: 1634540055
+  timesteps_since_restore: 0
+  training_iteration: 6
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 6: Loss = 0.06315, Training (Code) = 0.97703, Validation (Code) = 0.97594, Training (X) = 0.87678, Validation (X) = 0.86968, Training (Z) = 0.87174, Validation (Z) = 0.86711
+[2m[36m(ImplicitFunc pid=23733)[0m 0.97703125
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0631477 |   0.977031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.057562  |   0.997031 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0689592 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.996171875
+  date: 2021-10-17_23-54-17
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 6
+  loss: 0.05642879009246826
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 103.421945810318
+  time_this_iter_s: 15.334561586380005
+  time_total_s: 103.421945810318
+  timestamp: 1634540057
+  timesteps_since_restore: 0
+  training_iteration: 6
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 6: Loss = 0.05643, Training (Code) = 0.99617, Validation (Code) = 0.99719, Training (X) = 0.87162, Validation (X) = 0.86462, Training (Z) = 0.86456, Validation (Z) = 0.85741
+[2m[36m(ImplicitFunc pid=23735)[0m 0.996171875
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.998671875
+  date: 2021-10-17_23-54-22
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 6
+  loss: 0.06630081683397293
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 108.3403811454773
+  time_this_iter_s: 15.586249828338623
+  time_total_s: 108.3403811454773
+  timestamp: 1634540062
+  timesteps_since_restore: 0
+  training_iteration: 6
+  trial_id: f6e23_00007
+  
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0631477 |   0.977031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0564288 |   0.996172 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0663008 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 6: Loss = 0.0663, Training (Code) = 0.99867, Validation (Code) = 0.9975, Training (X) = 0.87108, Validation (X) = 0.86654, Training (Z) = 0.86513, Validation (Z) = 0.8609
+[2m[36m(ImplicitFunc pid=23731)[0m 0.998671875
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0631477 |   0.977031 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0564288 |   0.996172 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0663008 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.97984375
+  date: 2021-10-17_23-54-30
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 7
+  loss: 0.060033999383449554
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 116.38439178466797
+  time_this_iter_s: 14.739394187927246
+  time_total_s: 116.38439178466797
+  timestamp: 1634540070
+  timesteps_since_restore: 0
+  training_iteration: 7
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 7: Loss = 0.06003, Training (Code) = 0.97984, Validation (Code) = 0.9775, Training (X) = 0.87402, Validation (X) = 0.86957, Training (Z) = 0.87028, Validation (Z) = 0.86093
+[2m[36m(ImplicitFunc pid=23733)[0m 0.97984375
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.060034  |   0.979844 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0564288 |   0.996172 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0663008 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.997421875
+  date: 2021-10-17_23-54-33
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 7
+  loss: 0.05641823261976242
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 119.77717709541321
+  time_this_iter_s: 16.355231285095215
+  time_total_s: 119.77717709541321
+  timestamp: 1634540073
+  timesteps_since_restore: 0
+  training_iteration: 7
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 7: Loss = 0.05642, Training (Code) = 0.99742, Validation (Code) = 0.99813, Training (X) = 0.86786, Validation (X) = 0.86318, Training (Z) = 0.86669, Validation (Z) = 0.85942
+[2m[36m(ImplicitFunc pid=23735)[0m 0.997421875
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.060034  |   0.979844 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0564182 |   0.997422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0663008 |   0.998672 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.99921875
+  date: 2021-10-17_23-54-38
+  done: false
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 7
+  loss: 0.06441272050142288
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 124.48550844192505
+  time_this_iter_s: 16.145127296447754
+  time_total_s: 124.48550844192505
+  timestamp: 1634540078
+  timesteps_since_restore: 0
+  training_iteration: 7
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 7: Loss = 0.06441, Training (Code) = 0.99922, Validation (Code) = 0.99781, Training (X) = 0.8688, Validation (X) = 0.86126, Training (Z) = 0.86513, Validation (Z) = 0.8622
+[2m[36m(ImplicitFunc pid=23731)[0m 0.99921875
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: None | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.060034  |   0.979844 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0564182 |   0.997422 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0644127 |   0.999219 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.978984375
+  date: 2021-10-17_23-54-46
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 8
+  loss: 0.05757959932088852
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 131.9316041469574
+  time_this_iter_s: 15.547212362289429
+  time_total_s: 131.9316041469574
+  timestamp: 1634540086
+  timesteps_since_restore: 0
+  training_iteration: 8
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 8: Loss = 0.05758, Training (Code) = 0.97898, Validation (Code) = 0.9775, Training (X) = 0.87543, Validation (X) = 0.86988, Training (Z) = 0.87128, Validation (Z) = 0.86093
+[2m[36m(ImplicitFunc pid=23733)[0m 0.978984375
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.9971875
+  date: 2021-10-17_23-54-48
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 8
+  loss: 0.05668092891573906
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 134.6747441291809
+  time_this_iter_s: 14.8975670337677
+  time_total_s: 134.6747441291809
+  timestamp: 1634540088
+  timesteps_since_restore: 0
+  training_iteration: 8
+  trial_id: f6e23_00006
+  
+== Status ==
+Memory usage on this node: 20.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: -0.05713026411831379 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0575796 |   0.978984 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0566809 |   0.997188 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0644127 |   0.999219 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 8: Loss = 0.05668, Training (Code) = 0.99719, Validation (Code) = 0.99719, Training (X) = 0.86846, Validation (X) = 0.86368, Training (Z) = 0.86603, Validation (Z) = 0.85835
+[2m[36m(ImplicitFunc pid=23735)[0m 0.9971875
+== Status ==
+Memory usage on this node: 20.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=5
+Bracket: Iter 8.000: -0.05713026411831379 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 6.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (3 RUNNING, 5 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0575796 |   0.978984 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0566809 |   0.997188 |
+| DEFAULT_f6e23_00007 | RUNNING    | 10.125.19.185:23731 |       65 | 0.0644127 |   0.999219 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00007:
+  accuracy: 0.999375
+  date: 2021-10-17_23-54-53
+  done: true
+  experiment_id: 4f2b8a02d1744f488a2e075be2e88f59
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 8
+  loss: 0.06282009184360504
+  node_ip: 10.125.19.185
+  pid: 23731
+  should_checkpoint: true
+  time_since_restore: 139.79037642478943
+  time_this_iter_s: 15.30486798286438
+  time_total_s: 139.79037642478943
+  timestamp: 1634540093
+  timesteps_since_restore: 0
+  training_iteration: 8
+  trial_id: f6e23_00007
+  
+[2m[36m(ImplicitFunc pid=23731)[0m Epoch 8: Loss = 0.06282, Training (Code) = 0.99938, Validation (Code) = 0.99906, Training (X) = 0.86984, Validation (X) = 0.868, Training (Z) = 0.86554, Validation (Z) = 0.8583
+[2m[36m(ImplicitFunc pid=23731)[0m 0.999375
+== Status ==
+Memory usage on this node: 19.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=6
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (2 RUNNING, 6 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0575796 |   0.978984 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0566809 |   0.997188 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00007 | TERMINATED |                     |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.98171875
+  date: 2021-10-17_23-55-01
+  done: false
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 9
+  loss: 0.055524054914712906
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 147.17348504066467
+  time_this_iter_s: 15.241880893707275
+  time_total_s: 147.17348504066467
+  timestamp: 1634540101
+  timesteps_since_restore: 0
+  training_iteration: 9
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 9: Loss = 0.05552, Training (Code) = 0.98172, Validation (Code) = 0.98281, Training (X) = 0.87371, Validation (X) = 0.86804, Training (Z) = 0.87116, Validation (Z) = 0.86296
+[2m[36m(ImplicitFunc pid=23733)[0m 0.98171875
+== Status ==
+Memory usage on this node: 19.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=6
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (2 RUNNING, 6 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0555241 |   0.981719 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0566809 |   0.997188 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00007 | TERMINATED |                     |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.99765625
+  date: 2021-10-17_23-55-04
+  done: false
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 9
+  loss: 0.05700405687093735
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 150.38405585289001
+  time_this_iter_s: 15.709311723709106
+  time_total_s: 150.38405585289001
+  timestamp: 1634540104
+  timesteps_since_restore: 0
+  training_iteration: 9
+  trial_id: f6e23_00006
+  
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 9: Loss = 0.057, Training (Code) = 0.99766, Validation (Code) = 0.99719, Training (X) = 0.87056, Validation (X) = 0.86619, Training (Z) = 0.86445, Validation (Z) = 0.85898
+[2m[36m(ImplicitFunc pid=23735)[0m 0.99765625
+== Status ==
+Memory usage on this node: 19.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=6
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (2 RUNNING, 6 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0555241 |   0.981719 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0570041 |   0.997656 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00007 | TERMINATED |                     |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+== Status ==
+Memory usage on this node: 19.9/188.6 GiB
+Using AsyncHyperBand: num_stopped=6
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 4.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (2 RUNNING, 6 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | RUNNING    | 10.125.19.185:23733 |       20 | 0.0555241 |   0.981719 |
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0570041 |   0.997656 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00007 | TERMINATED |                     |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00000:
+  accuracy: 0.9821875
+  date: 2021-10-17_23-55-15
+  done: true
+  experiment_id: 31206469f5674ccabbe8d996ed7b4c1d
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 10
+  loss: 0.05410432815551758
+  node_ip: 10.125.19.185
+  pid: 23733
+  should_checkpoint: true
+  time_since_restore: 161.86223530769348
+  time_this_iter_s: 14.688750267028809
+  time_total_s: 161.86223530769348
+  timestamp: 1634540115
+  timesteps_since_restore: 0
+  training_iteration: 10
+  trial_id: f6e23_00000
+  
+[2m[36m(ImplicitFunc pid=23733)[0m Epoch 10: Loss = 0.0541, Training (Code) = 0.98219, Validation (Code) = 0.98125, Training (X) = 0.87337, Validation (X) = 0.86975, Training (Z) = 0.87027, Validation (Z) = 0.86561
+[2m[36m(ImplicitFunc pid=23733)[0m 0.9821875
+== Status ==
+Memory usage on this node: 19.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=7
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (1 RUNNING, 7 TERMINATED)
++---------------------+------------+---------------------+----------+-----------+------------+
+| Trial name          | status     | loc                 |   trials |      loss |   accuracy |
+|---------------------+------------+---------------------+----------+-----------+------------|
+| DEFAULT_f6e23_00006 | RUNNING    | 10.125.19.185:23735 |       45 | 0.0570041 |   0.997656 |
+| DEFAULT_f6e23_00000 | TERMINATED |                     |       20 | 0.0541043 |   0.982187 |
+| DEFAULT_f6e23_00001 | TERMINATED |                     |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |                     |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |                     |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |                     |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |                     |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00007 | TERMINATED |                     |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+---------------------+----------+-----------+------------+
+
+
+Result for DEFAULT_f6e23_00006:
+  accuracy: 0.998125
+  date: 2021-10-17_23-55-20
+  done: true
+  experiment_id: f98976a4f02a4754bdd37dbd9795f6d2
+  hostname: d05-11.hpc.usc.edu
+  iterations_since_restore: 10
+  loss: 0.057313404977321625
+  node_ip: 10.125.19.185
+  pid: 23735
+  should_checkpoint: true
+  time_since_restore: 166.8611023426056
+  time_this_iter_s: 16.477046489715576
+  time_total_s: 166.8611023426056
+  timestamp: 1634540120
+  timesteps_since_restore: 0
+  training_iteration: 10
+  trial_id: f6e23_00006
+  
+== Status ==
+Memory usage on this node: 19.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=8
+Bracket: Iter 8.000: -0.05757959932088852 | Iter 4.000: -0.0740140974521637 | Iter 2.000: -0.0994996428489685 | Iter 1.000: -0.12720942497253418
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/111.99 GiB heap, 0.0/51.99 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-52-30
+Number of trials: 8/8 (8 TERMINATED)
++---------------------+------------+-------+----------+-----------+------------+
+| Trial name          | status     | loc   |   trials |      loss |   accuracy |
+|---------------------+------------+-------+----------+-----------+------------|
+| DEFAULT_f6e23_00000 | TERMINATED |       |       20 | 0.0541043 |   0.982187 |
+| DEFAULT_f6e23_00001 | TERMINATED |       |       50 | 0.141128  |   0.987812 |
+| DEFAULT_f6e23_00002 | TERMINATED |       |       20 | 0.129163  |   0.931094 |
+| DEFAULT_f6e23_00003 | TERMINATED |       |       60 | 0.133284  |   0.989062 |
+| DEFAULT_f6e23_00004 | TERMINATED |       |       55 | 0.131311  |   0.988828 |
+| DEFAULT_f6e23_00005 | TERMINATED |       |       70 | 0.0746213 |   0.999141 |
+| DEFAULT_f6e23_00006 | TERMINATED |       |       45 | 0.0573134 |   0.998125 |
+| DEFAULT_f6e23_00007 | TERMINATED |       |       65 | 0.0628201 |   0.999375 |
++---------------------+------------+-------+----------+-----------+------------+
+
+
+[2m[36m(ImplicitFunc pid=23735)[0m Epoch 10: Loss = 0.05731, Training (Code) = 0.99813, Validation (Code) = 0.99844, Training (X) = 0.86983, Validation (X) = 0.86541, Training (Z) = 0.86506, Validation (Z) = 0.85634
+[2m[36m(ImplicitFunc pid=23735)[0m 0.998125
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 129, in <module>
+    print("Best trial config: {}".format(best_trial.config))
+AttributeError: 'NoneType' object has no attribute 'config'

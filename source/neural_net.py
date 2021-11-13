@@ -83,15 +83,15 @@ def train(config, checkpoint_dir =None,  **kwargs):
     print("Training (Code) = {}, Validation (Code) = {}".format(round(train_acc_codespace_epoch, kwargs['precision']), round(valid_acc_codespace_epoch, kwargs['precision'])), flush=True, end = ', ')
     print("Training (X) = {}, Validation (X) = {}".format(round(train_acc_x_epoch, kwargs['precision']), round(valid_acc_x_epoch, kwargs['precision'])), flush=True, end = ', ')
     print("Training (Z) = {}, Validation (Z) = {}".format(round(train_acc_z_epoch, kwargs['precision']), round(valid_acc_z_epoch, kwargs['precision'])), flush=True)
-    torch.save(QuantumDecoderNet, kwargs['mod_filename']+"_"+str(round(config['lr'],6))+"_"+ str(int(config['trials']))+ ".pt")
+    torch.save(QuantumDecoderNet, kwargs['mod_filename'])
 
     with tune.checkpoint_dir(epoch) as checkpoint_dir:
       path = os.path.join(checkpoint_dir, "checkpoint")
       torch.save((QuantumDecoderNet.state_dict(), optimizer.state_dict()), path)
-  #  print(train_acc_codespace_epoch)
+  
     tune.report(loss=loss_epoch, accuracy=train_acc_codespace_epoch, x_log_val_epoch=train_acc_x_epoch, epoch=epoch)
     results = [loss_arr, train_acc_codespace, train_acc_x, train_acc_z, valid_acc_codespace, valid_acc_x, valid_acc_z]
-    with open(kwargs['acc_filename']+"_"+str(round(config['lr'],6))+"_"+ str(int(config['trials']))+ ".pkl", "wb") as file:
+    with open(kwargs['res_filename'], "wb") as file:
       pkl.dump(results, file)
 
 
@@ -105,31 +105,57 @@ def accuracy(QuantumDecoderNet, config, ds_synds, ds_error_labels, **kwargs):
   with torch.no_grad():
     for idx in range(l):
       output = QuantumDecoderNet.forward(ds_synds[idx]).cpu().detach().numpy()
-      len_output = len(output)
-      for _ in range(int(config["trials"])):
-        a = np.random.uniform(size = (len_output, 1))
-        b = [1 if output[i] > a[i] else 0 for i in range(len_output)]
-        predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
-        actual_syndrome = ds_synds[idx].cpu().detach().numpy()
-        if np.array_equal(predicted_syndrome, actual_syndrome):
-          num_success += 1
-          corrected = np.array([int(b[i]) ^ int(ds_error_labels[idx].cpu().detach().numpy()[i]) for i in range(len(b))])
-          log_error_exists = np.dot(kwargs['log_ops'], corrected.T) % 2
-          if log_error_exists[0] == 1:
-            num_log_z += 1
-          if log_error_exists[1] == 1:
-            num_log_x += 1
-          break
+      if kwargs["random_sampling"] == True:
+        succ, logx, logz = sample(output, idx, ds_synds, ds_error_labels, config, **kwargs)
+      else:
+        succ, logx, logz = sample_threshold(0.5, output, idx, ds_synds, ds_error_labels, **kwargs)	
+      num_success += succ
+      num_log_x += logx
+      num_log_z += logz
+
   codespace_acc = num_success / l
-  if num_success>0:
+  if num_success > 0:
     x_space_acc = 1 - (num_log_x / num_success)
     z_space_acc = 1 - (num_log_z / num_success)	
   else:
-    x_space_acc = 1
-    z_space_acc = 1
+    x_space_acc = -1
+    z_space_acc = -1
   return codespace_acc, x_space_acc, z_space_acc
 
 
+def sample(output, idx, ds_synds, ds_error_labels, config, **kwargs):
+  
+  success, log_x, log_z = 0, 0, 0
+  len_output = len(output)
+  for _ in range(int(config["trials"])):
+    a = np.random.uniform(size = (len_output, 1))
+    b = [1 if output[i] > a[i] else 0 for i in range(len_output)]
+    predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+    actual_syndrome = ds_synds[idx].cpu().detach().numpy()
+    if np.array_equal(predicted_syndrome, actual_syndrome):
+      success += 1
+      corrected = np.array([int(b[i]) ^ int(ds_error_labels[idx].cpu().detach().numpy()[i]) for i in range(len(b))])
+      log_error_exists = np.dot(kwargs['log_ops'], corrected.T) % 2
+      if log_error_exists[0] == 1:
+        log_z += 1
+      if log_error_exists[1] == 1:
+        log_x += 1
+      break
+  return success, log_x, log_z
 
 
+def sample_threshold(th_value, output, idx, ds_synds, ds_error_labels, **kwargs):
 
+  success, log_x, log_z = 0, 0, 0
+  b = [1 if output[i] > th_value else 0 for i in range(len(output))]
+  predicted_syndrome = np.dot(kwargs['stabs'], b) % 2
+  actual_syndrome = ds_synds[idx].cpu().detach().numpy()
+  if np.array_equal(predicted_syndrome, actual_syndrome):
+    success += 1
+    corrected = np.array([int(b[i]) ^ int(ds_error_labels[idx].cpu().detach().numpy()[i]) for i in range(len(b))])
+    log_error_exists = np.dot(kwargs['log_ops'], corrected.T) % 2
+    if log_error_exists[0] == 1:
+      log_z += 1
+    if log_error_exists[1] == 1:
+      log_x += 1
+  return success, log_x, log_z

@@ -1,0 +1,593 @@
+==========================================
+SLURM_JOB_ID = 6215302
+SLURM_JOB_NODELIST = d05-29
+TMPDIR = /tmp/SLURM_6215302
+==========================================
+2021-10-17 22:33:32,437	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 22:33:32,437	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=26167)[0m 2021-10-17 22:33:40,298	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26167)[0m Traceback (most recent call last):
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26167)[0m     self._entrypoint()
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26167)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26167)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26167)[0m     output = fn()
+[2m[36m(pid=26167)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26167)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26167)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26167)[0m Exception in thread Thread-2:
+[2m[36m(pid=26167)[0m Traceback (most recent call last):
+[2m[36m(pid=26167)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26167)[0m     self.run()
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26167)[0m     raise e
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26167)[0m     self._entrypoint()
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26167)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26167)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26167)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26167)[0m     output = fn()
+[2m[36m(pid=26167)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26167)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26167)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26169)[0m 2021-10-17 22:33:40,309	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26169)[0m Traceback (most recent call last):
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26169)[0m     self._entrypoint()
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26169)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26169)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26169)[0m     output = fn()
+[2m[36m(pid=26169)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26169)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26169)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26169)[0m Exception in thread Thread-2:
+[2m[36m(pid=26169)[0m Traceback (most recent call last):
+[2m[36m(pid=26169)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26169)[0m     self.run()
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26169)[0m     raise e
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26169)[0m     self._entrypoint()
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26169)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26169)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26169)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26169)[0m     output = fn()
+[2m[36m(pid=26169)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26169)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26169)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26162)[0m 2021-10-17 22:33:40,347	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26162)[0m Traceback (most recent call last):
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26162)[0m     self._entrypoint()
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26162)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26162)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26162)[0m     output = fn()
+[2m[36m(pid=26162)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26162)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26162)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26162)[0m Exception in thread Thread-2:
+[2m[36m(pid=26162)[0m Traceback (most recent call last):
+[2m[36m(pid=26162)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26162)[0m     self.run()
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26162)[0m     raise e
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26162)[0m     self._entrypoint()
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26162)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26162)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26162)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26162)[0m     output = fn()
+[2m[36m(pid=26162)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26162)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26162)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26168)[0m 2021-10-17 22:33:40,329	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26168)[0m Traceback (most recent call last):
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26168)[0m     self._entrypoint()
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26168)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26168)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26168)[0m     output = fn()
+[2m[36m(pid=26168)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26168)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26168)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26168)[0m Exception in thread Thread-2:
+[2m[36m(pid=26168)[0m Traceback (most recent call last):
+[2m[36m(pid=26168)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26168)[0m     self.run()
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26168)[0m     raise e
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26168)[0m     self._entrypoint()
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26168)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26168)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26168)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26168)[0m     output = fn()
+[2m[36m(pid=26168)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26168)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26168)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26164)[0m 2021-10-17 22:33:40,404	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26164)[0m Traceback (most recent call last):
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26164)[0m     self._entrypoint()
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26164)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26164)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26164)[0m     output = fn()
+[2m[36m(pid=26164)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26164)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26164)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26164)[0m Exception in thread Thread-2:
+[2m[36m(pid=26164)[0m Traceback (most recent call last):
+[2m[36m(pid=26164)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26164)[0m     self.run()
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26164)[0m     raise e
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26164)[0m     self._entrypoint()
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26164)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26164)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26164)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26164)[0m     output = fn()
+[2m[36m(pid=26164)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26164)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26164)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26166)[0m 2021-10-17 22:33:40,398	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26166)[0m Traceback (most recent call last):
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26166)[0m     self._entrypoint()
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26166)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26166)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26166)[0m     output = fn()
+[2m[36m(pid=26166)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26166)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26166)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26166)[0m Exception in thread Thread-2:
+[2m[36m(pid=26166)[0m Traceback (most recent call last):
+[2m[36m(pid=26166)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26166)[0m     self.run()
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26166)[0m     raise e
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26166)[0m     self._entrypoint()
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26166)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26166)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26166)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26166)[0m     output = fn()
+[2m[36m(pid=26166)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26166)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26166)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26159)[0m 2021-10-17 22:33:40,374	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26159)[0m Traceback (most recent call last):
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26159)[0m     self._entrypoint()
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26159)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26159)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26159)[0m     output = fn()
+[2m[36m(pid=26159)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26159)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26159)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26159)[0m Exception in thread Thread-2:
+[2m[36m(pid=26159)[0m Traceback (most recent call last):
+[2m[36m(pid=26159)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26159)[0m     self.run()
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26159)[0m     raise e
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26159)[0m     self._entrypoint()
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26159)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26159)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26159)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26159)[0m     output = fn()
+[2m[36m(pid=26159)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26159)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26159)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26158)[0m 2021-10-17 22:33:40,360	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=26158)[0m Traceback (most recent call last):
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26158)[0m     self._entrypoint()
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26158)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26158)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26158)[0m     output = fn()
+[2m[36m(pid=26158)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26158)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26158)[0m NameError: name 'kqargs' is not defined
+[2m[36m(pid=26158)[0m Exception in thread Thread-2:
+[2m[36m(pid=26158)[0m Traceback (most recent call last):
+[2m[36m(pid=26158)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=26158)[0m     self.run()
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=26158)[0m     raise e
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=26158)[0m     self._entrypoint()
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=26158)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=26158)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=26158)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=26158)[0m     output = fn()
+[2m[36m(pid=26158)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+[2m[36m(pid=26158)[0m     QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+[2m[36m(pid=26158)[0m NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,504	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26167, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fa0a83321c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26167, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fa0a83321c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,515	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26169, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f1a763fe4c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26169, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f1a763fe4c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,533	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26168, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f715ad40310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26168, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f715ad40310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,553	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26162, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fed6de3d370>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26162, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fed6de3d370>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,580	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26159, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fd33959b1c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26159, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fd33959b1c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,584	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26158, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f15a33621c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26158, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f15a33621c0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,658	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26164, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f63cd9c7310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26164, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f63cd9c7310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+2021-10-17 22:33:40,692	ERROR trial_runner.py:846 -- Trial DEFAULT_eea1b_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=26166, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fe2182f2310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=26166, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fe2182f2310>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 44, in train
+    QuantumDecoderNet = Net(kqargs['layersizes'], kwargs['acts'])
+NameError: name 'kqargs' is not defined
+10_17_22_33_25_147 [22, 50, 50, 60, 60, 46] [Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 14.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/115.41 GiB heap, 0.0/53.45 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_eea1b_00000 | RUNNING  |       |       45 |
+| DEFAULT_eea1b_00001 | PENDING  |       |       45 |
+| DEFAULT_eea1b_00002 | PENDING  |       |       25 |
+| DEFAULT_eea1b_00003 | PENDING  |       |       45 |
+| DEFAULT_eea1b_00004 | PENDING  |       |       40 |
+| DEFAULT_eea1b_00005 | PENDING  |       |       55 |
+| DEFAULT_eea1b_00006 | PENDING  |       |       25 |
+| DEFAULT_eea1b_00007 | PENDING  |       |       15 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 16.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.41 GiB heap, 0.0/53.45 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_eea1b_00000 | RUNNING  |       |       45 |
+| DEFAULT_eea1b_00001 | RUNNING  |       |       45 |
+| DEFAULT_eea1b_00002 | RUNNING  |       |       25 |
+| DEFAULT_eea1b_00003 | RUNNING  |       |       45 |
+| DEFAULT_eea1b_00004 | RUNNING  |       |       40 |
+| DEFAULT_eea1b_00005 | RUNNING  |       |       55 |
+| DEFAULT_eea1b_00006 | RUNNING  |       |       25 |
+| DEFAULT_eea1b_00007 | RUNNING  |       |       15 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_eea1b_00002:
+  {}
+  
+Result for DEFAULT_eea1b_00000:
+  {}
+  
+Result for DEFAULT_eea1b_00003:
+  {}
+  
+Result for DEFAULT_eea1b_00001:
+  {}
+  
+Result for DEFAULT_eea1b_00006:
+  {}
+  
+Result for DEFAULT_eea1b_00007:
+  {}
+  
+Result for DEFAULT_eea1b_00004:
+  {}
+  
+Result for DEFAULT_eea1b_00005:
+  {}
+  
+== Status ==
+Memory usage on this node: 14.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/115.41 GiB heap, 0.0/53.45 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_eea1b_00000 | ERROR    |       |       45 |
+| DEFAULT_eea1b_00001 | ERROR    |       |       45 |
+| DEFAULT_eea1b_00002 | ERROR    |       |       25 |
+| DEFAULT_eea1b_00003 | ERROR    |       |       45 |
+| DEFAULT_eea1b_00004 | ERROR    |       |       40 |
+| DEFAULT_eea1b_00005 | ERROR    |       |       55 |
+| DEFAULT_eea1b_00006 | ERROR    |       |       25 |
+| DEFAULT_eea1b_00007 | ERROR    |       |       15 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_eea1b_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00000_0_trials=45.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00001_1_trials=45.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00002_2_trials=25.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00003_3_trials=45.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00004_4_trials=40.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00005_5_trials=55.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00006_6_trials=25.0_2021-10-17_22-33-32/error.txt |
+| DEFAULT_eea1b_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-33-32/DEFAULT_eea1b_00007_7_trials=15.0_2021-10-17_22-33-32/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 119, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_eea1b_00000, DEFAULT_eea1b_00001, DEFAULT_eea1b_00002, DEFAULT_eea1b_00003, DEFAULT_eea1b_00004, DEFAULT_eea1b_00005, DEFAULT_eea1b_00006, DEFAULT_eea1b_00007])

@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 6216954
+SLURM_JOB_NODELIST = e07-03
+TMPDIR = /tmp/SLURM_6216954
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 2, in <module>
+    from neural_net import Net, train
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 88
+    with tune.checkpoint_dir(epoch) as checkpoint_dir:
+    ^
+SyntaxError: invalid syntax

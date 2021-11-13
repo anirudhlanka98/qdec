@@ -1,0 +1,2083 @@
+==========================================
+SLURM_JOB_ID = 6215317
+SLURM_JOB_NODELIST = d05-29
+TMPDIR = /tmp/SLURM_6215317
+==========================================
+2021-10-17 22:53:13,575	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 22:53:13,575	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+[2m[36m(pid=28823)[0m 2021-10-17 22:58:58,423	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28823)[0m Traceback (most recent call last):
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28823)[0m     self._entrypoint()
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28823)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28823)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28823)[0m     output = fn()
+[2m[36m(pid=28823)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28823)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28823)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28823)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28823)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28823)[0m Exception in thread Thread-2:
+[2m[36m(pid=28823)[0m Traceback (most recent call last):
+[2m[36m(pid=28823)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28823)[0m     self.run()
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28823)[0m     raise e
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28823)[0m     self._entrypoint()
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28823)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28823)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28823)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28823)[0m     output = fn()
+[2m[36m(pid=28823)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28823)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28823)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28823)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28823)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28816)[0m 2021-10-17 22:58:58,454	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28816)[0m Traceback (most recent call last):
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28816)[0m     self._entrypoint()
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28816)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28816)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28816)[0m     output = fn()
+[2m[36m(pid=28816)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28816)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28816)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28816)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28816)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28816)[0m Exception in thread Thread-2:
+[2m[36m(pid=28816)[0m Traceback (most recent call last):
+[2m[36m(pid=28816)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28816)[0m     self.run()
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28816)[0m     raise e
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28816)[0m     self._entrypoint()
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28816)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28816)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28816)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28816)[0m     output = fn()
+[2m[36m(pid=28816)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28816)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28816)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28816)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28816)[0m TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:58:58,626	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28823, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7ef62aafd3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28823, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7ef62aafd3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:58:58,662	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28816, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7efb4d3123d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28816, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7efb4d3123d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:59:00,664	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28822, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f37db0423d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28822, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f37db0423d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28822)[0m 2021-10-17 22:59:00,590	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28822)[0m Traceback (most recent call last):
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28822)[0m     self._entrypoint()
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28822)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28822)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28822)[0m     output = fn()
+[2m[36m(pid=28822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28822)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28822)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28822)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28822)[0m Exception in thread Thread-2:
+[2m[36m(pid=28822)[0m Traceback (most recent call last):
+[2m[36m(pid=28822)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28822)[0m     self.run()
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28822)[0m     raise e
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28822)[0m     self._entrypoint()
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28822)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28822)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28822)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28822)[0m     output = fn()
+[2m[36m(pid=28822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28822)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28822)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28822)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28822)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28813)[0m 2021-10-17 22:59:01,131	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28813)[0m Traceback (most recent call last):
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28813)[0m     self._entrypoint()
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28813)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28813)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28813)[0m     output = fn()
+[2m[36m(pid=28813)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28813)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28813)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28813)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28813)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28813)[0m Exception in thread Thread-2:
+[2m[36m(pid=28813)[0m Traceback (most recent call last):
+[2m[36m(pid=28813)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28813)[0m     self.run()
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28813)[0m     raise e
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28813)[0m     self._entrypoint()
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28813)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28813)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28813)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28813)[0m     output = fn()
+[2m[36m(pid=28813)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28813)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28813)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28813)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28813)[0m TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:59:01,334	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28813, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f3d406363d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28813, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f3d406363d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:59:02,392	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28824, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fd5f1bf8280>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28824, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7fd5f1bf8280>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28824)[0m 2021-10-17 22:59:02,356	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28824)[0m Traceback (most recent call last):
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28824)[0m     self._entrypoint()
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28824)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28824)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28824)[0m     output = fn()
+[2m[36m(pid=28824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28824)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28824)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28824)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28824)[0m Exception in thread Thread-2:
+[2m[36m(pid=28824)[0m Traceback (most recent call last):
+[2m[36m(pid=28824)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28824)[0m     self.run()
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28824)[0m     raise e
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28824)[0m     self._entrypoint()
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28824)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28824)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28824)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28824)[0m     output = fn()
+[2m[36m(pid=28824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28824)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28824)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28824)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28824)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28809)[0m 2021-10-17 22:59:02,810	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28809)[0m Traceback (most recent call last):
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28809)[0m     self._entrypoint()
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28809)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28809)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28809)[0m     output = fn()
+[2m[36m(pid=28809)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28809)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28809)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28809)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28809)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28809)[0m Exception in thread Thread-2:
+[2m[36m(pid=28809)[0m Traceback (most recent call last):
+[2m[36m(pid=28809)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28809)[0m     self.run()
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28809)[0m     raise e
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28809)[0m     self._entrypoint()
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28809)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28809)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28809)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28809)[0m     output = fn()
+[2m[36m(pid=28809)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28809)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28809)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28809)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28809)[0m TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:59:02,952	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28809, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f08e6a04580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28809, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f08e6a04580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28810)[0m 2021-10-17 22:59:03,407	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28810)[0m Traceback (most recent call last):
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28810)[0m     self._entrypoint()
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28810)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28810)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28810)[0m     output = fn()
+[2m[36m(pid=28810)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28810)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28810)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28810)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28810)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28810)[0m Exception in thread Thread-2:
+[2m[36m(pid=28810)[0m Traceback (most recent call last):
+[2m[36m(pid=28810)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28810)[0m     self.run()
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28810)[0m     raise e
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28810)[0m     self._entrypoint()
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28810)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28810)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28810)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28810)[0m     output = fn()
+[2m[36m(pid=28810)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28810)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28810)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+2021-10-17 22:59:03,510	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28810, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f9c36eae3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28810, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f9c36eae3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28810)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28810)[0m TypeError: 'float' object cannot be interpreted as an integer
+2021-10-17 22:59:04,225	ERROR trial_runner.py:846 -- Trial DEFAULT_aea47_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=28821, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f9cd47393d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=28821, ip=10.125.19.203, repr=<types.ImplicitFunc object at 0x7f9cd47393d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+    train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+    for _ in range(config["trials"]):
+TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28821)[0m 2021-10-17 22:59:04,187	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=28821)[0m Traceback (most recent call last):
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28821)[0m     self._entrypoint()
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28821)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28821)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28821)[0m     output = fn()
+[2m[36m(pid=28821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28821)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28821)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28821)[0m TypeError: 'float' object cannot be interpreted as an integer
+[2m[36m(pid=28821)[0m Exception in thread Thread-2:
+[2m[36m(pid=28821)[0m Traceback (most recent call last):
+[2m[36m(pid=28821)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=28821)[0m     self.run()
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=28821)[0m     raise e
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=28821)[0m     self._entrypoint()
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=28821)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=28821)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=28821)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=28821)[0m     output = fn()
+[2m[36m(pid=28821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 72, in train
+[2m[36m(pid=28821)[0m     train_acc_codespace_epoch, train_acc_x_epoch, train_acc_z_epoch = accuracy(QuantumDecoderNet, config, train_syndromes, train_error_labels, **kwargs)
+[2m[36m(pid=28821)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 110, in accuracy
+[2m[36m(pid=28821)[0m     for _ in range(config["trials"]):
+[2m[36m(pid=28821)[0m TypeError: 'float' object cannot be interpreted as an integer
+10_17_22_53_05_835 [22, 35, 46] [Tanh(), Tanh(), Sigmoid()] 100 0.001 35
+== Status ==
+Memory usage on this node: 14.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | PENDING  |       |       35 |
+| DEFAULT_aea47_00002 | PENDING  |       |       70 |
+| DEFAULT_aea47_00003 | PENDING  |       |       30 |
+| DEFAULT_aea47_00004 | PENDING  |       |       30 |
+| DEFAULT_aea47_00005 | PENDING  |       |       30 |
+| DEFAULT_aea47_00006 | PENDING  |       |       30 |
+| DEFAULT_aea47_00007 | PENDING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 16.2/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.3/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 18.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.8/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=28822)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28816)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28821)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28813)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28824)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28823)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28809)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=28810)[0m 96000 24000
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 17.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00003 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00006 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
++---------------------+----------+-------+----------+
+
+
+Result for DEFAULT_aea47_00003:
+  {}
+  
+Result for DEFAULT_aea47_00006:
+  {}
+  
+== Status ==
+Memory usage on this node: 16.6/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 12.0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (2 ERROR, 6 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | RUNNING  |       |       20 |
+| DEFAULT_aea47_00001 | RUNNING  |       |       35 |
+| DEFAULT_aea47_00002 | RUNNING  |       |       70 |
+| DEFAULT_aea47_00004 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00005 | RUNNING  |       |       30 |
+| DEFAULT_aea47_00007 | RUNNING  |       |       60 |
+| DEFAULT_aea47_00003 | ERROR    |       |       30 |
+| DEFAULT_aea47_00006 | ERROR    |       |       30 |
++---------------------+----------+-------+----------+
+Number of errored trials: 2
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_aea47_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00003_3_trials=30.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00006_6_trials=30.0_2021-10-17_22-53-13/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Result for DEFAULT_aea47_00004:
+  {}
+  
+Result for DEFAULT_aea47_00005:
+  {}
+  
+Result for DEFAULT_aea47_00002:
+  {}
+  
+Result for DEFAULT_aea47_00000:
+  {}
+  
+Result for DEFAULT_aea47_00001:
+  {}
+  
+Result for DEFAULT_aea47_00007:
+  {}
+  
+== Status ==
+Memory usage on this node: 14.5/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 32.000: None | Iter 16.000: None | Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/115.43 GiB heap, 0.0/53.46 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_aea47_00000 | ERROR    |       |       20 |
+| DEFAULT_aea47_00001 | ERROR    |       |       35 |
+| DEFAULT_aea47_00002 | ERROR    |       |       70 |
+| DEFAULT_aea47_00003 | ERROR    |       |       30 |
+| DEFAULT_aea47_00004 | ERROR    |       |       30 |
+| DEFAULT_aea47_00005 | ERROR    |       |       30 |
+| DEFAULT_aea47_00006 | ERROR    |       |       30 |
+| DEFAULT_aea47_00007 | ERROR    |       |       60 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_aea47_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00000_0_trials=20.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00001_1_trials=35.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00002_2_trials=70.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00003_3_trials=30.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00004_4_trials=30.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00005_5_trials=30.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00006_6_trials=30.0_2021-10-17_22-53-13/error.txt |
+| DEFAULT_aea47_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_22-53-13/DEFAULT_aea47_00007_7_trials=60.0_2021-10-17_22-53-14/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 120, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_aea47_00000, DEFAULT_aea47_00001, DEFAULT_aea47_00002, DEFAULT_aea47_00003, DEFAULT_aea47_00004, DEFAULT_aea47_00005, DEFAULT_aea47_00006, DEFAULT_aea47_00007])

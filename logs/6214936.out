@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6214936
+SLURM_JOB_NODELIST = d05-29
+TMPDIR = /tmp/SLURM_6214936
+==========================================
+  File "source/pprabhu_driver.py", line 115
+    'QDNet': QuantumDecoderNet,
+    ^
+SyntaxError: invalid syntax

@@ -1,0 +1,22 @@
+==========================================
+SLURM_JOB_ID = 6162557
+SLURM_JOB_NODELIST = d23-13
+TMPDIR = /tmp/SLURM_6162557
+==========================================
+Timestamp: 10_11_21_14_01_257, Layersizes: [22, 150, 150, 150, 150, 46], Activation functions: [Tanh(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()], Epochs: 200, Learning rate: 5e-05, Number of random trials: 100
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 90, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 46, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 32, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 25, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x6 and 22x150)

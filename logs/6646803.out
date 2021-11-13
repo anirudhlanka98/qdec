@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6646803
+SLURM_JOB_NODELIST = e14-45
+TMPDIR = /tmp/SLURM_6646803
+==========================================
+Traceback (most recent call last):
+  File "source/alanka_driver.py", line 88, in <module>
+    train(QuantumDecoderNet, *data[:4], **kwargs)
+TypeError: train() takes from 1 to 2 positional arguments but 5 were given

@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6560201
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6560201
+==========================================
+  File "source/pprabhu_driver.py", line 123
+    'mod_filename': mod_filename,
+    ^
+SyntaxError: invalid syntax

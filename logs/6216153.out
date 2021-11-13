@@ -1,0 +1,34 @@
+==========================================
+SLURM_JOB_ID = 6216153
+SLURM_JOB_NODELIST = d05-11
+TMPDIR = /tmp/SLURM_6216153
+==========================================
+2021-10-17 23:49:14,856	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 23:49:14,856	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 23:49:38,482	ERROR trial_runner.py:846 -- Trial DEFAULT_821d7_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 820, in _process_trial
+    decision = self._process_trial_result(trial, result)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 890, in _process_trial_result
+    decision = self._scheduler_alg.on_trial_result(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 140, in on_trial_result
+    action = bracket.on_result(trial, result[self._time_attr],
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 210, in on_result
+    cutoff = self.cutoff(recorded)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/schedulers/async_hyperband.py", line 200, in cutoff
+    return np.nanpercentile(
+  File "<__array_function__ internals>", line 5, in nanpercentile
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1243, in nanpercentile
+    return _nanquantile_unchecked(
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1368, in _nanquantile_unchecked
+    r, k = function_base._ureduce(
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/function_base.py", line 3429, in _ureduce
+    r = func(a, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1387, in _nanquantile_ureduce_func
+    result = _nanquantile_1d(part, q, overwrite_input, interpolation)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 1407, in _nanquantile_1d
+    arr1d, overwrite_input = _remove_nan_1d(arr1d,
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/numpy/lib/nanfunctions.py", line 164, in _remove_nan_1d
+    c = np.isnan(arr1d)
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+slurmstepd: error: *** JOB 6216153 ON d05-11 CANCELLED AT 2021-10-17T23:49:38 ***

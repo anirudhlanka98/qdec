@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6214919
+SLURM_JOB_NODELIST = d05-10
+TMPDIR = /tmp/SLURM_6214919
+==========================================
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 86, in <module>
+    args = [QuantumDecoderNet, device]+ data[:4]
+TypeError: can only concatenate list (not "tuple") to list

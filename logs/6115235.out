@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6115235
+SLURM_JOB_NODELIST = d05-06
+TMPDIR = /tmp/SLURM_6115235
+==========================================
+  File "source/pprabhu_driver.py", line 85
+    'precision': 5,
+    ^
+SyntaxError: invalid syntax

@@ -1,0 +1,841 @@
+==========================================
+SLURM_JOB_ID = 6216152
+SLURM_JOB_NODELIST = d05-11
+TMPDIR = /tmp/SLURM_6216152
+==========================================
+2021-10-17 23:42:28,218	WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
+2021-10-17 23:42:28,218	INFO registry.py:66 -- Detected unknown callable for trainable. Converting to class.
+2021-10-17 23:42:37,198	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00003: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22037, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7efb82c86580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22037, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7efb82c86580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22029)[0m 2021-10-17 23:42:37,070	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22029)[0m Traceback (most recent call last):
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22029)[0m     self._entrypoint()
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22029)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22029)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22029)[0m     output = fn()
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22029)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22029)[0m     return arch(a_0, 0)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22029)[0m     z_l = layers[l](input)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22029)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22029)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22029)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22029)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22029)[0m Exception in thread Thread-2:
+[2m[36m(pid=22029)[0m Traceback (most recent call last):
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22029)[0m     self.run()
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22029)[0m     raise e
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22029)[0m     self._entrypoint()
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22029)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22029)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22029)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22029)[0m     output = fn()
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22029)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22029)[0m     return arch(a_0, 0)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22029)[0m     z_l = layers[l](input)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22029)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22029)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22029)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22029)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22029)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22037)[0m 2021-10-17 23:42:37,069	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22037)[0m Traceback (most recent call last):
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22037)[0m     self._entrypoint()
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22037)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22037)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22037)[0m     output = fn()
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22037)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22037)[0m     return arch(a_0, 0)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22037)[0m     z_l = layers[l](input)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22037)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22037)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22037)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22037)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22037)[0m Exception in thread Thread-2:
+[2m[36m(pid=22037)[0m Traceback (most recent call last):
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22037)[0m     self.run()
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22037)[0m     raise e
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22037)[0m     self._entrypoint()
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22037)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22037)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22037)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22037)[0m     output = fn()
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22037)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22037)[0m     return arch(a_0, 0)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22037)[0m     z_l = layers[l](input)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22037)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22037)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22037)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22037)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22037)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22036)[0m 2021-10-17 23:42:37,069	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22036)[0m Traceback (most recent call last):
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22036)[0m     self._entrypoint()
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22036)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22036)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22036)[0m     output = fn()
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22036)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22036)[0m     return arch(a_0, 0)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22036)[0m     z_l = layers[l](input)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22036)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22036)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22036)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22036)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22036)[0m Exception in thread Thread-2:
+[2m[36m(pid=22036)[0m Traceback (most recent call last):
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22036)[0m     self.run()
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22036)[0m     raise e
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22036)[0m     self._entrypoint()
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22036)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22036)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22036)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22036)[0m     output = fn()
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22036)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22036)[0m     return arch(a_0, 0)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22036)[0m     z_l = layers[l](input)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22036)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22036)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22036)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22036)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22036)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22025)[0m 2021-10-17 23:42:37,072	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22025)[0m Traceback (most recent call last):
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22025)[0m     self._entrypoint()
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22025)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22025)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22025)[0m     output = fn()
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22025)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22025)[0m     return arch(a_0, 0)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22025)[0m     z_l = layers[l](input)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22025)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22025)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22025)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22025)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22025)[0m Exception in thread Thread-2:
+[2m[36m(pid=22025)[0m Traceback (most recent call last):
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22025)[0m     self.run()
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22025)[0m     raise e
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22025)[0m     self._entrypoint()
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22025)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22025)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22025)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22025)[0m     output = fn()
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22025)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22025)[0m     return arch(a_0, 0)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22025)[0m     z_l = layers[l](input)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22025)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22025)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22025)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22025)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22025)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22042)[0m 2021-10-17 23:42:37,069	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22042)[0m Traceback (most recent call last):
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22042)[0m     self._entrypoint()
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22042)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22042)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22042)[0m     output = fn()
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22042)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22042)[0m     return arch(a_0, 0)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22042)[0m     z_l = layers[l](input)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22042)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22042)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22042)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22042)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22042)[0m Exception in thread Thread-2:
+[2m[36m(pid=22042)[0m Traceback (most recent call last):
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22042)[0m     self.run()
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22042)[0m     raise e
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22042)[0m     self._entrypoint()
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22042)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22042)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22042)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22042)[0m     output = fn()
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22042)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22042)[0m     return arch(a_0, 0)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22042)[0m     z_l = layers[l](input)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22042)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22042)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22042)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22042)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22042)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22033)[0m 2021-10-17 23:42:37,070	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22033)[0m Traceback (most recent call last):
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22033)[0m     self._entrypoint()
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22033)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22033)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22033)[0m     output = fn()
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22033)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22033)[0m     return arch(a_0, 0)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22033)[0m     z_l = layers[l](input)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22033)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22033)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22033)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22033)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22033)[0m Exception in thread Thread-2:
+[2m[36m(pid=22033)[0m Traceback (most recent call last):
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22033)[0m     self.run()
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22033)[0m     raise e
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22033)[0m     self._entrypoint()
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22033)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22033)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22033)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22033)[0m     output = fn()
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22033)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22033)[0m     return arch(a_0, 0)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22033)[0m     z_l = layers[l](input)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22033)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22033)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22033)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22033)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22033)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22028)[0m 2021-10-17 23:42:37,070	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22028)[0m Traceback (most recent call last):
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22028)[0m     self._entrypoint()
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22028)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22028)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22028)[0m     output = fn()
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22028)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22028)[0m     return arch(a_0, 0)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22028)[0m     z_l = layers[l](input)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22028)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22028)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22028)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22028)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22028)[0m Exception in thread Thread-2:
+[2m[36m(pid=22028)[0m Traceback (most recent call last):
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22028)[0m     self.run()
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22028)[0m     raise e
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22028)[0m     self._entrypoint()
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22028)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22028)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22028)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22028)[0m     output = fn()
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22028)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22028)[0m     return arch(a_0, 0)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22028)[0m     z_l = layers[l](input)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22028)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22028)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22028)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22028)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22028)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22038)[0m 2021-10-17 23:42:37,069	ERROR function_runner.py:266 -- Runner Thread raised error.
+[2m[36m(pid=22038)[0m Traceback (most recent call last):
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22038)[0m     self._entrypoint()
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22038)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22038)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22038)[0m     output = fn()
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22038)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22038)[0m     return arch(a_0, 0)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22038)[0m     z_l = layers[l](input)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22038)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22038)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22038)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22038)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+[2m[36m(pid=22038)[0m Exception in thread Thread-2:
+[2m[36m(pid=22038)[0m Traceback (most recent call last):
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[2m[36m(pid=22038)[0m     self.run()
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 279, in run
+[2m[36m(pid=22038)[0m     raise e
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+[2m[36m(pid=22038)[0m     self._entrypoint()
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+[2m[36m(pid=22038)[0m     return self._trainable_func(self.config, self._status_reporter,
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/util/tracing/tracing_helper.py", line 449, in _resume_span
+[2m[36m(pid=22038)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(pid=22038)[0m   File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+[2m[36m(pid=22038)[0m     output = fn()
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+[2m[36m(pid=22038)[0m     output = QuantumDecoderNet.forward(syndrome)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+[2m[36m(pid=22038)[0m     return arch(a_0, 0)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+[2m[36m(pid=22038)[0m     z_l = layers[l](input)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+[2m[36m(pid=22038)[0m     return forward_call(*input, **kwargs)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+[2m[36m(pid=22038)[0m     return F.linear(input, self.weight, self.bias)
+[2m[36m(pid=22038)[0m   File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+[2m[36m(pid=22038)[0m     return torch._C._nn.linear(input, weight, bias)
+[2m[36m(pid=22038)[0m RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,272	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22036, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f1e3c97c580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22036, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f1e3c97c580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,276	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00006: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22028, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7fa9912d23d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22028, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7fa9912d23d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,279	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00007: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22033, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f1e807693d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22033, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f1e807693d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,283	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00005: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22038, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7efa2dab03d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22038, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7efa2dab03d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,286	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00002: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22029, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f7c6ec02580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22029, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f7c6ec02580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,289	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00001: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22025, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f660c55b580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22025, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f660c55b580>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+2021-10-17 23:42:37,306	ERROR trial_runner.py:846 -- Trial DEFAULT_8fbda_00004: Error processing event.
+Traceback (most recent call last):
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 812, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 767, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/worker.py", line 1621, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train_buffered()[39m (pid=22042, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f2cc138d3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 189, in train_buffered
+    result = self.train()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/trainable.py", line 248, in train
+    result = self.step()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 379, in step
+    self._report_thread_runner_error(block=True)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 526, in _report_thread_runner_error
+    raise TuneError(
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train_buffered()[39m (pid=22042, ip=10.125.19.185, repr=<types.ImplicitFunc object at 0x7f2cc138d3d0>)
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 260, in run
+    self._entrypoint()
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 328, in entrypoint
+    return self._trainable_func(self.config, self._status_reporter,
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/function_runner.py", line 594, in _trainable_func
+    output = fn()
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 66, in train
+    output = QuantumDecoderNet.forward(syndrome)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 36, in forward
+    return arch(a_0, 0)
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 29, in arch
+    z_l = layers[l](input)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x22 and 6x20)
+10_17_23_42_25_237 [6, 20, 14] [Tanh(), Tanh(), Sigmoid()] 10 0.001 35
+== Status ==
+Memory usage on this node: 19.4/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 2.0/24 CPUs, 0/0 GPUs, 0.0/112.07 GiB heap, 0.0/52.02 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28
+Number of trials: 8/8 (7 PENDING, 1 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_8fbda_00000 | RUNNING  |       |       15 |
+| DEFAULT_8fbda_00001 | PENDING  |       |       35 |
+| DEFAULT_8fbda_00002 | PENDING  |       |       50 |
+| DEFAULT_8fbda_00003 | PENDING  |       |       60 |
+| DEFAULT_8fbda_00004 | PENDING  |       |       15 |
+| DEFAULT_8fbda_00005 | PENDING  |       |       55 |
+| DEFAULT_8fbda_00006 | PENDING  |       |       30 |
+| DEFAULT_8fbda_00007 | PENDING  |       |       25 |
++---------------------+----------+-------+----------+
+
+
+== Status ==
+Memory usage on this node: 22.7/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 16.0/24 CPUs, 0/0 GPUs, 0.0/112.07 GiB heap, 0.0/52.02 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28
+Number of trials: 8/8 (8 RUNNING)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_8fbda_00000 | RUNNING  |       |       15 |
+| DEFAULT_8fbda_00001 | RUNNING  |       |       35 |
+| DEFAULT_8fbda_00002 | RUNNING  |       |       50 |
+| DEFAULT_8fbda_00003 | RUNNING  |       |       60 |
+| DEFAULT_8fbda_00004 | RUNNING  |       |       15 |
+| DEFAULT_8fbda_00005 | RUNNING  |       |       55 |
+| DEFAULT_8fbda_00006 | RUNNING  |       |       30 |
+| DEFAULT_8fbda_00007 | RUNNING  |       |       25 |
++---------------------+----------+-------+----------+
+
+
+[2m[36m(ImplicitFunc pid=22029)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22036)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22025)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22033)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22028)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22038)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22042)[0m 96000 24000
+[2m[36m(ImplicitFunc pid=22037)[0m 96000 24000
+Result for DEFAULT_8fbda_00003:
+  {}
+  
+Result for DEFAULT_8fbda_00000:
+  {}
+  
+Result for DEFAULT_8fbda_00006:
+  {}
+  
+Result for DEFAULT_8fbda_00007:
+  {}
+  
+Result for DEFAULT_8fbda_00005:
+  {}
+  
+Result for DEFAULT_8fbda_00002:
+  {}
+  
+Result for DEFAULT_8fbda_00001:
+  {}
+  
+Result for DEFAULT_8fbda_00004:
+  {}
+  
+== Status ==
+Memory usage on this node: 21.0/188.6 GiB
+Using AsyncHyperBand: num_stopped=0
+Bracket: Iter 8.000: None | Iter 4.000: None | Iter 2.000: None | Iter 1.000: None
+Resources requested: 0/24 CPUs, 0/0 GPUs, 0.0/112.07 GiB heap, 0.0/52.02 GiB objects
+Result logdir: /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28
+Number of trials: 8/8 (8 ERROR)
++---------------------+----------+-------+----------+
+| Trial name          | status   | loc   |   trials |
+|---------------------+----------+-------+----------|
+| DEFAULT_8fbda_00000 | ERROR    |       |       15 |
+| DEFAULT_8fbda_00001 | ERROR    |       |       35 |
+| DEFAULT_8fbda_00002 | ERROR    |       |       50 |
+| DEFAULT_8fbda_00003 | ERROR    |       |       60 |
+| DEFAULT_8fbda_00004 | ERROR    |       |       15 |
+| DEFAULT_8fbda_00005 | ERROR    |       |       55 |
+| DEFAULT_8fbda_00006 | ERROR    |       |       30 |
+| DEFAULT_8fbda_00007 | ERROR    |       |       25 |
++---------------------+----------+-------+----------+
+Number of errored trials: 8
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+| Trial name          |   # failures | error file                                                                                                             |
+|---------------------+--------------+------------------------------------------------------------------------------------------------------------------------|
+| DEFAULT_8fbda_00000 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00000_0_trials=15.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00001 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00001_1_trials=35.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00002 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00002_2_trials=50.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00003 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00003_3_trials=60.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00004 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00004_4_trials=15.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00005 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00005_5_trials=55.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00006 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00006_6_trials=30.0_2021-10-17_23-42-28/error.txt |
+| DEFAULT_8fbda_00007 |            1 | /home1/pprabhu/ray_results/DEFAULT_2021-10-17_23-42-28/DEFAULT_8fbda_00007_7_trials=25.0_2021-10-17_23-42-28/error.txt |
++---------------------+--------------+------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 120, in <module>
+    result = tune.run(
+  File "/home1/pprabhu/.local/lib/python3.8/site-packages/ray/tune/tune.py", line 611, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [DEFAULT_8fbda_00000, DEFAULT_8fbda_00001, DEFAULT_8fbda_00002, DEFAULT_8fbda_00003, DEFAULT_8fbda_00004, DEFAULT_8fbda_00005, DEFAULT_8fbda_00006, DEFAULT_8fbda_00007])

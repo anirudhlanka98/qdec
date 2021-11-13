@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 6158247
+SLURM_JOB_NODELIST = d05-14
+TMPDIR = /tmp/SLURM_6158247
+==========================================
+  File "source/pprabhu_driver.py", line 97
+    'momentum': 0.9,
+    ^
+SyntaxError: invalid syntax

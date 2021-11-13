@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 6216178
+SLURM_JOB_NODELIST = d05-26
+TMPDIR = /tmp/SLURM_6216178
+==========================================
+10_18_00_47_59_264 [22, 50, 80, 46] [Tanh(), Tanh(), Tanh(), Sigmoid()] 50
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 95, in <module>
+    'learningRate': learning_rate,
+NameError: name 'learning_rate' is not defined

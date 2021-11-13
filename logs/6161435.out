@@ -1,0 +1,72 @@
+==========================================
+SLURM_JOB_ID = 6161435
+SLURM_JOB_NODELIST = d05-12
+TMPDIR = /tmp/SLURM_6161435
+==========================================
+10_11_08_56_30_043 [6, 40, 40, 40, 40, 14] [Tanh(), Tanh(), Tanh(), Tanh(), Tanh(), Sigmoid()] 200 5e-05 35
+Epoch 1: Loss = 0.38496, Training (Code) = 0.68892, Validation (Code) = 0.68717, Training (X) = 0.88215, Validation (X) = 0.87691, Training (Z) = 0.87967, Validation (Z) = 0.87509
+Epoch 2: Loss = 0.31917, Training (Code) = 0.77158, Validation (Code) = 0.77058, Training (X) = 0.88087, Validation (X) = 0.88148, Training (Z) = 0.87634, Validation (Z) = 0.87596
+Epoch 3: Loss = 0.27518, Training (Code) = 0.83167, Validation (Code) = 0.82758, Training (X) = 0.88051, Validation (X) = 0.87796, Training (Z) = 0.87906, Validation (Z) = 0.87725
+Epoch 4: Loss = 0.25817, Training (Code) = 0.85673, Validation (Code) = 0.85458, Training (X) = 0.88257, Validation (X) = 0.88006, Training (Z) = 0.88119, Validation (Z) = 0.88318
+Epoch 5: Loss = 0.25142, Training (Code) = 0.87085, Validation (Code) = 0.86383, Training (X) = 0.88431, Validation (X) = 0.88636, Training (Z) = 0.87957, Validation (Z) = 0.87729
+Epoch 6: Loss = 0.24827, Training (Code) = 0.87681, Validation (Code) = 0.87625, Training (X) = 0.88341, Validation (X) = 0.87903, Training (Z) = 0.88146, Validation (Z) = 0.8815
+Epoch 7: Loss = 0.24649, Training (Code) = 0.87935, Validation (Code) = 0.87608, Training (X) = 0.8813, Validation (X) = 0.88272, Training (Z) = 0.87955, Validation (Z) = 0.88186
+Epoch 8: Loss = 0.24519, Training (Code) = 0.88115, Validation (Code) = 0.87692, Training (X) = 0.88287, Validation (X) = 0.88397, Training (Z) = 0.88065, Validation (Z) = 0.8795
+Epoch 9: Loss = 0.24401, Training (Code) = 0.88471, Validation (Code) = 0.889, Training (X) = 0.88242, Validation (X) = 0.88133, Training (Z) = 0.88002, Validation (Z) = 0.88095
+Epoch 10: Loss = 0.24281, Training (Code) = 0.88535, Validation (Code) = 0.8885, Training (X) = 0.88194, Validation (X) = 0.87882, Training (Z) = 0.88267, Validation (Z) = 0.88117
+Epoch 11: Loss = 0.24156, Training (Code) = 0.88952, Validation (Code) = 0.88783, Training (X) = 0.88168, Validation (X) = 0.88136, Training (Z) = 0.87992, Validation (Z) = 0.87967
+Epoch 12: Loss = 0.24027, Training (Code) = 0.8899, Validation (Code) = 0.889, Training (X) = 0.88241, Validation (X) = 0.88245, Training (Z) = 0.87988, Validation (Z) = 0.88292
+Epoch 13: Loss = 0.23893, Training (Code) = 0.89185, Validation (Code) = 0.89308, Training (X) = 0.88206, Validation (X) = 0.87963, Training (Z) = 0.88201, Validation (Z) = 0.88103
+Epoch 14: Loss = 0.23757, Training (Code) = 0.89629, Validation (Code) = 0.89142, Training (X) = 0.8805, Validation (X) = 0.88193, Training (Z) = 0.88062, Validation (Z) = 0.87838
+Epoch 15: Loss = 0.2362, Training (Code) = 0.89765, Validation (Code) = 0.89817, Training (X) = 0.87857, Validation (X) = 0.8804, Training (Z) = 0.87945, Validation (Z) = 0.8792
+Epoch 16: Loss = 0.23483, Training (Code) = 0.89831, Validation (Code) = 0.89917, Training (X) = 0.87975, Validation (X) = 0.87868, Training (Z) = 0.8788, Validation (Z) = 0.87998
+Epoch 17: Loss = 0.23348, Training (Code) = 0.90071, Validation (Code) = 0.90367, Training (X) = 0.88157, Validation (X) = 0.88261, Training (Z) = 0.87896, Validation (Z) = 0.87624
+Epoch 18: Loss = 0.23214, Training (Code) = 0.90319, Validation (Code) = 0.90192, Training (X) = 0.88015, Validation (X) = 0.87998, Training (Z) = 0.87766, Validation (Z) = 0.88072
+Epoch 19: Loss = 0.23084, Training (Code) = 0.90521, Validation (Code) = 0.90725, Training (X) = 0.87933, Validation (X) = 0.8783, Training (Z) = 0.87841, Validation (Z) = 0.87444
+Epoch 20: Loss = 0.22956, Training (Code) = 0.90917, Validation (Code) = 0.90742, Training (X) = 0.8794, Validation (X) = 0.87841, Training (Z) = 0.87674, Validation (Z) = 0.87657
+Epoch 21: Loss = 0.22833, Training (Code) = 0.91067, Validation (Code) = 0.90608, Training (X) = 0.87994, Validation (X) = 0.88108, Training (Z) = 0.87637, Validation (Z) = 0.87602
+Epoch 22: Loss = 0.22713, Training (Code) = 0.90965, Validation (Code) = 0.90542, Training (X) = 0.88065, Validation (X) = 0.88366, Training (Z) = 0.87763, Validation (Z) = 0.88136
+Epoch 23: Loss = 0.22597, Training (Code) = 0.91379, Validation (Code) = 0.91492, Training (X) = 0.87839, Validation (X) = 0.87676, Training (Z) = 0.87853, Validation (Z) = 0.87686
+Epoch 24: Loss = 0.22484, Training (Code) = 0.91185, Validation (Code) = 0.9135, Training (X) = 0.88003, Validation (X) = 0.87639, Training (Z) = 0.87672, Validation (Z) = 0.87968
+Epoch 25: Loss = 0.22375, Training (Code) = 0.91383, Validation (Code) = 0.911, Training (X) = 0.87988, Validation (X) = 0.87935, Training (Z) = 0.87853, Validation (Z) = 0.87578
+Epoch 26: Loss = 0.2227, Training (Code) = 0.91287, Validation (Code) = 0.91242, Training (X) = 0.88021, Validation (X) = 0.87944, Training (Z) = 0.87754, Validation (Z) = 0.87606
+Epoch 27: Loss = 0.22168, Training (Code) = 0.91377, Validation (Code) = 0.912, Training (X) = 0.88085, Validation (X) = 0.87939, Training (Z) = 0.87912, Validation (Z) = 0.8761
+Epoch 28: Loss = 0.22069, Training (Code) = 0.91392, Validation (Code) = 0.912, Training (X) = 0.88089, Validation (X) = 0.87829, Training (Z) = 0.87845, Validation (Z) = 0.87738
+Epoch 29: Loss = 0.21973, Training (Code) = 0.9144, Validation (Code) = 0.91542, Training (X) = 0.87998, Validation (X) = 0.87774, Training (Z) = 0.87797, Validation (Z) = 0.87711
+Epoch 30: Loss = 0.2188, Training (Code) = 0.9169, Validation (Code) = 0.91658, Training (X) = 0.88096, Validation (X) = 0.87899, Training (Z) = 0.87839, Validation (Z) = 0.87699
+Epoch 31: Loss = 0.21789, Training (Code) = 0.91635, Validation (Code) = 0.91625, Training (X) = 0.87773, Validation (X) = 0.87885, Training (Z) = 0.87894, Validation (Z) = 0.87722
+Epoch 32: Loss = 0.21701, Training (Code) = 0.919, Validation (Code) = 0.91667, Training (X) = 0.87854, Validation (X) = 0.87736, Training (Z) = 0.87824, Validation (Z) = 0.87491
+Epoch 33: Loss = 0.21616, Training (Code) = 0.91833, Validation (Code) = 0.91683, Training (X) = 0.88187, Validation (X) = 0.87675, Training (Z) = 0.87727, Validation (Z) = 0.87266
+Epoch 34: Loss = 0.21532, Training (Code) = 0.91952, Validation (Code) = 0.91817, Training (X) = 0.87928, Validation (X) = 0.88192, Training (Z) = 0.87743, Validation (Z) = 0.87284
+Epoch 35: Loss = 0.2145, Training (Code) = 0.92058, Validation (Code) = 0.91525, Training (X) = 0.87836, Validation (X) = 0.87726, Training (Z) = 0.87761, Validation (Z) = 0.87872
+Epoch 36: Loss = 0.21369, Training (Code) = 0.92002, Validation (Code) = 0.91617, Training (X) = 0.87899, Validation (X) = 0.8783, Training (Z) = 0.87781, Validation (Z) = 0.87739
+Epoch 37: Loss = 0.2129, Training (Code) = 0.92054, Validation (Code) = 0.91567, Training (X) = 0.87897, Validation (X) = 0.87714, Training (Z) = 0.87824, Validation (Z) = 0.87923
+Epoch 38: Loss = 0.21212, Training (Code) = 0.92292, Validation (Code) = 0.92192, Training (X) = 0.8788, Validation (X) = 0.87499, Training (Z) = 0.87806, Validation (Z) = 0.87987
+Epoch 39: Loss = 0.21135, Training (Code) = 0.92046, Validation (Code) = 0.91792, Training (X) = 0.87934, Validation (X) = 0.87953, Training (Z) = 0.87796, Validation (Z) = 0.8769
+Epoch 40: Loss = 0.21058, Training (Code) = 0.92196, Validation (Code) = 0.92025, Training (X) = 0.88003, Validation (X) = 0.88119, Training (Z) = 0.87734, Validation (Z) = 0.87866
+Epoch 41: Loss = 0.20983, Training (Code) = 0.92021, Validation (Code) = 0.92417, Training (X) = 0.87928, Validation (X) = 0.88016, Training (Z) = 0.87935, Validation (Z) = 0.87737
+Epoch 42: Loss = 0.20908, Training (Code) = 0.92327, Validation (Code) = 0.91783, Training (X) = 0.8791, Validation (X) = 0.87861, Training (Z) = 0.87761, Validation (Z) = 0.8767
+Epoch 43: Loss = 0.20834, Training (Code) = 0.92198, Validation (Code) = 0.92042, Training (X) = 0.88006, Validation (X) = 0.88321, Training (Z) = 0.87805, Validation (Z) = 0.87804
+Epoch 44: Loss = 0.20761, Training (Code) = 0.91921, Validation (Code) = 0.92008, Training (X) = 0.88153, Validation (X) = 0.88008, Training (Z) = 0.8797, Validation (Z) = 0.87646
+Epoch 45: Loss = 0.2069, Training (Code) = 0.9214, Validation (Code) = 0.921, Training (X) = 0.87856, Validation (X) = 0.87667, Training (Z) = 0.87835, Validation (Z) = 0.88075
+Epoch 46: Loss = 0.2062, Training (Code) = 0.92454, Validation (Code) = 0.91625, Training (X) = 0.87935, Validation (X) = 0.87904, Training (Z) = 0.878, Validation (Z) = 0.87412
+Epoch 47: Loss = 0.20552, Training (Code) = 0.9215, Validation (Code) = 0.919, Training (X) = 0.88169, Validation (X) = 0.87695, Training (Z) = 0.87891, Validation (Z) = 0.87768
+Epoch 48: Loss = 0.20486, Training (Code) = 0.92585, Validation (Code) = 0.923, Training (X) = 0.87869, Validation (X) = 0.88173, Training (Z) = 0.8791, Validation (Z) = 0.87541
+Epoch 49: Loss = 0.20422, Training (Code) = 0.92408, Validation (Code) = 0.92358, Training (X) = 0.87785, Validation (X) = 0.87747, Training (Z) = 0.87911, Validation (Z) = 0.87765
+Epoch 50: Loss = 0.20359, Training (Code) = 0.92344, Validation (Code) = 0.91933, Training (X) = 0.88117, Validation (X) = 0.88307, Training (Z) = 0.87795, Validation (Z) = 0.87863
+Epoch 51: Loss = 0.20298, Training (Code) = 0.92404, Validation (Code) = 0.92267, Training (X) = 0.88078, Validation (X) = 0.87699, Training (Z) = 0.8799, Validation (Z) = 0.87952
+Epoch 52: Loss = 0.2024, Training (Code) = 0.92381, Validation (Code) = 0.9235, Training (X) = 0.8805, Validation (X) = 0.87818, Training (Z) = 0.87946, Validation (Z) = 0.87746
+Epoch 53: Loss = 0.20183, Training (Code) = 0.92396, Validation (Code) = 0.92158, Training (X) = 0.8779, Validation (X) = 0.87874, Training (Z) = 0.87844, Validation (Z) = 0.87603
+Epoch 54: Loss = 0.20128, Training (Code) = 0.92558, Validation (Code) = 0.92533, Training (X) = 0.87922, Validation (X) = 0.88121, Training (Z) = 0.87791, Validation (Z) = 0.8786
+Epoch 55: Loss = 0.20074, Training (Code) = 0.92469, Validation (Code) = 0.92083, Training (X) = 0.87998, Validation (X) = 0.87964, Training (Z) = 0.87789, Validation (Z) = 0.87919
+Epoch 56: Loss = 0.20022, Training (Code) = 0.92421, Validation (Code) = 0.92258, Training (X) = 0.88098, Validation (X) = 0.87634, Training (Z) = 0.87931, Validation (Z) = 0.88032
+Traceback (most recent call last):
+  File "source/pprabhu_driver.py", line 95, in <module>
+  File "/project/tbrun_769/qdec/source/neural_net.py", line 67, in train
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/serialization.py", line 376, in save
+    with _open_file_like(f, 'wb') as opened_file:
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/project/tbrun_769/envs/qdec/lib/python3.8/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+PermissionError: [Errno 13] Permission denied: '/project/tbrun_769/qdec/models/model_10_11_08_56_30_043.pt'
